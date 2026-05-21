@@ -1,0 +1,18 @@
+{
+  "$schema": "https://code.claude.com/marketplace.schema.json",
+  "name": "marcelopossa-skills",
+  "description": "Marketplace pessoal de skills curadas por Marcelo Possa",
+  "owner": {
+    "name": "Marcelo Possa"
+  },
+  "plugins": [
+    {
+      "name": "marcelopossa-skills",
+      "source": "./",
+      "description": "Coleção curada de skills do Claude Code importadas e mantidas de fontes externas (mattpocock/skills e outros)",
+      "license": "MIT",
+      "category": "skills",
+      "keywords": ["claude-code", "skills", "marketplace", "curated"]
+    }
+  ]
+}
