@@ -1,0 +1,10 @@
+{
+  "name": "mattpocock-write-a-skill",
+  "description": "Cria novas skills de IA com estrutura adequada, divulgação progressiva e recursos agrupados. Use quando o usuário quiser criar, escrever ou construir uma nova skill.",
+  "author": {
+    "name": "mattpocock"
+  },
+  "homepage": "https://github.com/mattpocock/skills",
+  "repository": "https://github.com/mattpocock/skills",
+  "license": "MIT"
+}

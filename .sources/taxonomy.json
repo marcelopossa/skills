@@ -135,6 +135,131 @@
       "slug": "theme-application",
       "label": "Aplicação de temas",
       "description": "Habilidade para aplicar temas visuais predefinidos ou personalizados a artefatos como slides, documentos e landing pages, incluindo seleção de paletas de cores e fontes, e geração de novos temas sob demanda."
+    },
+    {
+      "slug": "ads-agent-management",
+      "label": "Gerenciamento de agente de anúncios",
+      "description": "Habilidade para gerenciar e operar um agente de anúncios, incluindo configuração de campanhas, análise de desempenho e otimização de lances."
+    },
+    {
+      "slug": "apollo-integration",
+      "label": "Integração com Apollo.io",
+      "description": "Habilidade para usar as APIs do Apollo.io em fluxos de vendas: enriquecimento de leads, prospecção por ICP e carregamento em sequências de outreach."
+    },
+    {
+      "slug": "skill-package-management",
+      "label": "Gerenciamento de pacotes de skills",
+      "description": "Habilidade para organizar, listar e gerenciar coleções de skills internas, incluindo criação de pacotes e manutenção de índices."
+    },
+    {
+      "slug": "bioinformatics-pipeline",
+      "label": "Bioinformática",
+      "description": "Habilidade para executar pipelines de bioinformática (nf-core, Nextflow), análise de dados de sequenciamento (RNA-seq, ATAC-seq, WGS), controle de qualidade de dados single-cell e integração com ferramentas como scvi-tools."
+    },
+    {
+      "slug": "lab-data-standardization",
+      "label": "Padronização de dados laboratoriais",
+      "description": "Habilidade para converter arquivos de instrumentos laboratoriais (PDF, CSV, Excel) para formatos padronizados como Allotrope Simple Model (ASM), facilitando integração com LIMS e data lakes."
+    },
+    {
+      "slug": "scientific-strategy",
+      "label": "Estratégia científica",
+      "description": "Habilidade para auxiliar na seleção de problemas de pesquisa, ideação de projetos, troubleshooting e tomada de decisões estratégicas baseadas em árvores de decisão científicas."
+    },
+    {
+      "slug": "brand-voice-enforcement",
+      "label": "Aplicação de tom de marca",
+      "description": "Habilidade para aplicar diretrizes de tom de marca existentes na criação de conteúdo, carregando as diretrizes, aplicando constantes de voz e flexões de tom, validando a saída e explicando as escolhas de marca."
+    },
+    {
+      "slug": "brand-discovery",
+      "label": "Descoberta de materiais de marca",
+      "description": "Habilidade para orquestrar a descoberta autônoma de materiais de marca em plataformas empresariais (Notion, Confluence, Google Drive, etc.), triar fontes e produzir um relatório estruturado com perguntas em aberto."
+    },
+    {
+      "slug": "brightdata-plugin",
+      "label": "Plugin BrightData",
+      "description": "Habilidade para gerenciar e operar o plugin BrightData, incluindo configuração, extração de dados e integração com outras ferramentas."
+    },
+    {
+      "slug": "data-analysis",
+      "label": "Análise de dados",
+      "description": "Habilidade para responder perguntas sobre dados, desde consultas rápidas até análises completas e relatórios formais, incluindo exploração de dados, escrita de SQL e criação de visualizações."
+    },
+    {
+      "slug": "figma-package",
+      "label": "Pacote Figma",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas ao Figma, organizando-as em pacotes."
+    },
+    {
+      "slug": "finance-workflow",
+      "label": "Fluxo de trabalho financeiro",
+      "description": "Habilidade para gerenciar workflows financeiros e contábeis, incluindo lançamentos contábeis, reconciliação, fechamento de mês, demonstrações financeiras e suporte a auditoria SOX."
+    },
+    {
+      "slug": "human-resources",
+      "label": "Recursos Humanos",
+      "description": "Habilidade para gerenciar operações de pessoas, incluindo recrutamento, onboarding, avaliações de desempenho, análise de remuneração e orientação de políticas, mantendo conformidade."
+    },
+    {
+      "slug": "legal-workflow",
+      "label": "Fluxo de trabalho jurídico",
+      "description": "Habilidade para gerenciar fluxos de trabalho jurídicos internos, incluindo revisão de contratos, verificação de conformidade, avaliação de riscos legais e preparação de briefings para reuniões."
+    },
+    {
+      "slug": "marketing-campaign-management",
+      "label": "Gestão de campanhas de marketing",
+      "description": "Habilidade para planejar, executar e analisar campanhas de marketing multicanal, incluindo criação de briefings, calendários de conteúdo, sequências de e-mail e relatórios de desempenho."
+    },
+    {
+      "slug": "miro-package",
+      "label": "Pacote Miro",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas ao Miro, organizando-as em pacotes."
+    },
+    {
+      "slug": "operations-package",
+      "label": "Pacote de operações",
+      "description": "Habilidade para gerenciar pacotes de skills operacionais, incluindo planejamento de capacidade, gestão de mudanças, rastreamento de conformidade, documentação de processos, otimização de processos, avaliação de riscos e criação de runbooks."
+    },
+    {
+      "slug": "planetscale-package",
+      "label": "Pacote PlanetScale",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas ao PlanetScale, organizando-as em pacotes."
+    },
+    {
+      "slug": "postiz-package",
+      "label": "Pacote Postiz",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas ao Postiz, organizando-as em pacotes."
+    },
+    {
+      "slug": "product-management",
+      "label": "Gestão de produto",
+      "description": "Habilidade para gerenciar o ciclo de vida de produto, incluindo escrita de especificações, planejamento de roadmap, síntese de pesquisa de usuário, análise competitiva, revisão de métricas e atualizações para stakeholders."
+    },
+    {
+      "slug": "sales-package",
+      "label": "Pacote de vendas",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas a vendas, organizando-as em pacotes."
+    },
+    {
+      "slug": "searchfit-seo",
+      "label": "Pacote SearchFit SEO",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas a SEO, organizando-as em pacotes."
+    },
+    {
+      "slug": "zapier-package",
+      "label": "Pacote Zapier",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas ao Zapier, organizando-as em pacotes."
+    },
+    {
+      "slug": "zoom-integration",
+      "label": "Integração com Zoom",
+      "description": "Habilidade para planejar, construir e depurar integrações com a plataforma Zoom, incluindo REST APIs, SDKs, webhooks, bots e fluxos MCP."
+    },
+    {
+      "slug": "zoominfo-package",
+      "label": "Pacote ZoomInfo",
+      "description": "Habilidade para gerenciar e listar skills internas relacionadas ao ZoomInfo, organizando-as em pacotes."
     }
   ]
 }

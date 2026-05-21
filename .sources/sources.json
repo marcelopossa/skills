@@ -7,14 +7,104 @@
       "repo": "skills",
       "branch": "main",
       "last_synced_sha": "b8be62ffacb0118fa3eaa29a0923c87c8c11985c",
-      "last_synced_at": "2026-05-21T17:47:51.132Z",
+      "last_synced_at": "2026-05-21T18:00:42.645Z",
       "license": {
         "spdx": "MIT",
         "url": "https://github.com/mattpocock/skills/blob/main/LICENSE",
-        "fetched_at": "2026-05-21T17:47:50.594Z"
+        "fetched_at": "2026-05-21T18:00:28.529Z"
       },
       "attribution": "Skills originalmente criadas por mattpocock (https://github.com/mattpocock).",
-      "imported_skills": {},
+      "imported_skills": {
+        "write-a-skill": {
+          "upstream_path": "skills/productivity/write-a-skill",
+          "local_path": "skills/mattpocock/write-a-skill",
+          "upstream_category": "productivity",
+          "areas": [],
+          "description": "Cria novas skills de IA com estrutura adequada, divulgação progressiva e recursos agrupados. Use quando o usuário quiser criar, escrever ou construir uma nova skill.",
+          "files": {
+            "SKILL.md": "7339c8a38d6c2e1ee5fd721327bca3441a9408be"
+          },
+          "type": "skill"
+        },
+        "tdd": {
+          "upstream_path": "skills/engineering/tdd",
+          "local_path": "skills/mattpocock/tdd",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use quando quiser construir funcionalidades ou corrigir bugs seguindo TDD.",
+          "files": {
+            "SKILL.md": "7a989411eb3c4d0879cb33b2d7d05831add27b84",
+            "deep-modules.md": "0d9720cf1dce25e51f4ba66d16f9d2de78a12abb",
+            "interface-design.md": "a0a20ca41f02f18e63b78cde06cec0763923a403",
+            "mocking.md": "71cbfee674d93244ce81d1830b930ca9a69200bd",
+            "refactoring.md": "8a4443924fbe40c2f865c56a9477d5ec01cc9962",
+            "tests.md": "ff22f809ccbcac26ecd7a3c4bc48ef701a8ac82e"
+          },
+          "type": "skill"
+        },
+        "improve-codebase-architecture": {
+          "upstream_path": "skills/engineering/improve-codebase-architecture",
+          "local_path": "skills/mattpocock/improve-codebase-architecture",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.",
+          "files": {
+            "DEEPENING.md": "ecaf5d7dcf7aae2aff6dbc63742dd069351b4f5c",
+            "HTML-REPORT.md": "8adc368ffb30f9e8a6f01ac95621555f4afc2b76",
+            "INTERFACE-DESIGN.md": "3197723a0d04aef73b74fbcf7e48269988a61684",
+            "LANGUAGE.md": "530c27630a045406a66712c8f062e873c3b22449",
+            "SKILL.md": "c12b263bed311d85cbcedcda7e36867eda541ddc"
+          },
+          "type": "skill"
+        },
+        "grill-with-docs": {
+          "upstream_path": "skills/engineering/grill-with-docs",
+          "local_path": "skills/mattpocock/grill-with-docs",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Sessão de questionamento que desafia seu plano contra o modelo de domínio existente, afina a terminologia e atualiza a documentação (CONTEXT.md, ADRs) à medida que as decisões se cristalizam. Use quando quiser testar um plano contra a linguagem e decisões documentadas do projeto.",
+          "files": {
+            "ADR-FORMAT.md": "da7e78ec1c220cd0aedf7ad36424c9398034f375",
+            "CONTEXT-FORMAT.md": "08302557cc2ca8de32c02de708a7c8c84ed66f3f",
+            "SKILL.md": "5ea0aa913629bec683690f371839bd10e588413d"
+          },
+          "type": "skill"
+        },
+        "grill-me": {
+          "upstream_path": "skills/productivity/grill-me",
+          "local_path": "skills/mattpocock/grill-me",
+          "upstream_category": "productivity",
+          "areas": [],
+          "description": "Entrevista implacável sobre um plano ou design, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano ou quando mencionar 'me grille'.",
+          "files": {
+            "SKILL.md": "bd04394c675ee54173a093c50eb74da01a2940fa"
+          },
+          "type": "skill"
+        },
+        "diagnose": {
+          "upstream_path": "skills/engineering/diagnose",
+          "local_path": "skills/mattpocock/diagnose",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir. Use quando o usuário disser 'diagnostique isso' ou relatar um bug.",
+          "files": {
+            "SKILL.md": "ed55bda2fdb0d690ea3b80a1cf28bf848c5ad2b5",
+            "scripts/hitl-loop.template.sh": "40afc4652f6f52fc117b2b00e1fa65fcec235838"
+          },
+          "type": "skill"
+        },
+        "caveman": {
+          "upstream_path": "skills/productivity/caveman",
+          "local_path": "skills/mattpocock/caveman",
+          "upstream_category": "productivity",
+          "areas": [],
+          "description": "Modo de comunicação ultracompacto que reduz uso de tokens em ~75% ao eliminar rodeios, mantendo precisão técnica. Ative com 'caveman mode' ou '/caveman'.",
+          "files": {
+            "SKILL.md": "85770a38992a7c74d2b3467b03fe5bd4b1287fe6"
+          },
+          "type": "skill"
+        }
+      },
       "dismissed_skills": [
         "qa",
         "request-refactor-plan",
@@ -345,6 +435,9 @@
         },
         "tdd": {
           "skill_md_sha": "7a989411eb3c4d0879cb33b2d7d05831add27b84",
+          "areas": [
+            "test-driven-development"
+          ],
           "deps": {
             "referenced_skills": [
               "deep-modules",
@@ -358,7 +451,14 @@
             ],
             "implicit_deps_notes": "A skill referencia arquivos de documentação (tests.md, mocking.md) que devem estar no mesmo diretório ou acessíveis via caminho relativo. As skills 'deep-modules', 'interface-design' e 'refactoring' são mencionadas como complementares, mas não há garantia de que existam como skills separadas."
           },
-          "analyzed_at": "2026-05-21T16:19:30.644Z"
+          "analyzed_at": "2026-05-21T18:01:06.975Z"
+        },
+        "diagnose": {
+          "skill_md_sha": "ed55bda2fdb0d690ea3b80a1cf28bf848c5ad2b5",
+          "areas": [
+            "debugging"
+          ],
+          "analyzed_at": "2026-05-21T18:00:55.722Z"
         }
       },
       "expand_skills": true
@@ -566,13 +666,378 @@
       "owner": "nextlevelbuilder",
       "repo": "ui-ux-pro-max-skill",
       "branch": "main",
-      "last_synced_sha": null,
-      "last_synced_at": null,
-      "license": null,
+      "last_synced_sha": "b7e3af80f6e331f6fb456667b82b12cade7c9d35",
+      "last_synced_at": "2026-05-21T18:03:15.658Z",
+      "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE",
+        "fetched_at": "2026-05-21T18:01:35.800Z"
+      },
       "attribution": "Skills originalmente criadas por nextlevelbuilder (https://github.com/nextlevelbuilder).",
-      "imported_skills": {},
+      "imported_skills": {
+        "ui-ux-pro-max": {
+          "upstream_path": "",
+          "local_path": "skills/nextlevelbuilder/ui-ux-pro-max",
+          "upstream_category": null,
+          "areas": [
+            "interface-design",
+            "brand-styling",
+            "theme-application"
+          ],
+          "description": "Inteligência profissional de UI/UX para assistentes de IA: estilos, paletas, tipografia, gráficos e diretrizes para React, Next.js, Vue, Svelte, SwiftUI, Flutter, Tailwind e mais.",
+          "files": {
+            ".claude-plugin/marketplace.json": "2cc8a4e1d5de0c685e1aa039b801c0fc5efe7aec",
+            ".claude-plugin/plugin.json": "30f37fb49617ab40b49049b84e136b4a35a127f2",
+            ".claude/skills/banner-design/SKILL.md": "18fdac634970c086eee9c9eb1dc933402b39d963",
+            ".claude/skills/banner-design/references/banner-sizes-and-styles.md": "f72727be2e44ea042195730a7ae04f1371418817",
+            ".claude/skills/brand/SKILL.md": "035a1960a4e8a87d1cdc10fd1d1d63d4855e5409",
+            ".claude/skills/brand/references/approval-checklist.md": "ff05bacb18e4bc06291ef099d96a75ebe12bd43b",
+            ".claude/skills/brand/references/asset-organization.md": "5c69677e16b9abeb90f52c03d9ba59d83c4e0574",
+            ".claude/skills/brand/references/brand-guideline-template.md": "63c481efb19a1f4186118ad4a0bee2f596f4e2fe",
+            ".claude/skills/brand/references/color-palette-management.md": "042e29c5a4b926692cd2bfa33fe993e1135165ee",
+            ".claude/skills/brand/references/consistency-checklist.md": "918f3ed9239aaa7ba52567a8c888fad1644db267",
+            ".claude/skills/brand/references/logo-usage-rules.md": "64d84cb984621e964d3a612168c4e24154df7e2b",
+            ".claude/skills/brand/references/messaging-framework.md": "983e8431ccd58bcf132ef5990c6ac7f4f187b5f7",
+            ".claude/skills/brand/references/typography-specifications.md": "0e7b620bd97d55ddaed52c6963f25568ee0bb670",
+            ".claude/skills/brand/references/update.md": "4a92438edacc25c912d5eaaec8e8154f2d82b184",
+            ".claude/skills/brand/references/visual-identity.md": "93f4ed1ccffd0a666ec60570e7e406600e5e5672",
+            ".claude/skills/brand/references/voice-framework.md": "cdc26ab51f444723d9b1de0b651e17416b3a2ae8",
+            ".claude/skills/brand/scripts/extract-colors.cjs": "a2ec2b4384d9717ba5ac67886d6627e642b42a32",
+            ".claude/skills/brand/scripts/inject-brand-context.cjs": "04073071934d7426ef18757a17f47de00bfea2b0",
+            ".claude/skills/brand/scripts/sync-brand-to-tokens.cjs": "86c19e880488a313f5f35a646baa15e41d0caf70",
+            ".claude/skills/brand/scripts/validate-asset.cjs": "1bd4c929f98c89ee4dfe10d90505c2b7a359d8c7",
+            ".claude/skills/brand/templates/brand-guidelines-starter.md": "eb98dd0a525e3e82e897ec8ce4605d3c526ec30e",
+            ".claude/skills/design-system/SKILL.md": "cfbcba0c8d36e5dd8a20ad00c6e9df53ec4a1341",
+            ".claude/skills/design-system/data/slide-backgrounds.csv": "1150484c42bfc5fd23bcbe2611f384c6e7cc1806",
+            ".claude/skills/design-system/data/slide-charts.csv": "373648eca29297d14f3a5f454cb6e4e58becfc25",
+            ".claude/skills/design-system/data/slide-color-logic.csv": "d9481d6a233ca3b83eb056014b99516917448a5d",
+            ".claude/skills/design-system/data/slide-copy.csv": "ed448c056d8b9c6b19f8e5c86e2c7366fc80ef5f",
+            ".claude/skills/design-system/data/slide-layout-logic.csv": "a673bec60549ef6dd1b52a61452ee9e763e38a21",
+            ".claude/skills/design-system/data/slide-layouts.csv": "708be11b6a147b4acf35bfc18e68ef39f0cc1153",
+            ".claude/skills/design-system/data/slide-strategies.csv": "1aa276028569841312becbea790cb9ba1d768455",
+            ".claude/skills/design-system/data/slide-typography.csv": "204243ce59a89fe35d8faf68efd2ba1dad06f3c5",
+            ".claude/skills/design-system/references/component-specs.md": "cc7821b33a86faa8200b9defb1c522401aa21cf9",
+            ".claude/skills/design-system/references/component-tokens.md": "912ab9da54b19c9ce631bacec8d17e96245f9dea",
+            ".claude/skills/design-system/references/primitive-tokens.md": "eb251a278ffa9769af03fb0e32dd0b25e1fb9088",
+            ".claude/skills/design-system/references/semantic-tokens.md": "b441010e5a45bfc7bd61fdbb11b49651e44f3792",
+            ".claude/skills/design-system/references/states-and-variants.md": "64b808a6aaf202c66527e3787d476bb84dc91f28",
+            ".claude/skills/design-system/references/tailwind-integration.md": "c632788c9aafa347406b487ac2f18f734094aac8",
+            ".claude/skills/design-system/references/token-architecture.md": "e13ed2bba5a9c6eb78d2e96b9ee888e8c3115dbf",
+            ".claude/skills/design-system/scripts/embed-tokens.cjs": "419c10474f100bd2940eb45337a50500d71c8c60",
+            ".claude/skills/design-system/scripts/fetch-background.py": "bcbd357e3873ce75ae759506e54ecc444f5f29a8",
+            ".claude/skills/design-system/scripts/generate-slide.py": "228a50a3af92ca30cbd55be493fafe9e6d062301",
+            ".claude/skills/design-system/scripts/generate-tokens.cjs": "73cc7d7ae98a3d053d618a1ae1756a025510b407",
+            ".claude/skills/design-system/scripts/html-token-validator.py": "a72249806aacca4d9b42be901e095265bd37bed4",
+            ".claude/skills/design-system/scripts/search-slides.py": "ff5200adcf0a33d3a911a0ab4b4affddf2ad80d3",
+            ".claude/skills/design-system/scripts/slide-token-validator.py": "22548614b86ee9415c8d258aac1bc7b9bd2d59f9",
+            ".claude/skills/design-system/scripts/slide_search_core.py": "0c98e85baad80db673f2b74317a40a3cb5fd47b8",
+            ".claude/skills/design-system/scripts/validate-tokens.cjs": "e378665829f8edffa0a40b32d0b9b1e26ff25c7b",
+            ".claude/skills/design-system/templates/design-tokens-starter.json": "0c775e87ec1f5ec2ba863cdb764f95328c411aac",
+            ".claude/skills/design/SKILL.md": "1c4a37fb294a02d1fab922ea4fb7542c8e5e1432",
+            ".claude/skills/design/data/cip/deliverables.csv": "bf139ee1dfe28755428104a3821ef75686f7ad0c",
+            ".claude/skills/design/data/cip/industries.csv": "ecb02b3f5bad70df2ea443d24f2b9d65e1f0a7a5",
+            ".claude/skills/design/data/cip/mockup-contexts.csv": "a1592c2a3543aeb8456b925fba2446c44bc55b1a",
+            ".claude/skills/design/data/cip/styles.csv": "7ba7ee875ca88368f8ee5188be856b7b5da26cac",
+            ".claude/skills/design/data/icon/styles.csv": "dad8bb1e649145fabe3923db8ad376887696a9da",
+            ".claude/skills/design/data/logo/colors.csv": "e049e2397aef251430a900dc968258fc3050da32",
+            ".claude/skills/design/data/logo/industries.csv": "2c259dee0e7aa80a8d4f2c1a4f654b6233064fab",
+            ".claude/skills/design/data/logo/styles.csv": "a691812dec65dc08cd421a0cd9e6030aba2b8462",
+            ".claude/skills/design/references/banner-sizes-and-styles.md": "f72727be2e44ea042195730a7ae04f1371418817",
+            ".claude/skills/design/references/cip-deliverable-guide.md": "4c9524e17fdd707b7a60bbee8269082403e8a955",
+            ".claude/skills/design/references/cip-design.md": "81829ed56e4b9d64dd87233e79eb22c66c12d02b",
+            ".claude/skills/design/references/cip-prompt-engineering.md": "57bb178547e90bd5dd7bdfa2b357b681a38067ba",
+            ".claude/skills/design/references/cip-style-guide.md": "76328be91ce6ac3cde23e220372a61e3614bdab2",
+            ".claude/skills/design/references/design-routing.md": "78f558749fc911a796288b76e45e7396cae9a7d6",
+            ".claude/skills/design/references/icon-design.md": "db6db01d8a8eab6e8b4b169d9e97fac5bcb06afc",
+            ".claude/skills/design/references/logo-color-psychology.md": "6ce29fb7b8148fd1a1db4d9e922823a40740ee56",
+            ".claude/skills/design/references/logo-design.md": "c10de1a84a13a579ecc298f702f75b2b2c1d8650",
+            ".claude/skills/design/references/logo-prompt-engineering.md": "c91db39db3ea2fb6db0cd82b5a163ec5c5ec52e2",
+            ".claude/skills/design/references/logo-style-guide.md": "1db8aa1c278709b1f0b4855eed104d9574f50e90",
+            ".claude/skills/design/references/slides-copywriting-formulas.md": "ecf2875cf18b69a23bb8bd2b6077582b291dc806",
+            ".claude/skills/design/references/slides-create.md": "55b79a1349fb4c8b4e8f3a87dcfade9b08955290",
+            ".claude/skills/design/references/slides-html-template.md": "8b5a178f6c28c3bacc4f411c587c1495a48c778c",
+            ".claude/skills/design/references/slides-layout-patterns.md": "e2b3849f9c9b2b6131c19db592038eb2e84b9219",
+            ".claude/skills/design/references/slides-strategies.md": "e004fe174035983a6ca006ce74d3a481a85e9b3d",
+            ".claude/skills/design/references/slides.md": "748577ddb3183189d0e22faba0ada84ba651b8ce",
+            ".claude/skills/design/references/social-photos-design.md": "63f65459f5743f7aa11b6e8bc7e65bf0375fb378",
+            ".claude/skills/design/scripts/cip/core.py": "5e6b7a902ceabbc2f7a9ef425923774c9435f9da",
+            ".claude/skills/design/scripts/cip/generate.py": "0be632f5643fa8a5877a80bad1701499f513a1c6",
+            ".claude/skills/design/scripts/cip/render-html.py": "34e378261f642ea98303ee4a7718568b78ec8520",
+            ".claude/skills/design/scripts/cip/search.py": "894f4841979ef66920e5b96b8f41c89c896b8f6a",
+            ".claude/skills/design/scripts/icon/generate.py": "5e00fa98f5f7f8c0ea071d967e63bd0d3f44ee44",
+            ".claude/skills/design/scripts/logo/core.py": "b3de30c5d7c4afecb1c8a51c52688184530ea300",
+            ".claude/skills/design/scripts/logo/generate.py": "e33f8dbdab5ba3af346af5ee493291da09baab36",
+            ".claude/skills/design/scripts/logo/search.py": "e8437537b449cc96b3528703f2c025b7fa6e1d64",
+            ".claude/skills/slides/SKILL.md": "ef4500a086836a4bbaac01781a5989c5af532b05",
+            ".claude/skills/slides/references/copywriting-formulas.md": "ecf2875cf18b69a23bb8bd2b6077582b291dc806",
+            ".claude/skills/slides/references/create.md": "55b79a1349fb4c8b4e8f3a87dcfade9b08955290",
+            ".claude/skills/slides/references/html-template.md": "8b5a178f6c28c3bacc4f411c587c1495a48c778c",
+            ".claude/skills/slides/references/layout-patterns.md": "e2b3849f9c9b2b6131c19db592038eb2e84b9219",
+            ".claude/skills/slides/references/slide-strategies.md": "e004fe174035983a6ca006ce74d3a481a85e9b3d",
+            ".claude/skills/ui-styling/LICENSE.txt": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            ".claude/skills/ui-styling/SKILL.md": "f2a8f8dd25042425387d23f35b53e5c237178dcf",
+            ".claude/skills/ui-styling/canvas-fonts/ArsenalSC-OFL.txt": "1dad6ca6de2b041ef35c0f5009239ede4567e1f4",
+            ".claude/skills/ui-styling/canvas-fonts/ArsenalSC-Regular.ttf": "fe5409b22e6b22a0ce80c65bdbb333d7d96e7a6a",
+            ".claude/skills/ui-styling/canvas-fonts/BigShoulders-Bold.ttf": "fc5f8fddee4c9e5810b1ab0e518a69acee3d2c50",
+            ".claude/skills/ui-styling/canvas-fonts/BigShoulders-OFL.txt": "b220280e780d0b52a1efb259f44f332cfa9dcab4",
+            ".claude/skills/ui-styling/canvas-fonts/BigShoulders-Regular.ttf": "de8308ce32f3d6759e491dcdce37f65f538d6ac7",
+            ".claude/skills/ui-styling/canvas-fonts/Boldonse-OFL.txt": "1890cb1c226f32e581a9ca30cb06e01f2d251168",
+            ".claude/skills/ui-styling/canvas-fonts/Boldonse-Regular.ttf": "43fa30affce39b3649e6e94122fbe17cc5536dd2",
+            ".claude/skills/ui-styling/canvas-fonts/BricolageGrotesque-Bold.ttf": "f3b1deda1c594859a1f5197644142f73e2a85868",
+            ".claude/skills/ui-styling/canvas-fonts/BricolageGrotesque-OFL.txt": "fc2b2167c3ccc6fa6f41ab38cb5bde9b3b808769",
+            ".claude/skills/ui-styling/canvas-fonts/BricolageGrotesque-Regular.ttf": "0674ae3e4fc8c3f7baa53dbb582dd420ea73f224",
+            ".claude/skills/ui-styling/canvas-fonts/CrimsonPro-Bold.ttf": "58730fb4c7b999b46537d613ab629b8e465251ad",
+            ".claude/skills/ui-styling/canvas-fonts/CrimsonPro-Italic.ttf": "786a1bd66d38006d94a7cb96db1f93a2f439b08e",
+            ".claude/skills/ui-styling/canvas-fonts/CrimsonPro-OFL.txt": "f976fdc910257e3de8f4b24475963edb81b6ba46",
+            ".claude/skills/ui-styling/canvas-fonts/CrimsonPro-Regular.ttf": "f5666b9beb8fb808ee56e78726a5b754e67d1ae7",
+            ".claude/skills/ui-styling/canvas-fonts/DMMono-OFL.txt": "5b17f0c628c0a76ceb057e1b44d0112ab9a63ad2",
+            ".claude/skills/ui-styling/canvas-fonts/DMMono-Regular.ttf": "7efe813da72c7b1c0294cae782e88f262ecb75be",
+            ".claude/skills/ui-styling/canvas-fonts/EricaOne-OFL.txt": "490d012017f42bee136a3d3cb0d79ef9c3ba4561",
+            ".claude/skills/ui-styling/canvas-fonts/EricaOne-Regular.ttf": "8bd91d11773f5b035a9e6b6d1bab2e59b08051e3",
+            ".claude/skills/ui-styling/canvas-fonts/GeistMono-Bold.ttf": "736ff7c3b1483081322cacc7c64e0995b52d8af6",
+            ".claude/skills/ui-styling/canvas-fonts/GeistMono-OFL.txt": "679a685a2343079632b0dd836fecb7cefbea6f0d",
+            ".claude/skills/ui-styling/canvas-fonts/GeistMono-Regular.ttf": "1a30262ab749ea7a56aedd91410d8be3787db548",
+            ".claude/skills/ui-styling/canvas-fonts/Gloock-OFL.txt": "363acd33d9e37e60b9941229448244b6a2d22461",
+            ".claude/skills/ui-styling/canvas-fonts/Gloock-Regular.ttf": "3e58c4e455cc143e9b02d05fdcb054fac62ed7ab",
+            ".claude/skills/ui-styling/canvas-fonts/IBMPlexMono-Bold.ttf": "247979caeb26c286a33cfd33234188d370c1c0ff",
+            ".claude/skills/ui-styling/canvas-fonts/IBMPlexMono-OFL.txt": "e423b74780b16934a073769bd147d46479ceb8b2",
+            ".claude/skills/ui-styling/canvas-fonts/IBMPlexMono-Regular.ttf": "601ae945ebe1a717ac3ab7ed393288975da83b32",
+            ".claude/skills/ui-styling/canvas-fonts/IBMPlexSerif-Bold.ttf": "78f6e500de7faaec05bbbc60ccfc81083440b1c8",
+            ".claude/skills/ui-styling/canvas-fonts/IBMPlexSerif-BoldItalic.ttf": "369b89d261b2d6d186e46b49a5b1959d9e95b5d4",
+            ".claude/skills/ui-styling/canvas-fonts/IBMPlexSerif-Italic.ttf": "a4d859a77f0e52e36bf699cf55469c31a4664c18",
+            ".claude/skills/ui-styling/canvas-fonts/IBMPlexSerif-Regular.ttf": "35f454ceac6b101ea3f9bed9f57a68a61519b401",
+            ".claude/skills/ui-styling/canvas-fonts/InstrumentSans-Bold.ttf": "f602dcef23bb96d8d2f5c74c595ecf400c5ec722",
+            ".claude/skills/ui-styling/canvas-fonts/InstrumentSans-BoldItalic.ttf": "122b27305b6de88f6946bb171c055bd428124fc3",
+            ".claude/skills/ui-styling/canvas-fonts/InstrumentSans-Italic.ttf": "4b98fb8dd753453f6e355a6dd1d4f483961c4017",
+            ".claude/skills/ui-styling/canvas-fonts/InstrumentSans-OFL.txt": "4bb99142f612dfaa0053377934b47e466800b20e",
+            ".claude/skills/ui-styling/canvas-fonts/InstrumentSans-Regular.ttf": "14c6113cdd3abcfa360f8d27bb42034aa91accc0",
+            ".claude/skills/ui-styling/canvas-fonts/InstrumentSerif-Italic.ttf": "8fa958d9baf94bdf86c45d5340dc2ba171e2eb2c",
+            ".claude/skills/ui-styling/canvas-fonts/InstrumentSerif-Regular.ttf": "976303184a522174d92bc8d1a82d7960850a94b0",
+            ".claude/skills/ui-styling/canvas-fonts/Italiana-OFL.txt": "ba8af215bb486cc7f3f9acfa5df895d5ba2d89ae",
+            ".claude/skills/ui-styling/canvas-fonts/Italiana-Regular.ttf": "a9b828c0f308eaf07a172cbf2aae823e0f762210",
+            ".claude/skills/ui-styling/canvas-fonts/JetBrainsMono-Bold.ttf": "1926c804b95bcd44835689b0ddf1ac10d0b7a805",
+            ".claude/skills/ui-styling/canvas-fonts/JetBrainsMono-OFL.txt": "5ceee0025da23d2cd5fd14b28569708a8db4db2b",
+            ".claude/skills/ui-styling/canvas-fonts/JetBrainsMono-Regular.ttf": "436c982ff3209357305892181e61565d1e01d439",
+            ".claude/skills/ui-styling/canvas-fonts/Jura-Light.ttf": "dffbb3397409ebc91d53f4c4b29b7988c26a49f6",
+            ".claude/skills/ui-styling/canvas-fonts/Jura-Medium.ttf": "4bf91a33951b960e4d579eb2e57cce624e4aec0a",
+            ".claude/skills/ui-styling/canvas-fonts/Jura-OFL.txt": "64ad4c67d29fb44d037a400881c3c7a3d227cacf",
+            ".claude/skills/ui-styling/canvas-fonts/LibreBaskerville-OFL.txt": "8c531fa56848a48577f9aa3b3e8051f3682e87f4",
+            ".claude/skills/ui-styling/canvas-fonts/LibreBaskerville-Regular.ttf": "c1abc2645f623b8ab8d71724df32746b1aa627aa",
+            ".claude/skills/ui-styling/canvas-fonts/Lora-Bold.ttf": "edae21eb689cda1c1a7b7b1a69277b3c01112a4c",
+            ".claude/skills/ui-styling/canvas-fonts/Lora-BoldItalic.ttf": "12dea8c6f5f3af6c7e066b9c6ae5c8b33741e45e",
+            ".claude/skills/ui-styling/canvas-fonts/Lora-Italic.ttf": "e24b69b26b0e14a48fdbb65fd29db51ce1e95aad",
+            ".claude/skills/ui-styling/canvas-fonts/Lora-OFL.txt": "4cf1b950d308edaee72401989e45410ea99e76a4",
+            ".claude/skills/ui-styling/canvas-fonts/Lora-Regular.ttf": "dc751db00dc171fc19737d9da800d7a583bb2c6d",
+            ".claude/skills/ui-styling/canvas-fonts/NationalPark-Bold.ttf": "f4d7c021b6e0edd88bb152d8cee73154efa086c1",
+            ".claude/skills/ui-styling/canvas-fonts/NationalPark-OFL.txt": "f4ec3fba915df6e072b72fed691f1032d440544d",
+            ".claude/skills/ui-styling/canvas-fonts/NationalPark-Regular.ttf": "e4cbfbf5eb9569b2f0bcfe2f55ea1625123fc14c",
+            ".claude/skills/ui-styling/canvas-fonts/NothingYouCouldDo-OFL.txt": "c81eccdee9a75cebdd400cc39ff5a0bb7bd1eaa3",
+            ".claude/skills/ui-styling/canvas-fonts/NothingYouCouldDo-Regular.ttf": "b086bced91e7b587e8cbe5d7e13e3363e18bc812",
+            ".claude/skills/ui-styling/canvas-fonts/Outfit-Bold.ttf": "f9f2f72afdee8011d61048072576ceee2f95ea60",
+            ".claude/skills/ui-styling/canvas-fonts/Outfit-OFL.txt": "fd0cb995c0cadfa28394e7f9b88b7e43c783b453",
+            ".claude/skills/ui-styling/canvas-fonts/Outfit-Regular.ttf": "3939ab246e0736f7283a571a458db274088ed7b6",
+            ".claude/skills/ui-styling/canvas-fonts/PixelifySans-Medium.ttf": "95cd372534b533c9cb7ce35b782f0623ecb4de00",
+            ".claude/skills/ui-styling/canvas-fonts/PixelifySans-OFL.txt": "b02d1b6767c0cd44a3a3afeddef03778f10e6ad2",
+            ".claude/skills/ui-styling/canvas-fonts/PoiretOne-OFL.txt": "607bdad3fd41bf7915b74271cd4c67f3319c00e6",
+            ".claude/skills/ui-styling/canvas-fonts/PoiretOne-Regular.ttf": "b339511b02ea2c25722c8c975e7018e8efcaa217",
+            ".claude/skills/ui-styling/canvas-fonts/RedHatMono-Bold.ttf": "a6e3cf157ad71c0620620c9da48a8c8d0ca26cdf",
+            ".claude/skills/ui-styling/canvas-fonts/RedHatMono-OFL.txt": "16cf394bb1bd5100686703ebc4a3772a568e0e6a",
+            ".claude/skills/ui-styling/canvas-fonts/RedHatMono-Regular.ttf": "3bf6a698bbb3ab2caefdd2cd0456fc08b35ecf1d",
+            ".claude/skills/ui-styling/canvas-fonts/Silkscreen-OFL.txt": "a1fe7d5fbe4182d1071a23f8a8c46b9766eec81c",
+            ".claude/skills/ui-styling/canvas-fonts/Silkscreen-Regular.ttf": "8abaa7c500d4555073f9e303ec2e5e343d3b8f3f",
+            ".claude/skills/ui-styling/canvas-fonts/SmoochSans-Medium.ttf": "0af9ead07bc2b95a691a63c72d328595b93183a0",
+            ".claude/skills/ui-styling/canvas-fonts/SmoochSans-OFL.txt": "4c2f033ac0e041f61d88d255c4bb02ee28b6f3cb",
+            ".claude/skills/ui-styling/canvas-fonts/Tektur-Medium.ttf": "34fc797195169923bad8e76181d60ae02019fef0",
+            ".claude/skills/ui-styling/canvas-fonts/Tektur-OFL.txt": "2cad55f1b2d239571560773c92801166cb2be635",
+            ".claude/skills/ui-styling/canvas-fonts/Tektur-Regular.ttf": "f280fba407441453779b16f7021a286219421486",
+            ".claude/skills/ui-styling/canvas-fonts/WorkSans-Bold.ttf": "5c97989292020632435b96e6622c74b1f1c6e5cd",
+            ".claude/skills/ui-styling/canvas-fonts/WorkSans-BoldItalic.ttf": "54418b8a6303d1b0cd6b6a206ca3014eba71bc3a",
+            ".claude/skills/ui-styling/canvas-fonts/WorkSans-Italic.ttf": "40529b68f7784c96872fa7ed9bfb46d72bf699e2",
+            ".claude/skills/ui-styling/canvas-fonts/WorkSans-OFL.txt": "070f3416c4767c3396120b5942627f6d3d5bab10",
+            ".claude/skills/ui-styling/canvas-fonts/WorkSans-Regular.ttf": "d24586cc0336949d49a1c2bf3fb3b306c47b431e",
+            ".claude/skills/ui-styling/canvas-fonts/YoungSerif-OFL.txt": "f09443cbe4dfca41153edf6f9dd8fd63138a24b3",
+            ".claude/skills/ui-styling/canvas-fonts/YoungSerif-Regular.ttf": "f454fbedd4c8b00833d17fffa1f89acb5149b02c",
+            ".claude/skills/ui-styling/references/canvas-design-system.md": "6f99bee54c461c435aea10135435e2defd085585",
+            ".claude/skills/ui-styling/references/shadcn-accessibility.md": "d1cef4d9390e61c2887c0f80690bfb20e18c6be1",
+            ".claude/skills/ui-styling/references/shadcn-components.md": "b6c60b371f808116ea9e95a1199c86f56e5be5c2",
+            ".claude/skills/ui-styling/references/shadcn-theming.md": "989c5d363b6715d457b1d50359652284a7833cd5",
+            ".claude/skills/ui-styling/references/tailwind-customization.md": "b77ff3e7fe4fbaf2c0170d4f80677c6bc80cab8d",
+            ".claude/skills/ui-styling/references/tailwind-responsive.md": "f252e1857bb2f5f5a884711fcf983ea945ce45e7",
+            ".claude/skills/ui-styling/references/tailwind-utilities.md": "7b7b12363f2dbe40961cd7a11446419046a921af",
+            ".claude/skills/ui-styling/scripts/.coverage": "43821425940ddaf25a0ae1505e659d19ab5e4f6d",
+            ".claude/skills/ui-styling/scripts/requirements.txt": "75f72ca91d5c2eca4e9d3d1621a9db07f7d25dd3",
+            ".claude/skills/ui-styling/scripts/shadcn_add.py": "e2a9799809f3604d52e1309f96e6a04841d6f69b",
+            ".claude/skills/ui-styling/scripts/tailwind_config_gen.py": "51093111c6273692ba866c7077dcce04c895dd06",
+            ".claude/skills/ui-styling/scripts/tests/coverage-ui.json": "2a205687d7cc671581d6a49df617c84ba30dae4f",
+            ".claude/skills/ui-styling/scripts/tests/requirements.txt": "3a0f66d56fd0c7701273b67ca06d210497e14188",
+            ".claude/skills/ui-styling/scripts/tests/test_shadcn_add.py": "03c8f31be7f13a96fead9f312ef51a284dba3595",
+            ".claude/skills/ui-styling/scripts/tests/test_tailwind_config_gen.py": "a08414ee7b8cdbd7f09c68fcd89fffee8f7cbdb5",
+            ".claude/skills/ui-ux-pro-max/SKILL.md": "a64d6c233a6293c05ab70f67156cc7e30284232a",
+            ".claude/skills/ui-ux-pro-max/data": "e5b94699ce7cff5c94de1e14006fce76af06259b",
+            ".claude/skills/ui-ux-pro-max/scripts": "ccb93f777cb49f7f4ff40182905ce793295d66d1",
+            ".github/workflows/claude-code-review.yml": "b5e8cfd4dc37c61955c30f11cebe4e7bf7d126dd",
+            ".github/workflows/claude.yml": "d300267f1855c6feac7fcd99500b033a9cd8c0c1",
+            ".github/workflows/python-package-conda.yml": "f3586044ab80acefe54b36a3f5b0b5be41bba7fd",
+            ".gitignore": "127b4b40ecd901a6c5dad7b80cca98ed8aefd873",
+            "CLAUDE.md": "4c121a1ea761dcf14eff740f1861fd1731437a58",
+            "LICENSE": "1e71cbf26660f31903807d099fe902c098fc7e4c",
+            "README.md": "e2b4129e78b92e20f61d6eb6277ac4f8ca500397",
+            "cli/.gitignore": "dd6e803c7f7903d2140a54bd31224ab479c60c9b",
+            "cli/.npmignore": "9388f7381e9b74dd6d3bc906c1f9a6ee554e54ef",
+            "cli/README.md": "4b97df359fad541afee17cd654e412d2a73013ab",
+            "cli/assets/data/_sync_all.py": "37f7c3ac36e4dde9d3722ab365e9ee7bb107141d",
+            "cli/assets/data/app-interface.csv": "636284ce9d5d812813797abb08083b3afa4fba8c",
+            "cli/assets/data/charts.csv": "c27b726c1162aa79d93f46ef039523666be44187",
+            "cli/assets/data/colors.csv": "d77c833102315efd49907deb5820060974fc3dce",
+            "cli/assets/data/design.csv": "e6775ce3d721aa4b84b08900c60acd5904ea87c3",
+            "cli/assets/data/draft.csv": "cac862f89424c11e7267e120ea2c6aaf4c4f28d1",
+            "cli/assets/data/google-fonts.csv": "45ece9ea26e9df5405b987270067cb88dab79f67",
+            "cli/assets/data/icons.csv": "b60e35e67ad04cf0262e336432c2f10e95d3c059",
+            "cli/assets/data/landing.csv": "b0e52d15347254f5acecd1781ca05f90e334da6f",
+            "cli/assets/data/products.csv": "17826b856edc5e26b6244d06e48e481f74418810",
+            "cli/assets/data/react-performance.csv": "671465f29ce8d1b12e1576ab81c7b610161f2f6d",
+            "cli/assets/data/stacks/angular.csv": "75cb670f247923ba78946501c004e36dd37d3407",
+            "cli/assets/data/stacks/astro.csv": "cacba81c96005b527b55bdb56e37d69bd616ca54",
+            "cli/assets/data/stacks/flutter.csv": "2e32c6a29bf8e4ceeb61e92e33193adbe1219a75",
+            "cli/assets/data/stacks/html-tailwind.csv": "0efe300f3c0d0fd2de3e07c90b38c08b44b5bbeb",
+            "cli/assets/data/stacks/jetpack-compose.csv": "971ff9e3074c9a1a414b1a7e69745f286291d3f6",
+            "cli/assets/data/stacks/laravel.csv": "c32f2084373cc2f917c414949bb8e691825a529e",
+            "cli/assets/data/stacks/nextjs.csv": "6e9bea577c8c9294113d741b3f8dd3e6b1770b1c",
+            "cli/assets/data/stacks/nuxt-ui.csv": "7146e84836c504d4374a9b1cace3262b771a2956",
+            "cli/assets/data/stacks/nuxtjs.csv": "c275d0de8c6a06a06f8439be017af660fefe91bb",
+            "cli/assets/data/stacks/react-native.csv": "209e893c3b2441813add061270009d9b6fe3e512",
+            "cli/assets/data/stacks/react.csv": "ff08ee203acc0ea69a2444c8420e5a80dd07a0e2",
+            "cli/assets/data/stacks/shadcn.csv": "fb86e8d1c135aa384df284f216c3db9c5187ae57",
+            "cli/assets/data/stacks/svelte.csv": "1c6b4562d5d1c4ca98ad70959367ffcd68df5611",
+            "cli/assets/data/stacks/swiftui.csv": "e20f9f90e11d61b92ce39b05a672f2a660aa48ec",
+            "cli/assets/data/stacks/threejs.csv": "7035a99742baa094c42e551c03048c02715164a3",
+            "cli/assets/data/stacks/vue.csv": "77cb4b06fd179153ec5a8d11e2b35f8f79522183",
+            "cli/assets/data/styles.csv": "8bacc703fadb0165b0a2b746ca78c80513e0d5b0",
+            "cli/assets/data/typography.csv": "51a63f01ac248e51240652131bb342b6606b6856",
+            "cli/assets/data/ui-reasoning.csv": "8b6ca2fb256e13ff2a0a9dd150f34e1bc2ec8e25",
+            "cli/assets/data/ux-guidelines.csv": "e347aeda7401aac08879a7b11c3907782c7bcadb",
+            "cli/assets/scripts/core.py": "ad200d13974188a2f9218295d9c31bb1089a2a59",
+            "cli/assets/scripts/design_system.py": "d3152e5fb6cd284d03f4169ce63b91f3df40b32d",
+            "cli/assets/scripts/search.py": "3981cd2ad7c5622cbc2a981a4f2a8594e09fb715",
+            "cli/assets/templates/base/quick-reference.md": "5df2e6e325a62545278cd46ac91457eaae7ad3d4",
+            "cli/assets/templates/base/skill-content.md": "96a6faea745895a6417ddb0d3a79cfb6afb5fe6d",
+            "cli/assets/templates/platforms/agent.json": "918dd007bb8923fa56de77539c271bd076a8b77b",
+            "cli/assets/templates/platforms/augment.json": "dd1b6bab2fe980b712b101179fc1cd47c8324226",
+            "cli/assets/templates/platforms/claude.json": "5a4a8eeee9ded2f9da9e6abaa475faa8c11399b4",
+            "cli/assets/templates/platforms/codebuddy.json": "81d746acfa6122361bb093a195b8b2430381bf96",
+            "cli/assets/templates/platforms/codex.json": "44ad0bef6678b7f3d0183b5e87b15383757b00c2",
+            "cli/assets/templates/platforms/continue.json": "3778b096e8f8aaff1097fc4f2ad32e96b8eb3399",
+            "cli/assets/templates/platforms/copilot.json": "71f270f964a28a0d9f93cbb0d53f32fba3d8936d",
+            "cli/assets/templates/platforms/cursor.json": "b48e3da46daad9509deead7685e659efa642b539",
+            "cli/assets/templates/platforms/droid.json": "2f367ba8e913b082b1841695312f9fc31d582751",
+            "cli/assets/templates/platforms/gemini.json": "2cb73d8c1b076c13ce8d867b88583eabd33451a5",
+            "cli/assets/templates/platforms/kilocode.json": "52b2bd0ecd26cd4fa95321b36b50d45720c4327d",
+            "cli/assets/templates/platforms/kiro.json": "27af615f2f0f206924610a2c2d34d0d8ecfaa784",
+            "cli/assets/templates/platforms/opencode.json": "9a02703f7f4c55e5aa9028a6aab048549d6fc601",
+            "cli/assets/templates/platforms/qoder.json": "61abf1380c5696bea4ac728b811b298485c12207",
+            "cli/assets/templates/platforms/roocode.json": "9662e1052b29b4591c6cf77c3dea42b681b6b1d7",
+            "cli/assets/templates/platforms/trae.json": "312bff780e9266e8dc5ae8eb08010468b9189096",
+            "cli/assets/templates/platforms/warp.json": "fab3d5c4d3202f123aeac5d81e2493d4a80c1e16",
+            "cli/assets/templates/platforms/windsurf.json": "012c3113b051be97f6d97ae69534d5c29c26c191",
+            "cli/bun.lock": "17135fbf6a96d01c92e7f4d5f5a4763e5b952883",
+            "cli/package-lock.json": "de4644b3ea5ad1398b84507ff6aa4848ae114c92",
+            "cli/package.json": "3ce77025456d62d34d7341d4daeb8d7d292e68c1",
+            "cli/src/commands/init.ts": "e3bae33c335708709ee5f5869274d21db0f8fb19",
+            "cli/src/commands/uninstall.ts": "f4815bacd653ece67070938eb64f9b81e028594b",
+            "cli/src/commands/update.ts": "39ea09bf8fa8301c3dedcfc481b0c3e686cd1b25",
+            "cli/src/commands/versions.ts": "dca88e61bf55671540b446d771b25592da80fd72",
+            "cli/src/index.ts": "a745928c3e4df624e9d1367eb15038ed58d02973",
+            "cli/src/types/index.ts": "ab8385adaeb091fddafcc012da205927d9235f6d",
+            "cli/src/utils/detect.ts": "26390614c49c9288a3e395d5e46154229cec9403",
+            "cli/src/utils/extract.ts": "ee23aac2863bf13ac7811ac6868791863944546a",
+            "cli/src/utils/github.ts": "5799d88e046fb09a258298bc2549771fe92ad0bb",
+            "cli/src/utils/logger.ts": "7816022a03fe29f5bbd8c243891eded744e5f16a",
+            "cli/src/utils/template.ts": "3223a6ead62f44b76464e496b118a1a5c367b7ff",
+            "cli/tsconfig.json": "7fea45f3956ab204b9a397748aa689a436cd300d",
+            "docs/三个 data-scripts-templates 的区别.md": "6383e2e1d33e326a2f7426256d97ec15127feba4",
+            "preview/xiaomaomi-app.html": "bbb516c779c1a45e1d91012204dbb72844366e0e",
+            "screenshots/website.png": "b25e32c037b627e00db01fc3c18f311fe8d7c0e8",
+            "skill.json": "4c6748bf430d528bfe4ae07010f5e1d20c25d367",
+            "src/ui-ux-pro-max/data/_sync_all.py": "37f7c3ac36e4dde9d3722ab365e9ee7bb107141d",
+            "src/ui-ux-pro-max/data/app-interface.csv": "f34c3cd0de0eee83553b996756e1b999749d56a1",
+            "src/ui-ux-pro-max/data/charts.csv": "c27b726c1162aa79d93f46ef039523666be44187",
+            "src/ui-ux-pro-max/data/colors.csv": "7b2b0672037001ef08f1686f3d1f1c87e14a71c1",
+            "src/ui-ux-pro-max/data/design.csv": "e6775ce3d721aa4b84b08900c60acd5904ea87c3",
+            "src/ui-ux-pro-max/data/draft.csv": "cac862f89424c11e7267e120ea2c6aaf4c4f28d1",
+            "src/ui-ux-pro-max/data/google-fonts.csv": "45ece9ea26e9df5405b987270067cb88dab79f67",
+            "src/ui-ux-pro-max/data/icons.csv": "210a8d0863177abe5e559750d076a27216c87e49",
+            "src/ui-ux-pro-max/data/landing.csv": "f64101ec49882e68b0555da56e328187fd2f9a8c",
+            "src/ui-ux-pro-max/data/products.csv": "0bb9fcb3e03d7f70ca3e53a79de9bea49e585ef0",
+            "src/ui-ux-pro-max/data/react-performance.csv": "671465f29ce8d1b12e1576ab81c7b610161f2f6d",
+            "src/ui-ux-pro-max/data/stacks/angular.csv": "75cb670f247923ba78946501c004e36dd37d3407",
+            "src/ui-ux-pro-max/data/stacks/astro.csv": "cacba81c96005b527b55bdb56e37d69bd616ca54",
+            "src/ui-ux-pro-max/data/stacks/flutter.csv": "b8dfd0d696bdb885184c271feb0d8722f7d7c655",
+            "src/ui-ux-pro-max/data/stacks/html-tailwind.csv": "51ff57a6808b199e664eda22fbd7736d827d9a9a",
+            "src/ui-ux-pro-max/data/stacks/jetpack-compose.csv": "971ff9e3074c9a1a414b1a7e69745f286291d3f6",
+            "src/ui-ux-pro-max/data/stacks/laravel.csv": "c32f2084373cc2f917c414949bb8e691825a529e",
+            "src/ui-ux-pro-max/data/stacks/nextjs.csv": "8762161a982279b2bdaad86860d10f0afbfeb13f",
+            "src/ui-ux-pro-max/data/stacks/nuxt-ui.csv": "7146e84836c504d4374a9b1cace3262b771a2956",
+            "src/ui-ux-pro-max/data/stacks/nuxtjs.csv": "c275d0de8c6a06a06f8439be017af660fefe91bb",
+            "src/ui-ux-pro-max/data/stacks/react-native.csv": "209e893c3b2441813add061270009d9b6fe3e512",
+            "src/ui-ux-pro-max/data/stacks/react.csv": "9f891f4ab9cc8362b22f919f1dcae5b9853fc9bf",
+            "src/ui-ux-pro-max/data/stacks/shadcn.csv": "fb86e8d1c135aa384df284f216c3db9c5187ae57",
+            "src/ui-ux-pro-max/data/stacks/svelte.csv": "39b6d2e4404cca19d2afe86529597638e6752d2e",
+            "src/ui-ux-pro-max/data/stacks/swiftui.csv": "1009d75ccdac6eb667ee141285908a249e82fb50",
+            "src/ui-ux-pro-max/data/stacks/threejs.csv": "7035a99742baa094c42e551c03048c02715164a3",
+            "src/ui-ux-pro-max/data/stacks/vue.csv": "86b05cffdcd30abedf357e21ddf0fe51baed541f",
+            "src/ui-ux-pro-max/data/styles.csv": "8bacc703fadb0165b0a2b746ca78c80513e0d5b0",
+            "src/ui-ux-pro-max/data/typography.csv": "51a63f01ac248e51240652131bb342b6606b6856",
+            "src/ui-ux-pro-max/data/ui-reasoning.csv": "8b6ca2fb256e13ff2a0a9dd150f34e1bc2ec8e25",
+            "src/ui-ux-pro-max/data/ux-guidelines.csv": "e347aeda7401aac08879a7b11c3907782c7bcadb",
+            "src/ui-ux-pro-max/scripts/core.py": "8d02065480ecab6978935133371658789782e093",
+            "src/ui-ux-pro-max/scripts/design_system.py": "d3152e5fb6cd284d03f4169ce63b91f3df40b32d",
+            "src/ui-ux-pro-max/scripts/search.py": "d782d315f5cf3bb9dc9cbd16d43186e7c6adaf43",
+            "src/ui-ux-pro-max/templates/base/quick-reference.md": "5df2e6e325a62545278cd46ac91457eaae7ad3d4",
+            "src/ui-ux-pro-max/templates/base/skill-content.md": "c86923534e72ad859ca6510d7a7f1ee5b1f01174",
+            "src/ui-ux-pro-max/templates/platforms/agent.json": "d6687dbfc7e1d0afee1435da50921a3bef844c6f",
+            "src/ui-ux-pro-max/templates/platforms/augment.json": "905682b01a513462987aeaeda08e10a51feebb12",
+            "src/ui-ux-pro-max/templates/platforms/claude.json": "1c7d5b62f7896a53e7d39983967bc8de74f21966",
+            "src/ui-ux-pro-max/templates/platforms/codebuddy.json": "4c58e40f068177ef12d0b8bbe0ec8a092308aa76",
+            "src/ui-ux-pro-max/templates/platforms/codex.json": "95ae1b09e82eba950f4cb2848f6796c2a87b4a74",
+            "src/ui-ux-pro-max/templates/platforms/continue.json": "b77eb2225d7f14b993da7c79e2febf51faeae0c9",
+            "src/ui-ux-pro-max/templates/platforms/copilot.json": "ecac1aaeaa3b44f33aa49f3378abd661c50b9a2c",
+            "src/ui-ux-pro-max/templates/platforms/cursor.json": "f1b73b46575fe1b713519ee4cae8bb26005e6c82",
+            "src/ui-ux-pro-max/templates/platforms/droid.json": "e000b4ca6cc874019eab476e4f83d5a0df161d84",
+            "src/ui-ux-pro-max/templates/platforms/gemini.json": "fd4f8c3b0bb8228c1527caf6e4a4dd78cdd564bb",
+            "src/ui-ux-pro-max/templates/platforms/kilocode.json": "29d9aad719416292b1307b2cba884b75e97af710",
+            "src/ui-ux-pro-max/templates/platforms/kiro.json": "db2cd79c5365887654e603a0f135a425e00e9dd6",
+            "src/ui-ux-pro-max/templates/platforms/opencode.json": "6ff4ec0f696e34aa24c40b97f0188dadb9189026",
+            "src/ui-ux-pro-max/templates/platforms/qoder.json": "f408052ddbbb8b3cd7a53ff423849c184f6d736d",
+            "src/ui-ux-pro-max/templates/platforms/roocode.json": "2fb8c865e143cd05c4aaefed294e5cd67c1d88a9",
+            "src/ui-ux-pro-max/templates/platforms/trae.json": "040169f222476163066e80d82032d823709d2112",
+            "src/ui-ux-pro-max/templates/platforms/warp.json": "95ab68f182f279dcd57658ce3a8d55fe62edf313",
+            "src/ui-ux-pro-max/templates/platforms/windsurf.json": "f5e539cb53fcf167f9f6296b38d8b110e0e912ef"
+          },
+          "type": "package",
+          "package_skills": [
+            "banner-design",
+            "brand",
+            "design",
+            "design-system",
+            "slides",
+            "ui-styling",
+            "ui-ux-pro-max"
+          ]
+        }
+      },
       "dismissed_skills": [],
-      "analysis_cache": {},
+      "analysis_cache": {
+        "ui-ux-pro-max": {
+          "skill_md_sha": "30f37fb49617ab40b49049b84e136b4a35a127f2",
+          "description_pt": "Inteligência profissional de UI/UX para assistentes de IA: estilos, paletas, tipografia, gráficos e diretrizes para React, Next.js, Vue, Svelte, SwiftUI, Flutter, Tailwind e mais.",
+          "areas": [
+            "interface-design",
+            "brand-styling",
+            "theme-application"
+          ],
+          "analyzed_at": "2026-05-21T18:01:26.206Z"
+        }
+      },
       "expand_skills": false
     },
     "obra": {
@@ -622,13 +1087,570 @@
       "owner": "anthropics",
       "repo": "knowledge-work-plugins",
       "branch": "main",
-      "last_synced_sha": null,
-      "last_synced_at": null,
-      "license": null,
+      "last_synced_sha": "3bf5929025edffd209d8123a68d99088b14f3767",
+      "last_synced_at": "2026-05-21T18:16:05.535Z",
+      "license": {
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/anthropics/knowledge-work-plugins/blob/main/LICENSE",
+        "fetched_at": "2026-05-21T18:15:40.019Z"
+      },
       "attribution": "Skills originalmente criadas por anthropics (https://github.com/anthropics).",
-      "imported_skills": {},
+      "imported_skills": {
+        "data": {
+          "upstream_path": "data",
+          "local_path": "skills/anthropics-knowledge-work-plugins/data",
+          "upstream_category": null,
+          "areas": [
+            "data-analysis"
+          ],
+          "description": "Escreva SQL, explore dados e gere insights rapidamente. Crie visualizações e dashboards para transformar dados brutos em histórias claras para stakeholders.",
+          "files": {
+            ".claude-plugin/plugin.json": "fa4f3168b8bb696223b463a7fe01f9bff43baa2d",
+            ".mcp.json": "7f107d03acb3a154313291398c4d773c0e8f10b4",
+            "CONNECTORS.md": "bf6a50d81ff4b7065aeb0438cf5576f7ada07a9e",
+            "LICENSE": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+            "README.md": "9236eaa8d57c1e6102039bae20537dc6f1346ed2",
+            "skills/analyze/SKILL.md": "31ce9c58dd4de3038643750373de5b71a2494fa2",
+            "skills/build-dashboard/SKILL.md": "030c8aad751c289898cef092a67d340712ecccb9",
+            "skills/create-viz/SKILL.md": "54840e6742d5bf4adf27f8fef02c6dc4dd7d76c0",
+            "skills/data-context-extractor/SKILL.md": "1e065695c4f896f542c641ebeac3a80ccad952b6",
+            "skills/data-context-extractor/references/domain-template.md": "3aa83f589e38ba53be5931bf810211c86a1eefe6",
+            "skills/data-context-extractor/references/example-output.md": "5ed24bafa4f71cd48dccf03cd4a9431f5283331c",
+            "skills/data-context-extractor/references/skill-template.md": "58449883cf191e5703b29be3404d37959544d4fb",
+            "skills/data-context-extractor/references/sql-dialects.md": "8b513a6ca3944e7427c598010ddede7490059591",
+            "skills/data-context-extractor/scripts/package_data_skill.py": "c71f583ba4f515dbf466da091aea5b97a6cc7095",
+            "skills/data-visualization/SKILL.md": "409cce60f59b463a8386c83cde03dc7e70be93f3",
+            "skills/explore-data/SKILL.md": "f1e7032d0abee77903fc3abbfdc7646e383d4993",
+            "skills/sql-queries/SKILL.md": "f92e232c67054b078fcc1ee558101163ebdbb87d",
+            "skills/statistical-analysis/SKILL.md": "59cc87de24a0c1b2b5b1d7ba2d8d10eb314a6557",
+            "skills/validate-data/SKILL.md": "30a1bac41bf9679dc7d96b7ec59a116f03ec0575",
+            "skills/write-query/SKILL.md": "ae8333dd4ea9c8baafc242ad8410c1823cbdf792"
+          },
+          "type": "package",
+          "package_skills": [
+            "analyze",
+            "build-dashboard",
+            "create-viz",
+            "data-context-extractor",
+            "data-visualization",
+            "explore-data",
+            "sql-queries",
+            "statistical-analysis",
+            "validate-data",
+            "write-query"
+          ]
+        },
+        "engineering": {
+          "upstream_path": "engineering",
+          "local_path": "skills/anthropics-knowledge-work-plugins/engineering",
+          "upstream_category": null,
+          "areas": [
+            "code-review",
+            "debugging",
+            "handoff-documentation"
+          ],
+          "description": "Otimize fluxos de engenharia — standups, revisão de código, decisões de arquitetura, resposta a incidentes e documentação técnica. Funciona com ferramentas existentes ou de forma independente.",
+          "files": {
+            ".claude-plugin/plugin.json": "040404e93f7496a908391e6489b44c7f2fd9ed76",
+            ".mcp.json": "9d94183b19a76e5429b2e668ec9f7e02fc2cd373",
+            "CONNECTORS.md": "bfc0a84e4092ca8fb4b3efbdc6ea4a30629882bf",
+            "README.md": "e4236c1c60f5edd3bafd2a0dd538a95a42c1a0be",
+            "skills/architecture/SKILL.md": "f316e4661ed267d56c5b5cd0f5025ec4c9024452",
+            "skills/code-review/SKILL.md": "8b98fe4c0616775ee3624602f592f45e87daf5b4",
+            "skills/debug/SKILL.md": "6763b0b1bc5f6f6fdf033cbf01e8992052cd1339",
+            "skills/deploy-checklist/SKILL.md": "91171a09d0a88742d49601794791abbe2c917b25",
+            "skills/documentation/SKILL.md": "9a5a69394edd00e449625a928ec7e196db6feef4",
+            "skills/incident-response/SKILL.md": "b483514f8745939ec41bc7c181121c3ae1fccdee",
+            "skills/standup/SKILL.md": "22fb33ef2c8695c972ba6f367d4ff269a5b3c51d",
+            "skills/system-design/SKILL.md": "de5d5b8ced9d63c4d48ea776ae124c312b48b7ab",
+            "skills/tech-debt/SKILL.md": "d8fcb53a676c8781b3b1bb7fab9235b7c9cf204e",
+            "skills/testing-strategy/SKILL.md": "4ff59410c8fe67872a98ca97135815b778ca1219"
+          },
+          "type": "package",
+          "package_skills": [
+            "architecture",
+            "code-review",
+            "debug",
+            "deploy-checklist",
+            "documentation",
+            "incident-response",
+            "standup",
+            "system-design",
+            "tech-debt",
+            "testing-strategy"
+          ]
+        },
+        "finance": {
+          "upstream_path": "finance",
+          "local_path": "skills/anthropics-knowledge-work-plugins/finance",
+          "upstream_category": null,
+          "areas": [
+            "finance-workflow"
+          ],
+          "description": "Automatiza fluxos financeiros e contábeis: lançamentos, conciliação, demonstrações, análise de variações, fechamento mensal e preparação para auditoria.",
+          "files": {
+            ".claude-plugin/plugin.json": "fe42b230587aeb1ef19b9034e5ca2d2d70fd1d0e",
+            ".mcp.json": "9da45e97e252242932493a40faf6ab431acdeb6d",
+            "CONNECTORS.md": "936fd1350d8f1c969c07bd571c050e6051e43815",
+            "LICENSE": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+            "README.md": "8fed1061d4a7eb729a1754aee192673facf75848",
+            "skills/audit-support/SKILL.md": "6480bcddb2d01d8c7ed1730a803f0df5065a0f23",
+            "skills/close-management/SKILL.md": "f302f6e3b02f31af03c0d32972174590ddad608c",
+            "skills/financial-statements/SKILL.md": "5a9a8fc83fa68280759541dbdf6703d1b0cac5de",
+            "skills/journal-entry-prep/SKILL.md": "27f443c771df2ac7bf9c8879b9c297d2ca666cb5",
+            "skills/journal-entry/SKILL.md": "c152f027d308be0138622f4962c1da1af2483d1e",
+            "skills/reconciliation/SKILL.md": "5f212646c3827aa0d2b88137ade6829cb520ec03",
+            "skills/sox-testing/SKILL.md": "97d7b4e8be165ae3ef7e76d4f0c05eeec47e36dd",
+            "skills/variance-analysis/SKILL.md": "4a430511eac2af771e55caf965bf713fff88d649"
+          },
+          "type": "package",
+          "package_skills": [
+            "audit-support",
+            "close-management",
+            "financial-statements",
+            "journal-entry",
+            "journal-entry-prep",
+            "reconciliation",
+            "sox-testing",
+            "variance-analysis"
+          ]
+        },
+        "legal": {
+          "upstream_path": "legal",
+          "local_path": "skills/anthropics-knowledge-work-plugins/legal",
+          "upstream_category": null,
+          "areas": [
+            "code-review",
+            "legal-workflow"
+          ],
+          "description": "Acelere revisão de contratos, triagem de NDAs e conformidade para equipes jurídicas internas. Redija briefings legais, organize pesquisa de precedentes e gerencie conhecimento institucional.",
+          "files": {
+            ".claude-plugin/plugin.json": "330cc4d47867df93ebd17b511aa6e0eeb2d3c38d",
+            ".mcp.json": "8c03d90c542858c188a0390066e4082ed3513416",
+            "CONNECTORS.md": "de3230aeb0d06b0cfaa07e260da66408cd101743",
+            "LICENSE": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+            "README.md": "085d41825f65dede1d9634b2a5bea1314b41e30f",
+            "skills/brief/SKILL.md": "fa80117a99d84af2eaf6a6320eb08c6567a99f3f",
+            "skills/compliance-check/SKILL.md": "688d8c967870e6036c27e8fa2f1bc34ca5cf0896",
+            "skills/legal-response/SKILL.md": "ca96f06421326c2e6d83675701e16882b38080db",
+            "skills/legal-risk-assessment/SKILL.md": "636075c5846c0da11fe41b3f26810b397ccb7735",
+            "skills/meeting-briefing/SKILL.md": "5f629f19795bc910bdfffc84fbf66c206eec5d75",
+            "skills/review-contract/SKILL.md": "030204860ec70bf80254f9894721504df7c81bd5",
+            "skills/signature-request/SKILL.md": "242d64bd0431a7e1d87efda4493d7601a2332f07",
+            "skills/triage-nda/SKILL.md": "143c1113e926cd7b69f2dfc9bca6171097d35f0a",
+            "skills/vendor-check/SKILL.md": "d21d7465d061ec1158fa807603bc090915d9f2d0"
+          },
+          "type": "package",
+          "package_skills": [
+            "brief",
+            "compliance-check",
+            "legal-response",
+            "legal-risk-assessment",
+            "meeting-briefing",
+            "review-contract",
+            "signature-request",
+            "triage-nda",
+            "vendor-check"
+          ]
+        },
+        "marketing": {
+          "upstream_path": "marketing",
+          "local_path": "skills/anthropics-knowledge-work-plugins/marketing",
+          "upstream_category": null,
+          "areas": [
+            "marketing-campaign-management"
+          ],
+          "description": "Crie conteúdo, planeje campanhas e analise o desempenho em canais de marketing, mantendo a consistência da marca e monitorando concorrentes.",
+          "files": {
+            ".claude-plugin/plugin.json": "b1485cd48fef6589224dec93a2627eb899d544a0",
+            ".mcp.json": "796edd773cbd3b86212a83372de29da44ade8cb4",
+            "CONNECTORS.md": "f4d375273c56cfeb923022556ac5ec60e4c818ff",
+            "LICENSE": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+            "README.md": "d60fec0497205b605547a61e6fe971cb26aec089",
+            "skills/brand-review/SKILL.md": "25ae9d95120b8eda4a61cb91da67cb48c15d3132",
+            "skills/campaign-plan/SKILL.md": "087001892894890bf7fd84e0c9f999e0a68831ab",
+            "skills/competitive-brief/SKILL.md": "1a7df218996ed350c67e6899a60321f205bb69d6",
+            "skills/content-creation/SKILL.md": "4ca0b7166414334ee3a118b35e141eadab2f97ec",
+            "skills/draft-content/SKILL.md": "39de3a17733c07fe8a2039587c0e4aa339f04339",
+            "skills/email-sequence/SKILL.md": "32e4d65db0bd85490a8fb111515bf67729d1bb32",
+            "skills/performance-report/SKILL.md": "f282cfba98822d98791478037c68bf24ae650343",
+            "skills/seo-audit/SKILL.md": "12364b82ac8104faf9bbf758d6f880320466f3dd"
+          },
+          "type": "package",
+          "package_skills": [
+            "brand-review",
+            "campaign-plan",
+            "competitive-brief",
+            "content-creation",
+            "draft-content",
+            "email-sequence",
+            "performance-report",
+            "seo-audit"
+          ]
+        }
+      },
       "dismissed_skills": [],
-      "analysis_cache": {},
+      "analysis_cache": {
+        "apollo": {
+          "skill_md_sha": "2f5be45656bb39c54ec903a0d711831598a7c993",
+          "description_pt": "Prospect, enriqueça leads e carregue sequências de outreach com Apollo.io — integração MCP em um clique para Claude Code e Cowork.",
+          "areas": [
+            "apollo-integration"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "As skills internas dependem de APIs externas do Apollo (ex.: apollo_mixed_people_api_search) que não são ferramentas do sistema nem arquivos locais. Consumo de créditos Apollo é mencionado, mas não há dependências implícitas adicionais."
+          },
+          "analyzed_at": "2026-05-21T18:08:39.813Z"
+        },
+        "bio-research": {
+          "skill_md_sha": "04330fffd471cb0e9d39517cb8724048e422b859",
+          "description_pt": "Conecte-se a ferramentas e bancos de dados de pesquisa pré-clínica (busca de literatura, genômica, priorização de alvos) para acelerar P&D em ciências da vida.",
+          "areas": [
+            "bioinformatics-pipeline",
+            "lab-data-standardization",
+            "scientific-strategy"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "A skill 'start' referencia o arquivo CONNECTORS.md fora do diretório da skill, indicando dependência de configuração de conectores MCP."
+          },
+          "analyzed_at": "2026-05-21T18:08:43.698Z"
+        },
+        "brand-voice": {
+          "skill_md_sha": "1772f0c9a757d3a5a97ebf6bd7b165056ead575d",
+          "description_pt": "Descubra a voz da sua marca a partir de documentos e conversas, gere diretrizes aplicáveis e valide conteúdos de IA contra seu tom e posicionamento estabelecidos.",
+          "areas": [
+            "brand-styling",
+            "brand-voice-enforcement",
+            "brand-discovery"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "discover-brand",
+              "guideline-generation"
+            ],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill 'brand-voice-enforcement' depende de guidelines geradas por 'guideline-generation' ou descobertas por 'discover-brand'. Nenhuma dependência externa explícita foi encontrada."
+          },
+          "analyzed_at": "2026-05-21T18:08:46.571Z"
+        },
+        "common-room": {
+          "skill_md_sha": "8420c08c9afebf4905fcc06049db8e37e4cd9aee",
+          "description_pt": "Transforme o Common Room em seu copiloto de GTM: pesquise contas e contatos, prepare-se para reuniões e crie abordagens personalizadas para e-mail, LinkedIn e telefone.",
+          "areas": [
+            "code-review"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "account-research"
+            ],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill 'call-prep' referencia 'account-research' como sub-rotina. As skills 'compose-outreach', 'contact-research', 'prospect' e 'weekly-prep-brief' não dependem explicitamente de outras skills internas, mas podem usar ferramentas MCP do Common Room. Nenhuma dependência externa de sistema ou arquivo foi identificada."
+          },
+          "analyzed_at": "2026-05-21T18:08:52.087Z"
+        },
+        "cowork-plugin-management": {
+          "skill_md_sha": "c77ed8ec92b1c775c7125febfe610341c216cb4a",
+          "description_pt": "Crie, personalize e gerencie plugins para as ferramentas e fluxos da sua organização, configurando servidores MCP e ajustando comportamentos.",
+          "areas": [
+            "skill-package-management"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência externa ou referência a outras skills foi identificada no texto fornecido."
+          },
+          "analyzed_at": "2026-05-21T18:08:53.534Z"
+        },
+        "customer-support": {
+          "skill_md_sha": "7a3ff4d7a9d6251b365c83663d4a4d76c6abefb7",
+          "description_pt": "Trie tickets, rascunhe respostas, escale problemas e construa sua base de conhecimento. Pesquise o contexto do cliente e transforme problemas resolvidos em conteúdo de autoatendimento.",
+          "areas": [
+            "issue-creation",
+            "internal-comms",
+            "code-review"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "As skills internas dependem de conectores externos definidos em CONNECTORS.md, que está fora do diretório da skill."
+          },
+          "analyzed_at": "2026-05-21T18:08:54.972Z"
+        },
+        "data": {
+          "skill_md_sha": "fa4f3168b8bb696223b463a7fe01f9bff43baa2d",
+          "description_pt": "Escreva SQL, explore dados e gere insights rapidamente. Crie visualizações e dashboards para transformar dados brutos em histórias claras para stakeholders.",
+          "areas": [
+            "data-analysis"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "As skills internas (analyze, build-dashboard, create-viz, data-context-extractor, data-visualization, explore-data, sql-queries, statistical-analysis) são parte do mesmo pacote 'data' e não são dependências externas. O arquivo CONNECTORS.md está fora do diretório da skill, mas é referenciado como documentação, não como dependência executável."
+          },
+          "analyzed_at": "2026-05-21T18:08:58.161Z"
+        },
+        "design": {
+          "skill_md_sha": "90175dd41e6fdbedcef38498b6fe45db62331ff8",
+          "description_pt": "Acelere fluxos de design com suporte a críticas, gestão de design system, UX writing, auditorias de acessibilidade, síntese de pesquisa e handoff para dev. Ideal da exploração a especificações precisas.",
+          "areas": [
+            "interface-design",
+            "code-review"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "user-research"
+            ],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "A skill 'research-synthesis' referencia a skill 'user-research' como complemento. O arquivo CONNECTORS.md é referenciado por várias skills internas."
+          },
+          "analyzed_at": "2026-05-21T18:08:59.795Z"
+        },
+        "engineering": {
+          "skill_md_sha": "040404e93f7496a908391e6489b44c7f2fd9ed76",
+          "description_pt": "Otimize fluxos de engenharia — standups, revisão de código, decisões de arquitetura, resposta a incidentes e documentação técnica. Funciona com ferramentas existentes ou de forma independente.",
+          "areas": [
+            "code-review",
+            "debugging",
+            "handoff-documentation"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "system-design"
+            ],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "A skill 'system-design' é referenciada como complemento para frameworks detalhados de design de sistemas. O arquivo CONNECTORS.md é referenciado em várias skills internas para verificar ferramentas conectadas."
+          },
+          "analyzed_at": "2026-05-21T18:09:01.727Z"
+        },
+        "enterprise-search": {
+          "skill_md_sha": "0252dc9c76deca4ff969191578447e2992e23431",
+          "description_pt": "Pesquise em todas as ferramentas da empresa em um só lugar: e-mail, chat, documentos e wikis, sem alternar entre aplicativos.",
+          "areas": [
+            "data-analysis"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "digest",
+              "knowledge-synthesis",
+              "search",
+              "search-strategy",
+              "source-management"
+            ],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "As skills internas digest, search e source-management referenciam o arquivo CONNECTORS.md fora do diretório da skill. As skills knowledge-synthesis e search-strategy não são invocáveis pelo usuário, mas são usadas internamente por search e digest."
+          },
+          "analyzed_at": "2026-05-21T18:09:03.463Z"
+        },
+        "finance": {
+          "skill_md_sha": "fe42b230587aeb1ef19b9034e5ca2d2d70fd1d0e",
+          "description_pt": "Automatiza fluxos financeiros e contábeis: lançamentos, conciliação, demonstrações, análise de variações, fechamento mensal e preparação para auditoria.",
+          "areas": [
+            "finance-workflow"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "A skill 'financial-statements' referencia o arquivo CONNECTORS.md fora do diretório da skill. As demais skills não possuem dependências externas explícitas."
+          },
+          "analyzed_at": "2026-05-21T18:13:50.610Z"
+        },
+        "human-resources": {
+          "skill_md_sha": "b6a9dff644d34739ee7325bf606510b66b0b7c74",
+          "description_pt": "Otimize operações de RH: recrutamento, integração, avaliações, análise de remuneração e conformidade.",
+          "areas": [
+            "human-resources"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "Várias skills internas referenciam o arquivo CONNECTORS.md fora do diretório da skill, indicando dependência de ferramentas externas não especificadas."
+          },
+          "analyzed_at": "2026-05-21T18:09:09.202Z"
+        },
+        "legal": {
+          "skill_md_sha": "330cc4d47867df93ebd17b511aa6e0eeb2d3c38d",
+          "description_pt": "Acelere revisão de contratos, triagem de NDAs e conformidade para equipes jurídicas internas. Redija briefings legais, organize pesquisa de precedentes e gerencie conhecimento institucional.",
+          "areas": [
+            "code-review",
+            "legal-workflow"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "As skills internas referenciam o arquivo CONNECTORS.md fora do diretório da skill, que deve estar presente para configurar ferramentas conectadas."
+          },
+          "analyzed_at": "2026-05-21T18:09:12.513Z"
+        },
+        "marketing": {
+          "skill_md_sha": "b1485cd48fef6589224dec93a2627eb899d544a0",
+          "description_pt": "Crie conteúdo, planeje campanhas e analise o desempenho em canais de marketing, mantendo a consistência da marca e monitorando concorrentes.",
+          "areas": [
+            "marketing-campaign-management"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "A skill 'content-creation' não é invocável pelo usuário, mas é referenciada internamente. O arquivo CONNECTORS.md é referenciado por várias skills, mas está fora do diretório da skill."
+          },
+          "analyzed_at": "2026-05-21T18:09:15.450Z"
+        },
+        "operations": {
+          "skill_md_sha": "0c8f341813a3f9fee013d4c828d02377a996fc04",
+          "description_pt": "Otimize operações de negócios — gestão de fornecedores, documentação de processos, gestão de mudanças, planejamento de capacidade e conformidade. Mantenha sua organização eficiente.",
+          "areas": [
+            "operations-package"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "risk-assessment"
+            ],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "A skill status-report referencia a skill risk-assessment para frameworks de matriz de risco e definições de severidade."
+          },
+          "analyzed_at": "2026-05-21T18:09:20.365Z"
+        },
+        "pdf-viewer": {
+          "skill_md_sha": "c439ca19f940cacf6fcc8340a75764870275113f",
+          "description_pt": "Visualize, anote e assine PDFs interativamente: marque contratos, preencha formulários, carimbe aprovações e coloque assinaturas, baixando a cópia anotada.",
+          "areas": [
+            "pdf-processing"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill depende de um servidor PDF local não especificado no texto. Certifique-se de que o servidor esteja em execução."
+          },
+          "analyzed_at": "2026-05-21T18:09:21.903Z"
+        },
+        "product-management": {
+          "skill_md_sha": "808444af1405562ae3fbbe985d5ea85a29c9fc4b",
+          "description_pt": "Escreva especificações, planeje roadmaps e sintetize pesquisas de usuário mais rápido. Mantenha stakeholders atualizados e fique à frente da concorrência.",
+          "areas": [
+            "product-management"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "Várias skills internas mencionam conectores opcionais (ex: product analytics, project tracker, knowledge base, user feedback) que podem exigir ferramentas externas, mas nenhuma dependência obrigatória é especificada."
+          },
+          "analyzed_at": "2026-05-21T18:09:27.129Z"
+        },
+        "productivity": {
+          "skill_md_sha": "409d7efb7a29c72d70eb194e17afe2911fea7569",
+          "description_pt": "Gerencia tarefas, planeja seu dia e constrói memória de contexto importante do trabalho. Sincroniza com calendário, e-mail e chat para manter tudo organizado.",
+          "areas": [
+            "product-management"
+          ],
+          "analyzed_at": "2026-05-21T18:08:19.132Z"
+        },
+        "sales": {
+          "skill_md_sha": "1cd945eff56d5bb863051eb3346a74eecf1530db",
+          "description_pt": "Pesquise prospects, crie abordagens personalizadas e acelere sua estratégia de vendas com preparação para calls, gestão de pipeline e mensagens que convertem.",
+          "areas": [
+            "sales-package"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "../../CONNECTORS.md"
+            ],
+            "implicit_deps_notes": "A skill 'call-summary' referencia o arquivo CONNECTORS.md fora do diretório da skill. Nenhuma dependência implícita adicional identificada."
+          },
+          "analyzed_at": "2026-05-21T18:09:31.872Z"
+        },
+        "slack-by-salesforce": {
+          "skill_md_sha": "6baca74b2e51136e0646291ffef49c6d1ecb383e",
+          "description_pt": "Integração oficial do Slack para buscar mensagens, enviar comunicações, gerenciar canvases e muito mais.",
+          "areas": [
+            "internal-comms"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência implícita identificada além das skills internas listadas."
+          },
+          "analyzed_at": "2026-05-21T18:09:35.628Z"
+        },
+        "small-business": {
+          "skill_md_sha": "2a7ebc3e56ecb0fed424519cecf09013fc471298",
+          "description_pt": "Workflows pré-construídos para pequenas empresas (folha de pagamento, fechamento mensal, briefings semanais e campanhas de crescimento) usando QuickBooks, PayPal, HubSpot e outras ferramentas conectadas. Você aprova cada etapa que envolve dinheiro ou clientes.",
+          "areas": [
+            "marketing-campaign-management",
+            "finance-workflow",
+            "sales-package"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "lead-triage",
+              "month-end-prep",
+              "crm-maintenance"
+            ],
+            "system_requirements": [],
+            "external_files": [
+              "reference/data_sources.md",
+              "reference/gmail-fetch.md",
+              "reference/docusign-f"
+            ],
+            "implicit_deps_notes": "As skills internas 'lead-triage', 'month-end-prep' e 'crm-maintenance' são referenciadas como sub-workflows, mas não estão definidas neste pacote. Os arquivos externos em 'reference/' são referenciados, mas não incluídos. A skill cash-flow-snapshot menciona dependência de xlsx skill, que não está listada."
+          },
+          "analyzed_at": "2026-05-21T18:09:37.978Z"
+        },
+        "zoom-plugin": {
+          "skill_md_sha": "492e79eed27962e051e01e1bbe4be3acc79317ea",
+          "description_pt": "Planeje, construa e depure integrações Zoom usando REST APIs, SDKs, webhooks, bots e fluxos MCP. Ideal para criar experiências com IA no Zoom.",
+          "areas": [
+            "zoom-integration"
+          ],
+          "analyzed_at": "2026-05-21T18:08:32.516Z"
+        }
+      },
       "expand_skills": false
     },
     "anthropics-claude-plugins-official": {

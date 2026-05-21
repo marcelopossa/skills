@@ -1,0 +1,10 @@
+{
+  "name": "mattpocock-tdd",
+  "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use quando quiser construir funcionalidades ou corrigir bugs seguindo TDD.",
+  "author": {
+    "name": "mattpocock"
+  },
+  "homepage": "https://github.com/mattpocock/skills",
+  "repository": "https://github.com/mattpocock/skills",
+  "license": "MIT"
+}

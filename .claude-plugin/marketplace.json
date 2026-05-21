@@ -5,5 +5,120 @@
   "owner": {
     "name": "Marcelo Possa"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "anthropics-knowledge-work-plugins-data",
+      "source": "./plugins/anthropics-knowledge-work-plugins-data",
+      "description": "Escreva SQL, explore dados e gere insights rapidamente. Crie visualizações e dashboards para transformar dados brutos em histórias claras para stakeholders.",
+      "category": "skills",
+      "keywords": [
+        "data-analysis"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "anthropics-knowledge-work-plugins-engineering",
+      "source": "./plugins/anthropics-knowledge-work-plugins-engineering",
+      "description": "Otimize fluxos de engenharia — standups, revisão de código, decisões de arquitetura, resposta a incidentes e documentação técnica. Funciona com ferramentas existentes ou de forma independente.",
+      "category": "skills",
+      "keywords": [
+        "code-review",
+        "debugging",
+        "handoff-documentation"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "anthropics-knowledge-work-plugins-finance",
+      "source": "./plugins/anthropics-knowledge-work-plugins-finance",
+      "description": "Automatiza fluxos financeiros e contábeis: lançamentos, conciliação, demonstrações, análise de variações, fechamento mensal e preparação para auditoria.",
+      "category": "skills",
+      "keywords": [
+        "finance-workflow"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "anthropics-knowledge-work-plugins-legal",
+      "source": "./plugins/anthropics-knowledge-work-plugins-legal",
+      "description": "Acelere revisão de contratos, triagem de NDAs e conformidade para equipes jurídicas internas. Redija briefings legais, organize pesquisa de precedentes e gerencie conhecimento institucional.",
+      "category": "skills",
+      "keywords": [
+        "code-review",
+        "legal-workflow"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "anthropics-knowledge-work-plugins-marketing",
+      "source": "./plugins/anthropics-knowledge-work-plugins-marketing",
+      "description": "Crie conteúdo, planeje campanhas e analise o desempenho em canais de marketing, mantendo a consistência da marca e monitorando concorrentes.",
+      "category": "skills",
+      "keywords": [
+        "marketing-campaign-management"
+      ],
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "mattpocock-caveman",
+      "source": "./plugins/mattpocock-caveman",
+      "description": "Modo de comunicação ultracompacto que reduz uso de tokens em ~75% ao eliminar rodeios, mantendo precisão técnica. Ative com 'caveman mode' ou '/caveman'.",
+      "category": "productivity",
+      "license": "MIT"
+    },
+    {
+      "name": "mattpocock-diagnose",
+      "source": "./plugins/mattpocock-diagnose",
+      "description": "Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir. Use quando o usuário disser 'diagnostique isso' ou relatar um bug.",
+      "category": "engineering",
+      "license": "MIT"
+    },
+    {
+      "name": "mattpocock-grill-me",
+      "source": "./plugins/mattpocock-grill-me",
+      "description": "Entrevista implacável sobre um plano ou design, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano ou quando mencionar 'me grille'.",
+      "category": "productivity",
+      "license": "MIT"
+    },
+    {
+      "name": "mattpocock-grill-with-docs",
+      "source": "./plugins/mattpocock-grill-with-docs",
+      "description": "Sessão de questionamento que desafia seu plano contra o modelo de domínio existente, afina a terminologia e atualiza a documentação (CONTEXT.md, ADRs) à medida que as decisões se cristalizam. Use quando quiser testar um plano contra a linguagem e decisões documentadas do projeto.",
+      "category": "engineering",
+      "license": "MIT"
+    },
+    {
+      "name": "mattpocock-improve-codebase-architecture",
+      "source": "./plugins/mattpocock-improve-codebase-architecture",
+      "description": "Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.",
+      "category": "engineering",
+      "license": "MIT"
+    },
+    {
+      "name": "mattpocock-tdd",
+      "source": "./plugins/mattpocock-tdd",
+      "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use quando quiser construir funcionalidades ou corrigir bugs seguindo TDD.",
+      "category": "engineering",
+      "license": "MIT"
+    },
+    {
+      "name": "mattpocock-write-a-skill",
+      "source": "./plugins/mattpocock-write-a-skill",
+      "description": "Cria novas skills de IA com estrutura adequada, divulgação progressiva e recursos agrupados. Use quando o usuário quiser criar, escrever ou construir uma nova skill.",
+      "category": "productivity",
+      "license": "MIT"
+    },
+    {
+      "name": "nextlevelbuilder-ui-ux-pro-max",
+      "source": "./plugins/nextlevelbuilder-ui-ux-pro-max",
+      "description": "Inteligência profissional de UI/UX para assistentes de IA: estilos, paletas, tipografia, gráficos e diretrizes para React, Next.js, Vue, Svelte, SwiftUI, Flutter, Tailwind e mais.",
+      "category": "skills",
+      "keywords": [
+        "interface-design",
+        "brand-styling",
+        "theme-application"
+      ],
+      "license": "MIT"
+    }
+  ]
 }

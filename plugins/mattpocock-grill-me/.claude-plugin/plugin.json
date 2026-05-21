@@ -1,0 +1,10 @@
+{
+  "name": "mattpocock-grill-me",
+  "description": "Entrevista implacável sobre um plano ou design, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano ou quando mencionar 'me grille'.",
+  "author": {
+    "name": "mattpocock"
+  },
+  "homepage": "https://github.com/mattpocock/skills",
+  "repository": "https://github.com/mattpocock/skills",
+  "license": "MIT"
+}

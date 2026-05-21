@@ -1,0 +1,25 @@
+{
+  "name": "nextlevelbuilder-ui-ux-pro-max",
+  "description": "Inteligência profissional de UI/UX para assistentes de IA: estilos, paletas, tipografia, gráficos e diretrizes para React, Next.js, Vue, Svelte, SwiftUI, Flutter, Tailwind e mais.",
+  "version": "2.5.0",
+  "author": {
+    "name": "nextlevelbuilder"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "ux",
+    "design",
+    "styles",
+    "typography",
+    "color-palette",
+    "accessibility",
+    "charts",
+    "components"
+  ],
+  "skills": [
+    "./.claude/skills/ui-ux-pro-max"
+  ],
+  "homepage": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+}

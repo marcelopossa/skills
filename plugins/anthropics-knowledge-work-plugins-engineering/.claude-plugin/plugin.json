@@ -1,0 +1,11 @@
+{
+  "name": "anthropics-knowledge-work-plugins-engineering",
+  "version": "1.2.0",
+  "description": "Otimize fluxos de engenharia — standups, revisão de código, decisões de arquitetura, resposta a incidentes e documentação técnica. Funciona com ferramentas existentes ou de forma independente.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/knowledge-work-plugins",
+  "repository": "https://github.com/anthropics/knowledge-work-plugins",
+  "license": "Apache-2.0"
+}

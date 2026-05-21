@@ -1,0 +1,11 @@
+{
+  "name": "anthropics-knowledge-work-plugins-finance",
+  "version": "1.2.0",
+  "description": "Automatiza fluxos financeiros e contábeis: lançamentos, conciliação, demonstrações, análise de variações, fechamento mensal e preparação para auditoria.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/knowledge-work-plugins",
+  "repository": "https://github.com/anthropics/knowledge-work-plugins",
+  "license": "Apache-2.0"
+}

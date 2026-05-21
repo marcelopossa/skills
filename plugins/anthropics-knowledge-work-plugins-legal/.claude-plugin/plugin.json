@@ -1,0 +1,11 @@
+{
+  "name": "anthropics-knowledge-work-plugins-legal",
+  "version": "1.2.0",
+  "description": "Acelere revisão de contratos, triagem de NDAs e conformidade para equipes jurídicas internas. Redija briefings legais, organize pesquisa de precedentes e gerencie conhecimento institucional.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/knowledge-work-plugins",
+  "repository": "https://github.com/anthropics/knowledge-work-plugins",
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "mattpocock-diagnose",
+  "description": "Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir. Use quando o usuário disser 'diagnostique isso' ou relatar um bug.",
+  "author": {
+    "name": "mattpocock"
+  },
+  "homepage": "https://github.com/mattpocock/skills",
+  "repository": "https://github.com/mattpocock/skills",
+  "license": "MIT"
+}

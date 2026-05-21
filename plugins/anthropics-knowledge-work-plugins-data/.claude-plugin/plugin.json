@@ -1,0 +1,11 @@
+{
+  "name": "anthropics-knowledge-work-plugins-data",
+  "version": "1.1.0",
+  "description": "Escreva SQL, explore dados e gere insights rapidamente. Crie visualizações e dashboards para transformar dados brutos em histórias claras para stakeholders.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/knowledge-work-plugins",
+  "repository": "https://github.com/anthropics/knowledge-work-plugins",
+  "license": "Apache-2.0"
+}
