@@ -1,5 +1,5 @@
 import { promises as fs } from "node:fs";
-import { PLUGIN_FILE, README_FILE, README_TEMPLATE } from "./paths";
+import { MARKETPLACE_FILE, README_FILE, README_TEMPLATE } from "./paths";
 import { readSources, readTaxonomy } from "./sources";
 
 const AUTO_SKILLS_START = "<!-- AUTO:SKILLS:START -->";
@@ -7,44 +7,58 @@ const AUTO_SKILLS_END = "<!-- AUTO:SKILLS:END -->";
 const AUTO_CREDITS_START = "<!-- AUTO:CREDITS:START -->";
 const AUTO_CREDITS_END = "<!-- AUTO:CREDITS:END -->";
 
-export async function regeneratePluginManifest(): Promise<void> {
+const MARKETPLACE_NAME = "marcelopossa-skills";
+
+export async function regenerateMarketplaceManifest(): Promise<void> {
   const sources = await readSources();
-  const skills: string[] = [];
-  for (const [, src] of Object.entries(sources.sources)) {
-    for (const [, sk] of Object.entries(src.imported_skills)) {
-      skills.push("./" + sk.local_path.replaceAll("\\", "/"));
+  const plugins: unknown[] = [];
+  for (const [owner, src] of Object.entries(sources.sources)) {
+    for (const [name, sk] of Object.entries(src.imported_skills)) {
+      const pluginName = `${owner}-${name}`;
+      plugins.push({
+        name: pluginName,
+        source: `./plugins/${pluginName}`,
+        description: sk.description || `Skill ${name} curada de ${owner}`,
+        category: sk.upstream_category || "skills",
+        keywords: sk.areas?.length ? sk.areas : undefined,
+        ...(src.license?.spdx && src.license.spdx !== "UNKNOWN"
+          ? { license: src.license.spdx }
+          : {}),
+      });
     }
   }
-  skills.sort();
-  const current = await readPlugin();
-  const updated = { ...current, skills };
-  await fs.writeFile(PLUGIN_FILE, JSON.stringify(updated, null, 2) + "\n", "utf8");
-}
+  plugins.sort((a, b) => {
+    const an = (a as { name: string }).name;
+    const bn = (b as { name: string }).name;
+    return an.localeCompare(bn);
+  });
 
-async function readPlugin(): Promise<Record<string, unknown>> {
-  try {
-    const raw = await fs.readFile(PLUGIN_FILE, "utf8");
-    return JSON.parse(raw);
-  } catch {
-    return {
-      name: "marcelopossa-skills",
-      description: "Marketplace pessoal de skills curadas por Marcelo Possa",
-      version: "0.1.0",
-      skills: [],
-    };
-  }
+  const manifest = {
+    $schema: "https://code.claude.com/marketplace.schema.json",
+    name: MARKETPLACE_NAME,
+    description: "Marketplace pessoal de skills curadas por Marcelo Possa",
+    owner: { name: "Marcelo Possa" },
+    plugins,
+  };
+  await fs.writeFile(MARKETPLACE_FILE, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 }
 
 export async function regenerateReadme(): Promise<void> {
   const tax = await readTaxonomy();
   const sources = await readSources();
 
-  const skillsByArea = new Map<string, { owner: string; name: string; description: string }[]>();
-  const uncategorized: { owner: string; name: string; description: string }[] = [];
+  type Entry = { owner: string; name: string; description: string; pluginName: string };
+  const skillsByArea = new Map<string, Entry[]>();
+  const uncategorized: Entry[] = [];
 
   for (const [owner, src] of Object.entries(sources.sources)) {
     for (const [name, sk] of Object.entries(src.imported_skills)) {
-      const entry = { owner, name, description: sk.description };
+      const entry: Entry = {
+        owner,
+        name,
+        description: sk.description,
+        pluginName: `${owner}-${name}`,
+      };
       if (!sk.areas || sk.areas.length === 0) {
         uncategorized.push(entry);
       } else {
@@ -63,17 +77,21 @@ export async function regenerateReadme(): Promise<void> {
     skillsSection += `\n### ${area.label}\n\n`;
     if (area.description) skillsSection += `_${area.description}_\n\n`;
     for (const s of list) {
-      skillsSection += `- **${s.name}** (${s.owner}) — ${s.description || "_sem descrição_"}\n`;
+      skillsSection += `- **\`${s.pluginName}\`** — ${s.description || "_sem descrição_"}\n`;
     }
   }
   if (uncategorized.length > 0) {
     skillsSection += `\n### Sem área atribuída\n\n`;
     for (const s of uncategorized) {
-      skillsSection += `- **${s.name}** (${s.owner}) — ${s.description || "_sem descrição_"}\n`;
+      skillsSection += `- **\`${s.pluginName}\`** — ${s.description || "_sem descrição_"}\n`;
     }
   }
   if (!skillsSection) {
     skillsSection = "\n_Nenhuma skill importada ainda._\n";
+  } else {
+    skillsSection +=
+      `\nInstale individualmente: \`/plugin install <nome>@${MARKETPLACE_NAME}\`. ` +
+      "Habilite/desabilite por sessão com `/plugin enable <nome>` e `/plugin disable <nome>`.\n";
   }
 
   let creditsSection = "";
@@ -118,24 +136,34 @@ async function readOrCreateTemplate(): Promise<string> {
   }
 }
 
-const DEFAULT_TEMPLATE = `# marcelopossa-skills
+const DEFAULT_TEMPLATE = `# ${MARKETPLACE_NAME}
 
 Marketplace pessoal de skills curadas de outros repositórios do GitHub, mantido por Marcelo Possa.
 
-**Como funciona.** Skills aqui são importadas de fontes externas e mantidas em modo **read-only** — nunca edito manualmente. Quando o upstream muda, sincronizo localmente pelo painel web e republico para o GitHub.
+**Como funciona.** Cada skill curada é exposta como um **plugin independente** neste marketplace. Você instala só as que precisa e pode habilitar/desabilitar conforme o trabalho. Skills aqui são read-only — nunca edito manualmente; quando upstream muda, sincronizo localmente e republico.
 
-## Como instalar — Claude Code, Claude Cowork ou extensão Claude no VSCode
+## Adicionar o marketplace — Claude Code, Cowork ou extensão Claude no VSCode
 
 \`\`\`
 /plugin marketplace add marcelopossa/skills
-/plugin install marcelopossa-skills@marcelopossa/skills
 \`\`\`
 
-O mesmo \`.claude-plugin/plugin.json\` funciona nos três clientes.
+## Instalar skills individualmente
+
+\`\`\`
+/plugin install <nome-da-skill>@${MARKETPLACE_NAME}
+\`\`\`
+
+Veja a lista de skills disponíveis abaixo. Cada uma vira um plugin separado com prefixo do owner upstream (ex: \`mattpocock-diagnose\`).
+
+## Habilitar / desabilitar por sessão
+
+\`\`\`
+/plugin enable mattpocock-diagnose
+/plugin disable mattpocock-diagnose
+\`\`\`
 
 ## Curadoria local
-
-Para gerenciar fontes e selecionar skills:
 
 \`\`\`bash
 npm install
@@ -143,7 +171,7 @@ cp .env.example .env.local   # preencher DEEPSEEK_API_KEY (e GITHUB_TOKEN opcion
 npm run dev                  # abrir http://localhost:3000
 \`\`\`
 
-## Skills
+## Skills disponíveis
 
 ${AUTO_SKILLS_START}
 _Lista regenerada automaticamente pelo painel._

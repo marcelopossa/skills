@@ -12,9 +12,10 @@ import {
   downloadSkillFiles,
   removeSkill,
   writeNotice,
+  writePluginFolder,
   writeRequirementsIfAny,
 } from "@/lib/skills-fs";
-import { regeneratePluginManifest, regenerateReadme } from "@/lib/manifest";
+import { regenerateMarketplaceManifest, regenerateReadme } from "@/lib/manifest";
 import { refineDescription } from "@/lib/deepseek";
 import type { ImportedSkill } from "@/lib/types";
 
@@ -99,6 +100,12 @@ export async function POST(req: Request) {
     if (cached?.deps) {
       await writeRequirementsIfAny(src.owner, u.name, cached.deps);
     }
+    await writePluginFolder(src.owner, u.name, {
+      description,
+      licenseSpdx: src.license?.spdx,
+      repoUrl: src.repo_url,
+      author: src.owner,
+    });
     log.push({ action: toImport.includes(skillName) ? "import" : "update", skill: skillName });
   }
 
@@ -121,7 +128,7 @@ export async function POST(req: Request) {
   src.last_synced_sha = headSha;
   src.last_synced_at = new Date().toISOString();
   await writeSources(sources);
-  await regeneratePluginManifest();
+  await regenerateMarketplaceManifest();
   await regenerateReadme();
 
   return NextResponse.json({ ok: true, head_sha: headSha, log });

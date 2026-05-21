@@ -95,6 +95,46 @@
       "slug": "code-navigation",
       "label": "Navegação de código",
       "description": "Habilidade para fornecer visão geral de alto nível de uma base de código, mapeando módulos e chamadores usando vocabulário do domínio do projeto."
+    },
+    {
+      "slug": "generative-art",
+      "label": "Arte generativa",
+      "description": "Habilidade para criar arte generativa algorítmica usando p5.js, incluindo filosofia algorítmica, sistemas de partículas, campos de fluxo, ruído Perlin e exploração paramétrica interativa."
+    },
+    {
+      "slug": "brand-styling",
+      "label": "Estilização de marca",
+      "description": "Habilidade para aplicar diretrizes visuais de marca (cores, tipografia, logotipos) a artefatos, garantindo consistência com a identidade corporativa."
+    },
+    {
+      "slug": "visual-design-philosophy",
+      "label": "Filosofia de design visual",
+      "description": "Habilidade para criar filosofias de design visual (manifestos estéticos) e expressá-las em artefatos visuais como pôsteres, arte e designs, com ênfase em minimalismo textual, composição espacial e acabamento artesanal de alto nível."
+    },
+    {
+      "slug": "docx-manipulation",
+      "label": "Manipulação de documentos Word",
+      "description": "Habilidade para criar, ler, editar e analisar arquivos .docx, incluindo formatação avançada, tabelas, imagens, controle de alterações e conversão entre formatos."
+    },
+    {
+      "slug": "internal-comms",
+      "label": "Comunicação interna",
+      "description": "Habilidade para redigir comunicações internas corporativas como atualizações 3P, newsletters, FAQs, relatórios de status e incidentes, seguindo formatos e diretrizes específicas da empresa."
+    },
+    {
+      "slug": "pdf-processing",
+      "label": "Processamento de PDF",
+      "description": "Habilidade para realizar operações com arquivos PDF, incluindo leitura, extração de texto/tabelas, mesclagem, divisão, rotação, criação, preenchimento de formulários, criptografia, OCR e extração de imagens, usando bibliotecas Python e ferramentas de linha de comando."
+    },
+    {
+      "slug": "pptx-manipulation",
+      "label": "Manipulação de apresentações PPTX",
+      "description": "Habilidade para criar, ler, editar e analisar arquivos .pptx, incluindo formatação avançada, slides, layouts, notas do apresentador, comentários, extração de texto, mesclagem, divisão e uso de templates."
+    },
+    {
+      "slug": "theme-application",
+      "label": "Aplicação de temas",
+      "description": "Habilidade para aplicar temas visuais predefinidos ou personalizados a artefatos como slides, documentos e landing pages, incluindo seleção de paletas de cores e fontes, e geração de novos temas sob demanda."
     }
   ]
 }

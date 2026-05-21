@@ -1,7 +1,14 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { fetchRawBuffer } from "./github";
-import { skillLocalDir, sourceDir, noticeFile } from "./paths";
+import {
+  noticeFile,
+  pluginDir,
+  pluginManifestFile,
+  pluginSkillDir,
+  skillLocalDir,
+  sourceDir,
+} from "./paths";
 
 const TEXT_EXT = new Set([
   ".md", ".txt", ".json", ".yaml", ".yml", ".toml", ".sh", ".ps1", ".bat",
@@ -44,8 +51,56 @@ export async function downloadSkillFiles(
 }
 
 export async function removeSkill(owner: string, skillName: string): Promise<void> {
-  const dir = skillLocalDir(owner, skillName);
-  await fs.rm(dir, { recursive: true, force: true });
+  await fs.rm(skillLocalDir(owner, skillName), { recursive: true, force: true });
+  await fs.rm(pluginDir(owner, skillName), { recursive: true, force: true });
+}
+
+export async function writePluginFolder(
+  owner: string,
+  skillName: string,
+  meta: {
+    description: string;
+    licenseSpdx?: string;
+    repoUrl: string;
+    author: string;
+  }
+): Promise<void> {
+  const srcDir = skillLocalDir(owner, skillName);
+  const dstDir = pluginSkillDir(owner, skillName);
+  await fs.rm(pluginDir(owner, skillName), { recursive: true, force: true });
+  await ensureDir(dstDir);
+  await copyDirRecursive(srcDir, dstDir);
+
+  const manifest = {
+    name: `${owner}-${skillName}`,
+    description: meta.description || `Skill ${skillName} curada de ${owner}`,
+    author: { name: meta.author || owner },
+    homepage: meta.repoUrl,
+    repository: meta.repoUrl,
+    ...(meta.licenseSpdx && meta.licenseSpdx !== "UNKNOWN" ? { license: meta.licenseSpdx } : {}),
+  };
+  const manifestPath = pluginManifestFile(owner, skillName);
+  await ensureDir(path.dirname(manifestPath));
+  await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
+}
+
+async function copyDirRecursive(src: string, dst: string): Promise<void> {
+  let entries: import("node:fs").Dirent[];
+  try {
+    entries = await fs.readdir(src, { withFileTypes: true });
+  } catch {
+    return;
+  }
+  for (const entry of entries) {
+    const s = path.join(src, entry.name);
+    const d = path.join(dst, entry.name);
+    if (entry.isDirectory()) {
+      await ensureDir(d);
+      await copyDirRecursive(s, d);
+    } else if (entry.isFile()) {
+      await fs.copyFile(s, d);
+    }
+  }
 }
 
 export async function writeRequirementsIfAny(

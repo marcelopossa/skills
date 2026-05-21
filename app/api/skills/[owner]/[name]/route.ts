@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { readSources, writeSources } from "@/lib/sources";
-import { regeneratePluginManifest, regenerateReadme } from "@/lib/manifest";
+import { regenerateMarketplaceManifest, regenerateReadme } from "@/lib/manifest";
 
 const PatchBody = z.object({
   areas: z.array(z.string()).optional(),
@@ -29,7 +29,7 @@ export async function PATCH(
   if (parsed.data.areas) skill.areas = parsed.data.areas;
   if (parsed.data.description !== undefined) skill.description = parsed.data.description;
   await writeSources(sources);
-  await regeneratePluginManifest();
+  await regenerateMarketplaceManifest();
   await regenerateReadme();
   return NextResponse.json({ ok: true });
 }

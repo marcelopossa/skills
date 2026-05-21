@@ -7,11 +7,11 @@
       "repo": "skills",
       "branch": "main",
       "last_synced_sha": "b8be62ffacb0118fa3eaa29a0923c87c8c11985c",
-      "last_synced_at": "2026-05-21T16:31:47.024Z",
+      "last_synced_at": "2026-05-21T16:50:01.611Z",
       "license": {
         "spdx": "MIT",
         "url": "https://github.com/mattpocock/skills/blob/main/LICENSE",
-        "fetched_at": "2026-05-21T16:31:36.324Z"
+        "fetched_at": "2026-05-21T16:49:48.325Z"
       },
       "attribution": "Skills originalmente criadas por mattpocock (https://github.com/mattpocock).",
       "imported_skills": {
@@ -33,7 +33,7 @@
           "local_path": "skills/mattpocock/tdd",
           "upstream_category": "engineering",
           "areas": [],
-          "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use para construir funcionalidades ou corrigir bugs seguindo TDD, quando mencionar 'red-green-refactor' ou pedir testes primeiro.",
+          "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use para construir funcionalidades ou corrigir bugs com TDD, quando mencionar 'red-green-refactor', quiser testes de integração ou desenvolvimento test-first.",
           "files": {
             "SKILL.md": "7a989411eb3c4d0879cb33b2d7d05831add27b84",
             "deep-modules.md": "0d9720cf1dce25e51f4ba66d16f9d2de78a12abb",
@@ -48,7 +48,7 @@
           "local_path": "skills/mattpocock/grill-me",
           "upstream_category": "productivity",
           "areas": [],
-          "description": "Entrevista implacável sobre planos ou designs, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano sob pressão ou quando mencionar 'me grille'.",
+          "description": "Entrevista implacável sobre planos ou designs, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano sob pressão ou quando mencionar 'me avalie'.",
           "files": {
             "SKILL.md": "bd04394c675ee54173a093c50eb74da01a2940fa"
           }
@@ -70,7 +70,7 @@
           "local_path": "skills/mattpocock/handoff",
           "upstream_category": "productivity",
           "areas": [],
-          "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar, incluindo habilidades sugeridas e referências a artefatos existentes.",
+          "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar o trabalho, salvando no diretório temporário do sistema.",
           "files": {
             "SKILL.md": "0aa5b99300da27b50e80db53f880e422204faedd"
           }
@@ -438,6 +438,203 @@
             "implicit_deps_notes": "A skill referencia arquivos de documentação (tests.md, mocking.md) que devem estar no mesmo diretório ou acessíveis via caminho relativo. As skills 'deep-modules', 'interface-design' e 'refactoring' são mencionadas como complementares, mas não há garantia de que existam como skills separadas."
           },
           "analyzed_at": "2026-05-21T16:19:30.644Z"
+        }
+      }
+    },
+    "anthropics": {
+      "repo_url": "https://github.com/anthropics/skills",
+      "owner": "anthropics",
+      "repo": "skills",
+      "branch": "main",
+      "last_synced_sha": null,
+      "last_synced_at": null,
+      "license": null,
+      "attribution": "Skills originalmente criadas por anthropics (https://github.com/anthropics).",
+      "imported_skills": {},
+      "dismissed_skills": [],
+      "analysis_cache": {
+        "algorithmic-art": {
+          "skill_md_sha": "634f6fa42e4e697fa6afd293acd7fb8246574876",
+          "description_pt": "Cria arte algorítmica original com p5.js usando aleatoriedade com semente e exploração interativa de parâmetros. Ideal para arte generativa, campos de fluxo ou sistemas de partículas.",
+          "areas": [
+            "generative-art"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "templates/viewer.html"
+            ],
+            "implicit_deps_notes": "A skill depende do arquivo 'templates/viewer.html' para gerar o HTML do visualizador p5.js. Certifique-se de que o template existe no diretório 'templates/'."
+          },
+          "analyzed_at": "2026-05-21T16:48:48.207Z"
+        },
+        "brand-guidelines": {
+          "skill_md_sha": "47c72c607bdb5dd81bdea5de2b5e4f3992a5fd59",
+          "description_pt": "Aplica as cores e tipografia oficiais da Anthropic a artefatos visuais, seguindo as diretrizes da marca. Use quando precisar de formatação visual padronizada da empresa.",
+          "areas": [
+            "brand-styling"
+          ],
+          "analyzed_at": "2026-05-21T16:48:14.671Z"
+        },
+        "canvas-design": {
+          "skill_md_sha": "9f63fee82de84cd4230e1d0e322247b61eb4c94c",
+          "description_pt": "Cria arte visual original em .png e .pdf com base em filosofia de design. Use quando o usuário pedir pôster, arte, design ou peça estática, evitando cópias para não violar direitos autorais.",
+          "areas": [
+            "generative-art",
+            "brand-styling",
+            "visual-design-philosophy"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill depende de um diretório `./canvas-fonts` para fontes, mas não especifica quais. Também requer ferramentas para gerar .md, .pdf e .png, mas não lista ferramentas específicas."
+          },
+          "analyzed_at": "2026-05-21T16:48:52.203Z"
+        },
+        "claude-api": {
+          "skill_md_sha": "9412f082c05a715d9b4410ad6073f465a0ae9ff0",
+          "description_pt": "Cria, depura e otimiza apps com a API Claude/Anthropic SDK, incluindo prompt caching e migração entre versões de modelo.",
+          "areas": [
+            "debugging"
+          ],
+          "analyzed_at": "2026-05-21T16:48:19.947Z"
+        },
+        "doc-coauthoring": {
+          "skill_md_sha": "a5a69839ef4a161131d80b6daef10037a9686f4a",
+          "description_pt": "Guia o usuário em um fluxo estruturado de cocriação de documentos, ideal para escrever propostas, especificações técnicas ou documentação. Ajuda a transferir contexto, refinar conteúdo iterativamente e verificar a clareza para leitores.",
+          "areas": [
+            "article-editing"
+          ],
+          "analyzed_at": "2026-05-21T16:48:21.789Z"
+        },
+        "docx": {
+          "skill_md_sha": "2951e559989765293b6fbf83942378a3c2d0cba6",
+          "description_pt": "Cria, edita e analisa documentos Word (.docx) com formatação profissional, como sumários, cabeçalhos e numeração de páginas. Use para relatórios, memorandos, cartas ou qualquer manipulação de arquivos .docx.",
+          "areas": [
+            "docx-manipulation"
+          ],
+          "analyzed_at": "2026-05-21T16:48:23.806Z"
+        },
+        "frontend-design": {
+          "skill_md_sha": "5be498e2585843c7137bf9a74e262f57415de5ce",
+          "description_pt": "Cria interfaces frontend criativas e de alta qualidade, com design ousado e código refinado. Use para construir componentes web, páginas, dashboards ou layouts que fujam da estética genérica de IA.",
+          "areas": [
+            "interface-design",
+            "visual-design-philosophy",
+            "brand-styling"
+          ],
+          "analyzed_at": "2026-05-21T16:48:25.687Z"
+        },
+        "internal-comms": {
+          "skill_md_sha": "56ea935b74f371bfeb4c7d3c19d5139df866e73b",
+          "description_pt": "Recursos para escrever comunicações internas (relatórios, newsletters, FAQs, etc.) no formato da sua empresa. Use esta skill sempre que precisar redigir comunicados internos.",
+          "areas": [
+            "internal-comms"
+          ],
+          "analyzed_at": "2026-05-21T16:48:28.066Z"
+        },
+        "mcp-builder": {
+          "skill_md_sha": "8a1a77a47d141967b246adb4da4f91037578ff7d",
+          "description_pt": "Guia para criar servidores MCP de alta qualidade, permitindo que LLMs interajam com serviços externos via ferramentas bem projetadas. Use ao construir servidores MCP para integrar APIs externas em Python (FastMCP) ou Node/TypeScript (MCP SDK).",
+          "areas": [
+            "code-review",
+            "prototyping",
+            "debugging"
+          ],
+          "analyzed_at": "2026-05-21T16:48:29.620Z"
+        },
+        "pdf": {
+          "skill_md_sha": "d3e046a5ae107a6cb23cfb16c219837094ab35d3",
+          "description_pt": "Skill para manipular arquivos PDF: ler, extrair texto/tabelas, mesclar, dividir, rotacionar, adicionar marca d'água, criar, preencher formulários, criptografar/descriptografar, extrair imagens e aplicar OCR.",
+          "areas": [
+            "debugging",
+            "pdf-processing"
+          ],
+          "analyzed_at": "2026-05-21T16:48:31.251Z"
+        },
+        "pptx": {
+          "skill_md_sha": "df5000e17ef60ecf400e65bfcd3c58ff88b604c3",
+          "description_pt": "Use esta skill sempre que um arquivo .pptx estiver envolvido — para criar, ler, editar, extrair texto ou combinar slides. Ative quando o usuário mencionar 'deck', 'slides', 'apresentação' ou um nome de arquivo .pptx.",
+          "areas": [
+            "pdf-processing",
+            "pptx-manipulation"
+          ],
+          "analyzed_at": "2026-05-21T16:48:32.969Z"
+        },
+        "skill-creator": {
+          "skill_md_sha": "65b3a402dbd09b8e83f9d637c6b553875189085c",
+          "description_pt": "Cria, modifica e otimiza skills de IA, incluindo testes e avaliações de desempenho. Use para criar uma skill do zero, editar, melhorar, executar avaliações ou ajustar a descrição para maior precisão de ativação.",
+          "areas": [
+            "skill-authoring"
+          ],
+          "analyzed_at": "2026-05-21T16:48:34.805Z"
+        },
+        "slack-gif-creator": {
+          "skill_md_sha": "16660d8ceb77af47986bba1c9176c2ff3f287a91",
+          "description_pt": "Ferramentas e conhecimento para criar GIFs animados otimizados para o Slack, com validação e conceitos de animação. Use quando o usuário pedir GIFs para o Slack.",
+          "areas": [
+            "generative-art"
+          ],
+          "analyzed_at": "2026-05-21T16:48:37.039Z"
+        },
+        "template": {
+          "skill_md_sha": "50a4f9b104357d96361e257adb70454604cd15c0",
+          "description_pt": "Substitua pela descrição da habilidade e quando Claude deve usá-la.",
+          "areas": [
+            "skill-authoring"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": ""
+          },
+          "analyzed_at": "2026-05-21T16:49:15.348Z"
+        },
+        "theme-factory": {
+          "skill_md_sha": "90dfceaf2ecdc191a4dcfb0069768a9560638998",
+          "description_pt": "Kit de temas pré-definidos para estilizar slides, documentos e páginas HTML. Escolha entre 10 temas ou crie um personalizado.",
+          "areas": [
+            "brand-styling",
+            "theme-application"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "theme-showcase.pdf"
+            ],
+            "implicit_deps_notes": "O diretório 'themes/' contém arquivos de definição de temas que devem estar acessíveis para leitura."
+          },
+          "analyzed_at": "2026-05-21T16:49:16.867Z"
+        },
+        "web-artifacts-builder": {
+          "skill_md_sha": "8b39b19f259b4216ecb07574741dd8eaa9863a07",
+          "description_pt": "Ferramentas para criar artefatos HTML complexos com React, Tailwind CSS e shadcn/ui. Use para componentes com estado, roteamento ou shadcn/ui, não para HTML/JSX simples.",
+          "areas": [
+            "prototyping"
+          ],
+          "analyzed_at": "2026-05-21T16:48:42.732Z"
+        },
+        "webapp-testing": {
+          "skill_md_sha": "4726215301db64a0cc4d41fc3219c61f37a30f4a",
+          "description_pt": "Ferramenta para testar e interagir com aplicações web locais usando Playwright: verifica funcionalidades, depura UI, captura screenshots e visualiza logs do navegador.",
+          "areas": [
+            "debugging"
+          ],
+          "analyzed_at": "2026-05-21T16:48:44.296Z"
+        },
+        "xlsx": {
+          "skill_md_sha": "c5c881be9ebaa2bfcdd02f97de2ebd711ab78803",
+          "description_pt": "Crie, edite ou analise arquivos de planilha (.xlsx, .csv, etc.) com fórmulas dinâmicas e formatação profissional. Ideal para manipular dados tabulares, gerar relatórios financeiros ou limpar dados bagunçados.",
+          "areas": [
+            "docx-manipulation",
+            "pptx-manipulation",
+            "pdf-processing"
+          ],
+          "analyzed_at": "2026-05-21T16:48:45.923Z"
         }
       }
     }

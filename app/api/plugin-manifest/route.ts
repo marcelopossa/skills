@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { regeneratePluginManifest, regenerateReadme } from "@/lib/manifest";
+import { regenerateMarketplaceManifest, regenerateReadme } from "@/lib/manifest";
 
 export async function POST() {
-  await regeneratePluginManifest();
+  await regenerateMarketplaceManifest();
   await regenerateReadme();
   return NextResponse.json({ ok: true });
 }
