@@ -531,17 +531,26 @@ export default function RepoBrowse({ params }: { params: Promise<{ owner: string
                     type="checkbox"
                     checked={selected.has(s.name)}
                     onChange={() => toggle(s.name)}
+                    disabled={!!s.unsupported_source}
                   />
                 </td>
                 <td className="px-3 py-2 font-medium align-top">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span>{s.name}</span>
-                    {s.type === "package" && (
+                    {s.type === "package" && !s.unsupported_source && (
                       <span
                         title={`Pacote com ${s.package_skills?.length || 0} skill(s) internas: ${s.package_skills?.join(", ") || "—"}`}
                         className="text-[10px] px-1.5 py-0.5 rounded bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 cursor-help"
                       >
                         📦 pacote ({s.package_skills?.length || 0})
+                      </span>
+                    )}
+                    {s.unsupported_source && (
+                      <span
+                        title={`Source remoto (${s.unsupported_source.kind})${s.unsupported_source.detail ? ": " + s.unsupported_source.detail : ""}. Esta versão só importa fontes locais ao repositório upstream.`}
+                        className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-200 dark:bg-zinc-800 text-zinc-500 cursor-help"
+                      >
+                        🚫 {s.unsupported_source.kind}
                       </span>
                     )}
                     {s.upstream_category && (

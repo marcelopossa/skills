@@ -82,6 +82,7 @@ export type UpstreamSkill = {
   external_refs: string[];
   type: "skill" | "package";
   package_skills?: string[];
+  unsupported_source?: { kind: string; detail?: string };
 };
 
 export type SkillStatus =

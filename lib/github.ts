@@ -146,6 +146,84 @@ export async function listUpstreamSkills(
 ): Promise<UpstreamSkill[]> {
   const tree = await getTreeRecursive(owner, repo, sha);
 
+  const hasMarketplace = tree.some(
+    (e) => e.type === "blob" && e.path === ".claude-plugin/marketplace.json"
+  );
+
+  if (hasMarketplace && !opts.expandRootPackage) {
+    let mp: { plugins?: Array<Record<string, unknown>> } = {};
+    try {
+      const raw = await fetchRawFile(owner, repo, sha, ".claude-plugin/marketplace.json");
+      mp = JSON.parse(raw);
+    } catch {
+      /* fallback to other detection */
+    }
+    if (Array.isArray(mp.plugins) && mp.plugins.length > 0) {
+      const items: UpstreamSkill[] = [];
+      for (const p of mp.plugins) {
+        const name = String(p.name || "");
+        if (!name) continue;
+        const src = p.source;
+        const baseDescription =
+          typeof p.description === "string" ? p.description : "";
+
+        if (typeof src === "string" && src.startsWith("./")) {
+          const dir = src === "./" ? "" : src.replace(/^\.\//, "").replace(/\/+$/, "");
+          const innerPluginPath = dir
+            ? `${dir}/.claude-plugin/plugin.json`
+            : ".claude-plugin/plugin.json";
+          let description = baseDescription;
+          try {
+            const innerRaw = await fetchRawFile(owner, repo, sha, innerPluginPath);
+            const inner = JSON.parse(innerRaw) as { description?: string };
+            if (!description && typeof inner.description === "string") {
+              description = inner.description.trim();
+            }
+          } catch {
+            /* sem plugin.json interno */
+          }
+          const prefix = dir ? `${dir}/` : "";
+          const dirFiles = tree.filter(
+            (e) => e.type === "blob" && (prefix ? e.path.startsWith(prefix) : true)
+          );
+          const skillNames = dirFiles
+            .filter((f) => f.path.endsWith("/SKILL.md"))
+            .map((f) => f.path.slice(0, -"/SKILL.md".length).split("/").pop() || "");
+          items.push({
+            name,
+            upstream_path: dir,
+            upstream_category: null,
+            description,
+            files: dirFiles.map((f) => ({ path: f.path, sha: f.sha })),
+            external_refs: [],
+            type: "package",
+            package_skills: skillNames.filter(Boolean).sort(),
+          });
+        } else if (src && typeof src === "object" && "source" in src) {
+          const obj = src as { source?: string; url?: string; repo?: string; path?: string };
+          const kind = String(obj.source || "remote");
+          const detail = obj.url || obj.repo
+            ? `${obj.url || obj.repo}${obj.path ? "/" + obj.path : ""}`
+            : undefined;
+          items.push({
+            name,
+            upstream_path: "",
+            upstream_category: null,
+            description:
+              baseDescription ||
+              `Source remoto (${kind}): ${detail || "—"}. Não importável diretamente nesta versão.`,
+            files: [],
+            external_refs: [],
+            type: "package",
+            package_skills: [],
+            unsupported_source: { kind, detail },
+          });
+        }
+      }
+      return items.sort((a, b) => a.name.localeCompare(b.name));
+    }
+  }
+
   const hasRootPlugin = tree.some(
     (e) => e.type === "blob" && e.path === ".claude-plugin/plugin.json"
   );

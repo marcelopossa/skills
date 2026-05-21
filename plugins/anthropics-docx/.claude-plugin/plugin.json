@@ -1,9 +1,0 @@
-{
-  "name": "anthropics-docx",
-  "description": "Cria, edita e analisa documentos Word (.docx) com formatação profissional, como sumários, cabeçalhos e numeração de páginas. Use para relatórios, memorandos, cartas ou qualquer manipulação de arquivos .docx.",
-  "author": {
-    "name": "anthropics"
-  },
-  "homepage": "https://github.com/anthropics/skills",
-  "repository": "https://github.com/anthropics/skills"
-}
