@@ -59,10 +59,14 @@ export async function classifySkill(
   existingAreas: Area[]
 ): Promise<ClassifyResponse> {
   const sys =
-    "Você classifica skills de IA em áreas de utilidade. Responda APENAS JSON válido com chaves: " +
-    '`assigned` (array de slugs de áreas existentes que se aplicam, prefira reusar; máximo 3) e ' +
-    '`propose_new` (array vazio, ou objetos {slug, label, description} caso nenhuma existente sirva bem). ' +
-    "Use kebab-case para slugs. Máximo 3 áreas total entre assigned + propose_new.";
+    "Você classifica skills de IA em áreas de utilidade. " +
+    "IDIOMA OBRIGATÓRIO: TODA saída textual (`label`, `description` das áreas propostas) DEVE estar em **português do Brasil**. Nunca use inglês. " +
+    "Responda APENAS JSON válido com as chaves: " +
+    "`assigned` (array de slugs de áreas existentes que se aplicam — prefira reusar; máximo 3) e " +
+    "`propose_new` (array vazio, ou objetos {slug, label, description} se nenhuma existente servir bem). " +
+    "Slugs em kebab-case e em inglês (são identificadores técnicos), mas `label` e `description` SEMPRE em PT-BR. " +
+    "Máximo 3 áreas total entre assigned + propose_new. " +
+    'Exemplo de formato: {"assigned":["debugging"],"propose_new":[{"slug":"code-review","label":"Revisão de código","description":"Skills para revisão de pull requests e qualidade de código"}]}';
   const user =
     `Áreas existentes:\n${JSON.stringify(existingAreas, null, 2)}\n\n` +
     `Conteúdo da skill (SKILL.md):\n${skillMarkdown.slice(0, 8000)}`;
@@ -85,11 +89,13 @@ export type AnalyzeDepsResponse = z.infer<typeof AnalyzeDepsResponseSchema>;
 
 export async function analyzeDeps(skillMarkdown: string): Promise<AnalyzeDepsResponse> {
   const sys =
-    "Você analisa dependências de uma skill de IA descrita em markdown. Responda APENAS JSON com: " +
-    "`referenced_skills` (nomes de OUTRAS skills mencionadas como complemento ou pré-requisito), " +
-    "`system_requirements` (array de {tool, version?} para ferramentas externas como node, gh, python — só se mencionado), " +
-    "`external_files` (paths relativos fora do diretório da skill, como '../shared/x.sh'), " +
-    "`implicit_deps_notes` (string curta com observações importantes que não cabem nos campos acima). " +
+    "Você analisa dependências de uma skill de IA descrita em markdown. " +
+    "IDIOMA OBRIGATÓRIO: o campo `implicit_deps_notes` DEVE estar em português do Brasil. " +
+    "Responda APENAS JSON com: " +
+    "`referenced_skills` (nomes técnicos de OUTRAS skills mencionadas como complemento ou pré-requisito — manter exatamente como aparecem no texto), " +
+    "`system_requirements` (array de {tool, version?} para ferramentas externas como node, gh, python — manter nomes técnicos no original), " +
+    "`external_files` (paths relativos fora do diretório da skill, como '../shared/x.sh' — manter paths no original), " +
+    "`implicit_deps_notes` (string curta EM PORTUGUÊS DO BRASIL com observações importantes que não cabem nos campos acima). " +
     "Não invente. Se não houver, deixe vazio.";
   const raw = await chatJson([
     { role: "system", content: sys },
@@ -107,9 +113,14 @@ export async function refineDescription(
   currentDescription: string
 ): Promise<{ suggested_description: string }> {
   const sys =
-    "Gere uma descrição curta (1-2 frases, máximo 160 caracteres) em português brasileiro " +
-    "para a skill descrita. Responda APENAS JSON com a chave `suggested_description`.";
-  const user = `Descrição atual: ${currentDescription || "(vazia)"}\n\nSKILL.md:\n${skillMarkdown.slice(0, 8000)}`;
+    "Sua tarefa: gerar uma descrição curta para uma skill de IA. " +
+    "IDIOMA OBRIGATÓRIO: **português do Brasil**. Mesmo que o SKILL.md esteja em inglês, traduza e sintetize em PT-BR. " +
+    "Nunca devolva em inglês — se o texto original está em inglês, traduza para PT-BR. " +
+    "Formato: 1 a 2 frases, máximo 160 caracteres, tom direto e objetivo, foco no que a skill faz e quando usar. " +
+    "Não copie literalmente o texto original — reescreva de forma fluida em PT-BR. " +
+    "Responda APENAS JSON com a chave `suggested_description`. " +
+    'Exemplo: {"suggested_description":"Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir."}';
+  const user = `Descrição atual (pode estar em inglês ou vazia): ${currentDescription || "(vazia)"}\n\nConteúdo do SKILL.md:\n${skillMarkdown.slice(0, 8000)}\n\nGere a descrição em PORTUGUÊS DO BRASIL.`;
   const raw = await chatJson([
     { role: "system", content: sys },
     { role: "user", content: user },

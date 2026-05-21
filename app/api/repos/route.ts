@@ -67,6 +67,7 @@ export async function POST(req: Request) {
     attribution: `Skills originalmente criadas por ${owner} (https://github.com/${owner}).`,
     imported_skills: {},
     dismissed_skills: [],
+    analysis_cache: {},
   };
   await writeSources(sources);
   return NextResponse.json({ ok: true, owner, repo, branch });

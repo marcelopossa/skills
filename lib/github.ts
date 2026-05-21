@@ -120,9 +120,17 @@ function extractRelativeRefs(content: string): string[] {
       refs.add(p.split("#")[0]);
     }
   }
-  const inline = /(?<![A-Za-z0-9_./-])(\.{0,2}\/[A-Za-z0-9_./-]+|(?:scripts|references|assets|examples)\/[A-Za-z0-9_./-]+)/g;
+  const inline = /(?<![A-Za-z0-9_./-])(\.{1,2}\/[A-Za-z0-9_./-]+|(?:scripts|references|assets|examples)\/[A-Za-z0-9_./-]+)/g;
   for (const m of content.matchAll(inline)) refs.add(m[1]);
-  return Array.from(refs);
+  const out: string[] = [];
+  for (const r of refs) {
+    const trimmed = r.replace(/[.,;:)]+$/, "");
+    if (!trimmed) continue;
+    if (!/[./]/.test(trimmed.slice(1))) continue;
+    if (/^\/[a-z-]+$/i.test(trimmed) && !trimmed.includes(".")) continue;
+    out.push(trimmed);
+  }
+  return out;
 }
 
 export async function listUpstreamSkills(

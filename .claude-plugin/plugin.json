@@ -4,6 +4,11 @@
   "version": "0.1.0",
   "skills": [
     "./skills/mattpocock/diagnose",
+    "./skills/mattpocock/grill-me",
+    "./skills/mattpocock/grill-with-docs",
+    "./skills/mattpocock/handoff",
+    "./skills/mattpocock/improve-codebase-architecture",
+    "./skills/mattpocock/obsidian-vault",
     "./skills/mattpocock/tdd"
   ]
 }

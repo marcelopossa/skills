@@ -5,6 +5,96 @@
       "slug": "debugging",
       "label": "Debugging",
       "description": "Systematic diagnosis and resolution of software defects, including reproduction, minimization, hypothesis testing, and instrumentation."
+    },
+    {
+      "slug": "test-driven-development",
+      "label": "Desenvolvimento orientado a testes",
+      "description": "Habilidade para aplicar TDD (desenvolvimento orientado a testes) com ciclo vermelho-verde-refatoração, incluindo criação de testes de integração e desenvolvimento test-first."
+    },
+    {
+      "slug": "caveman-communication",
+      "label": "Comunicação ultracompacta",
+      "description": "Habilidade de se comunicar de forma extremamente concisa, eliminando palavras desnecessárias e mantendo precisão técnica, ideal para modos de baixo consumo de tokens."
+    },
+    {
+      "slug": "interface-design",
+      "label": "Design de interface",
+      "description": "Habilidade para projetar múltiplas interfaces de módulo radicalmente diferentes, comparar trade-offs e sintetizar a melhor abordagem, baseada em princípios de design de software."
+    },
+    {
+      "slug": "article-editing",
+      "label": "Edição de artigos",
+      "description": "Habilidade para editar e melhorar artigos, reestruturando seções, melhorando clareza e concisão, e respeitando dependências lógicas entre informações."
+    },
+    {
+      "slug": "grill-interview",
+      "label": "Entrevista de estresse",
+      "description": "Habilidade para conduzir entrevistas exaustivas sobre planos ou designs, explorando cada ramo da árvore de decisão até alcançar entendimento compartilhado."
+    },
+    {
+      "slug": "handoff-documentation",
+      "label": "Documentação de handoff",
+      "description": "Habilidade para criar documentos de handoff concisos que resumem o estado atual da conversa, referenciam artefatos existentes e sugerem skills para o próximo agente, com redação de informações sensíveis."
+    },
+    {
+      "slug": "architecture-deepening",
+      "label": "Aprofundamento de arquitetura",
+      "description": "Habilidade para identificar oportunidades de refatoração que transformam módulos rasos em módulos profundos, aumentando testabilidade e navegabilidade para IA, usando conceitos como interface, implementação, profundidade, costura e alavancagem."
+    },
+    {
+      "slug": "obsidian-vault-management",
+      "label": "Gerenciamento de vault Obsidian",
+      "description": "Habilidade para pesquisar, criar e organizar notas em um vault Obsidian, usando wikilinks e notas índice, seguindo convenções de nomenclatura e estrutura de arquivos."
+    },
+    {
+      "slug": "prototyping",
+      "label": "Prototipação",
+      "description": "Habilidade para construir protótipos descartáveis que respondem a perguntas de design, seja via terminal para lógica/estado ou múltiplas variações de UI, seguindo regras de descartabilidade e foco em aprendizado rápido."
+    },
+    {
+      "slug": "code-review",
+      "label": "Revisão de código",
+      "description": "Habilidade para revisar mudanças em código-fonte, verificando conformidade com padrões e especificações, e reportando achados de forma estruturada."
+    },
+    {
+      "slug": "exercise-scaffolding",
+      "label": "Estruturação de exercícios",
+      "description": "Habilidade para criar estruturas de diretórios de exercícios com seções, problemas, soluções e explicadores, seguindo convenções de nomenclatura e passando na validação de lint."
+    },
+    {
+      "slug": "repo-setup",
+      "label": "Configuração de repositório",
+      "description": "Habilidade para configurar a infraestrutura de um repositório, incluindo detecção de estado atual, coleta de preferências do usuário e escrita de arquivos de configuração (como AGENTS.md e docs/agents/)."
+    },
+    {
+      "slug": "issue-creation",
+      "label": "Criação de issues",
+      "description": "Habilidade para decompor planos, especificações ou PRDs em issues independentes e acionáveis no rastreador de issues do projeto, usando slices verticais (tracer bullets) e seguindo um processo de rascunho, validação com o usuário e publicação."
+    },
+    {
+      "slug": "ubiquitous-language",
+      "label": "Linguagem Ubíqua",
+      "description": "Habilidade para extrair e formalizar terminologia de domínio de uma conversa, criando um glossário consistente no formato DDD, identificando ambiguidades e propondo termos canônicos."
+    },
+    {
+      "slug": "skill-authoring",
+      "label": "Criação de skills",
+      "description": "Habilidade para criar novas skills de agente com estrutura adequada, divulgação progressiva e recursos agrupados. Use quando o usuário quiser criar, escrever ou construir uma nova skill."
+    },
+    {
+      "slug": "fragment-collection",
+      "label": "Coleta de fragmentos",
+      "description": "Habilidade para conduzir sessões de entrevista que extraem fragmentos de escrita do usuário — observações, frases, vinhetas — e os anexam a um documento único como matéria-prima para artigos futuros, sem impor estrutura."
+    },
+    {
+      "slug": "writing-shape",
+      "label": "Modelagem de escrita",
+      "description": "Habilidade para transformar material bruto em um artigo por meio de sessão conversacional, esboçando aberturas, crescendo parágrafo por parágrafo e argumentando sobre formato (listas, tabelas, callouts, citações) a cada etapa."
+    },
+    {
+      "slug": "code-navigation",
+      "label": "Navegação de código",
+      "description": "Habilidade para fornecer visão geral de alto nível de uma base de código, mapeando módulos e chamadores usando vocabulário do domínio do projeto."
     }
   ]
 }

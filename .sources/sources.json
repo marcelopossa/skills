@@ -7,11 +7,11 @@
       "repo": "skills",
       "branch": "main",
       "last_synced_sha": "b8be62ffacb0118fa3eaa29a0923c87c8c11985c",
-      "last_synced_at": "2026-05-21T14:19:59.973Z",
+      "last_synced_at": "2026-05-21T16:31:47.024Z",
       "license": {
         "spdx": "MIT",
         "url": "https://github.com/mattpocock/skills/blob/main/LICENSE",
-        "fetched_at": "2026-05-21T14:19:58.084Z"
+        "fetched_at": "2026-05-21T16:31:36.324Z"
       },
       "attribution": "Skills originalmente criadas por mattpocock (https://github.com/mattpocock).",
       "imported_skills": {
@@ -19,8 +19,10 @@
           "upstream_path": "skills/engineering/diagnose",
           "local_path": "skills/mattpocock/diagnose",
           "upstream_category": "engineering",
-          "areas": [],
-          "description": "Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-test. Use when user says \"diagnose this\" / \"debug this\", reports a bug, says something is broken/throwing/failing, or describes a performance regression.",
+          "areas": [
+            "debugging"
+          ],
+          "description": "Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir.",
           "files": {
             "SKILL.md": "ed55bda2fdb0d690ea3b80a1cf28bf848c5ad2b5",
             "scripts/hitl-loop.template.sh": "40afc4652f6f52fc117b2b00e1fa65fcec235838"
@@ -31,7 +33,7 @@
           "local_path": "skills/mattpocock/tdd",
           "upstream_category": "engineering",
           "areas": [],
-          "description": "Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions \"red-green-refactor\", wants integration tests, or asks for test-first development.",
+          "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use para construir funcionalidades ou corrigir bugs seguindo TDD, quando mencionar 'red-green-refactor' ou pedir testes primeiro.",
           "files": {
             "SKILL.md": "7a989411eb3c4d0879cb33b2d7d05831add27b84",
             "deep-modules.md": "0d9720cf1dce25e51f4ba66d16f9d2de78a12abb",
@@ -40,9 +42,404 @@
             "refactoring.md": "8a4443924fbe40c2f865c56a9477d5ec01cc9962",
             "tests.md": "ff22f809ccbcac26ecd7a3c4bc48ef701a8ac82e"
           }
+        },
+        "grill-me": {
+          "upstream_path": "skills/productivity/grill-me",
+          "local_path": "skills/mattpocock/grill-me",
+          "upstream_category": "productivity",
+          "areas": [],
+          "description": "Entrevista implacável sobre planos ou designs, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano sob pressão ou quando mencionar 'me grille'.",
+          "files": {
+            "SKILL.md": "bd04394c675ee54173a093c50eb74da01a2940fa"
+          }
+        },
+        "grill-with-docs": {
+          "upstream_path": "skills/engineering/grill-with-docs",
+          "local_path": "skills/mattpocock/grill-with-docs",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Sessão de questionamento que desafia seu plano contra o modelo de domínio existente, afina a terminologia e atualiza a documentação (CONTEXT.md, ADRs) à medida que as decisões se cristalizam. Use quando quiser testar um plano contra a linguagem e decisões documentadas do projeto.",
+          "files": {
+            "ADR-FORMAT.md": "da7e78ec1c220cd0aedf7ad36424c9398034f375",
+            "CONTEXT-FORMAT.md": "08302557cc2ca8de32c02de708a7c8c84ed66f3f",
+            "SKILL.md": "5ea0aa913629bec683690f371839bd10e588413d"
+          }
+        },
+        "handoff": {
+          "upstream_path": "skills/productivity/handoff",
+          "local_path": "skills/mattpocock/handoff",
+          "upstream_category": "productivity",
+          "areas": [],
+          "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar, incluindo habilidades sugeridas e referências a artefatos existentes.",
+          "files": {
+            "SKILL.md": "0aa5b99300da27b50e80db53f880e422204faedd"
+          }
+        },
+        "improve-codebase-architecture": {
+          "upstream_path": "skills/engineering/improve-codebase-architecture",
+          "local_path": "skills/mattpocock/improve-codebase-architecture",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.",
+          "files": {
+            "DEEPENING.md": "ecaf5d7dcf7aae2aff6dbc63742dd069351b4f5c",
+            "HTML-REPORT.md": "8adc368ffb30f9e8a6f01ac95621555f4afc2b76",
+            "INTERFACE-DESIGN.md": "3197723a0d04aef73b74fbcf7e48269988a61684",
+            "LANGUAGE.md": "530c27630a045406a66712c8f062e873c3b22449",
+            "SKILL.md": "c12b263bed311d85cbcedcda7e36867eda541ddc"
+          }
+        },
+        "obsidian-vault": {
+          "upstream_path": "skills/personal/obsidian-vault",
+          "local_path": "skills/mattpocock/obsidian-vault",
+          "upstream_category": "personal",
+          "areas": [],
+          "description": "Pesquise, crie e gerencie notas no vault Obsidian com wikilinks e notas índice. Use para encontrar, criar ou organizar notas.",
+          "files": {
+            "SKILL.md": "b9393654a90811d6e1ce25163b3bd77f803c1026"
+          }
         }
       },
-      "dismissed_skills": []
+      "dismissed_skills": [
+        "qa",
+        "request-refactor-plan",
+        "ubiquitous-language",
+        "design-an-interface"
+      ],
+      "analysis_cache": {
+        "caveman": {
+          "skill_md_sha": "85770a38992a7c74d2b3467b03fe5bd4b1287fe6",
+          "description_pt": "Modo de comunicação ultracompacto que reduz tokens em ~75% ao eliminar rodeios, mantendo precisão técnica. Ative com 'modo caverna', 'seja breve' ou '/caveman'.",
+          "areas": [
+            "caveman-communication"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência externa identificada. Skill é auto-contida, define apenas estilo de comunicação."
+          },
+          "analyzed_at": "2026-05-21T16:19:23.588Z"
+        },
+        "design-an-interface": {
+          "skill_md_sha": "d056bd183229ca93bd41cf1b8c10c6fd1f30e75f",
+          "description_pt": "Gera múltiplos designs de interface radicalmente diferentes para um módulo usando subagentes paralelos. Use para projetar APIs, explorar opções ou comparar formatos.",
+          "areas": [
+            "interface-design"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência externa identificada. A skill usa sub-agentes paralelos, mas não especifica ferramentas ou arquivos externos."
+          },
+          "analyzed_at": "2026-05-21T16:20:10.892Z"
+        },
+        "edit-article": {
+          "skill_md_sha": "b319b7c6fb034ed3d085519dce70702601f174e9",
+          "description_pt": "Edite e melhore artigos reestruturando seções, aumentando clareza e refinando a prosa. Use quando quiser revisar ou aprimorar um rascunho.",
+          "areas": [
+            "article-editing"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência externa identificada."
+          },
+          "analyzed_at": "2026-05-21T16:20:12.469Z"
+        },
+        "git-guardrails-claude-code": {
+          "skill_md_sha": "d943c68219d0f47512f10c5018a11fd8358e9bb5",
+          "description_pt": "Configura hooks no Claude Code para bloquear comandos git perigosos (push, reset --hard, clean, branch -D) antes da execução. Use para evitar operações destrutivas no git.",
+          "areas": [
+            "repo-setup"
+          ],
+          "analyzed_at": "2026-05-21T16:19:29.359Z"
+        },
+        "grill-me": {
+          "skill_md_sha": "bd04394c675ee54173a093c50eb74da01a2940fa",
+          "description_pt": "Entrevista implacável sobre um plano ou design até chegar a um entendimento compartilhado, resolvendo cada ramo da árvore de decisão. Use quando quiser testar um plano sob pressão.",
+          "areas": [
+            "grill-interview"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência implícita identificada."
+          },
+          "analyzed_at": "2026-05-21T16:20:16.012Z"
+        },
+        "grill-with-docs": {
+          "skill_md_sha": "5ea0aa913629bec683690f371839bd10e588413d",
+          "description_pt": "Sessão de questionamento que desafia seu plano contra o modelo de domínio existente, afina a terminologia e atualiza a documentação (CONTEXT.md, ADRs) à medida que as decisões se cristalizam. Use quando quiser testar seu plano contra a linguagem e decisões documentadas do projeto.",
+          "areas": [
+            "grill-interview",
+            "ubiquitous-language",
+            "handoff-documentation"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [
+              "./CONTEXT-FORMAT.md",
+              "./ADR-FORMAT.md"
+            ],
+            "implicit_deps_notes": "A skill depende de arquivos de formato no mesmo diretório (CONTEXT-FORMAT.md e ADR-FORMAT.md) para gerar documentação. Certifique-se de que existam."
+          },
+          "analyzed_at": "2026-05-21T16:20:18.160Z"
+        },
+        "handoff": {
+          "skill_md_sha": "0aa5b99300da27b50e80db53f880e422204faedd",
+          "description_pt": "Compacta a conversa atual em um documento de handoff para outro agente continuar, salvando no diretório temporário do sistema e referenciando artefatos existentes.",
+          "areas": [
+            "handoff-documentation"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência explícita identificada."
+          },
+          "analyzed_at": "2026-05-21T16:20:19.694Z"
+        },
+        "improve-codebase-architecture": {
+          "skill_md_sha": "c12b263bed311d85cbcedcda7e36867eda541ddc",
+          "description_pt": "Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.",
+          "areas": [
+            "architecture-deepening",
+            "ubiquitous-language",
+            "grill-interview"
+          ],
+          "analyzed_at": "2026-05-21T16:19:36.383Z"
+        },
+        "migrate-to-shoehorn": {
+          "skill_md_sha": "ae4f965e204fc93cedbc4e2c306e92829d93f800",
+          "description_pt": "Migra testes de `as` para @total-typescript/shoehorn, substituindo asserções de tipo por dados parciais seguros. Use ao mencionar shoehorn ou precisar de dados parciais em testes.",
+          "areas": [
+            "code-review"
+          ],
+          "analyzed_at": "2026-05-21T16:27:18.005Z"
+        },
+        "obsidian-vault": {
+          "skill_md_sha": "b9393654a90811d6e1ce25163b3bd77f803c1026",
+          "description_pt": "Pesquise, crie e gerencie notas no vault Obsidian com wikilinks e notas índice. Use para encontrar, criar ou organizar notas no Obsidian.",
+          "areas": [
+            "obsidian-vault-management"
+          ],
+          "analyzed_at": "2026-05-21T16:19:40.069Z"
+        },
+        "prototype": {
+          "skill_md_sha": "64f3e61117b49c305e8d85b9c8543dcdfbb7d2c2",
+          "description_pt": "Cria protótipos descartáveis para validar lógica, estado ou UI antes de implementar. Use para testar ideias rapidamente.",
+          "areas": [
+            "prototyping"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill depende de LOGIC.md e UI.md no mesmo diretório, que são sub-skills internas, não externas."
+          },
+          "analyzed_at": "2026-05-21T16:20:28.506Z"
+        },
+        "qa": {
+          "skill_md_sha": "305e43fbc1a171987fcab977ebd124c3f9792d39",
+          "description_pt": "Sessão interativa de QA onde o usuário relata bugs e o agente cria issues no GitHub, explorando o código para contexto. Use para reportar bugs ou iniciar uma sessão de QA.",
+          "areas": [
+            "issue-creation"
+          ],
+          "analyzed_at": "2026-05-21T16:19:43.348Z"
+        },
+        "request-refactor-plan": {
+          "skill_md_sha": "7e8b2e41d7ce805746d18b8e9dba4559301db251",
+          "description_pt": "Cria um plano detalhado de refatoração com commits pequenos via entrevista com o usuário e registra como issue no GitHub. Use para planejar refatorações, criar RFCs ou dividir mudanças em etapas seguras e incrementais.",
+          "areas": [
+            "issue-creation"
+          ],
+          "analyzed_at": "2026-05-21T16:19:45.094Z"
+        },
+        "review": {
+          "skill_md_sha": "7507a362147167c277b17ec5abf8bedb99fc42d5",
+          "description_pt": "Revisa alterações desde um ponto fixo (commit, branch, tag ou merge-base) em dois eixos paralelos: Padrões (conformidade com as normas do repositório) e Especificação (fidelidade ao requisito original). Use para revisar branches, PRs ou trabalhos em andamento.",
+          "areas": [
+            "code-review"
+          ],
+          "analyzed_at": "2026-05-21T16:19:47.036Z"
+        },
+        "scaffold-exercises": {
+          "skill_md_sha": "d87df28e7d8abb4e57ecc6e47d71c274d16054c7",
+          "description_pt": "Cria estruturas de diretórios de exercícios com seções, problemas, soluções e explicadores que passam no lint. Use para montar exercícios, criar stubs ou configurar uma nova seção de curso.",
+          "areas": [
+            "exercise-scaffolding"
+          ],
+          "analyzed_at": "2026-05-21T16:19:48.864Z"
+        },
+        "setup-matt-pocock-skills": {
+          "skill_md_sha": "1ebc6e14c126792dd48d946beb983e7519a7dac4",
+          "description_pt": "Configura o bloco de skills de agente em AGENTS.md/CLAUDE.md e docs/agents/ para que as skills de engenharia conheçam o issue tracker, labels de triagem e layout de docs do repositório. Execute antes de usar skills como to-issues, triage ou diagnose.",
+          "areas": [
+            "repo-setup"
+          ],
+          "analyzed_at": "2026-05-21T16:19:50.663Z"
+        },
+        "setup-pre-commit": {
+          "skill_md_sha": "395a77b5f7e33911092f7bc86e7d87c4ca70d189",
+          "description_pt": "Configura Husky, lint-staged, Prettier, typecheck e testes como hooks de pré-commit no repositório atual. Use para adicionar hooks de pré-commit ou configurar formatação/verificação automática ao commitar.",
+          "areas": [
+            "repo-setup"
+          ],
+          "analyzed_at": "2026-05-21T16:19:52.468Z"
+        },
+        "to-issues": {
+          "skill_md_sha": "9f6efbfe5fb5fcb9a751482e333d2f54da173102",
+          "description_pt": "Transforma planos, especificações ou PRDs em issues independentes usando fatias verticais (tracer bullets). Use para converter um plano em tarefas, criar tickets de implementação ou dividir o trabalho.",
+          "areas": [
+            "issue-creation"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "/setup-matt-pocock-skills"
+            ],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill /setup-matt-pocock-skills é referenciada como pré-requisito para configurar o vocabulário do issue tracker e labels de triagem."
+          },
+          "analyzed_at": "2026-05-21T16:20:44.176Z"
+        },
+        "to-prd": {
+          "skill_md_sha": "47a01d4e63cb4ba5b1ab020fd7efe6ab2a2c1d69",
+          "description_pt": "Transforma o contexto da conversa atual em um PRD e publica no issue tracker do projeto. Use quando quiser criar um PRD a partir do contexto atual.",
+          "areas": [
+            "issue-creation"
+          ],
+          "deps": {
+            "referenced_skills": [
+              "/setup-matt-pocock-skills"
+            ],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill /setup-matt-pocock-skills é mencionada como pré-requisito para configurar o issue tracker e o vocabulário de labels. Certifique-se de que ela foi executada antes de usar esta skill."
+          },
+          "analyzed_at": "2026-05-21T16:20:45.936Z"
+        },
+        "triage": {
+          "skill_md_sha": "3dee68f977ebab5d25a421f9d1f9ac1b56e0b7d7",
+          "description_pt": "Gerencia issues por meio de uma máquina de estados com papéis de triagem. Use para criar, revisar ou preparar issues para agentes ou humanos.",
+          "areas": [
+            "issue-creation"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill depende de um mapeamento de labels fornecido externamente via /setup-matt-pocock-skills, e de acesso ao issue tracker (GitHub Issues)."
+          },
+          "analyzed_at": "2026-05-21T16:20:47.859Z"
+        },
+        "ubiquitous-language": {
+          "skill_md_sha": "35b649ddcd4f6da16d70f27662e0dfb86fb34870",
+          "description_pt": "Extrai um glossário de linguagem ubíqua (DDD) da conversa, sinaliza ambiguidades e propõe termos canônicos. Salva em UBIQUITOUS_LANGUAGE.md. Use para definir termos de domínio, criar glossário ou quando mencionar 'modelo de domínio' ou 'DDD'.",
+          "areas": [
+            "ubiquitous-language"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill autônoma que gera/atualiza UBIQUITOUS_LANGUAGE.md no diretório de trabalho. Nenhuma dependência externa identificada."
+          },
+          "analyzed_at": "2026-05-21T16:20:49.759Z"
+        },
+        "write-a-skill": {
+          "skill_md_sha": "7339c8a38d6c2e1ee5fd721327bca3441a9408be",
+          "description_pt": "Cria novas skills de IA com estrutura adequada, divulgação progressiva e recursos agrupados. Use quando o usuário quiser criar, escrever ou construir uma nova skill.",
+          "areas": [
+            "skill-authoring"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência externa identificada. A skill é auto-contida, focada em estrutura e boas práticas para criação de novas skills."
+          },
+          "analyzed_at": "2026-05-21T16:20:51.644Z"
+        },
+        "writing-beats": {
+          "skill_md_sha": "419d11fe13cf72bd1b5ef2dc6356ebdd3c9803c4",
+          "description_pt": "Monte um artigo como uma jornada de batidas no estilo 'escolha sua própria aventura': o usuário escolhe uma batida inicial, você escreve apenas ela e oferece opções para a próxima, batida por batida, até um fim natural. Use quando o material bruto precisa virar narrativa, não argumento.",
+          "areas": [
+            "writing-shape"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill depende de um arquivo markdown de material bruto fornecido pelo usuário e de um caminho para salvar o artigo. Nenhuma dependência externa adicional foi identificada."
+          },
+          "analyzed_at": "2026-05-21T16:20:53.798Z"
+        },
+        "writing-fragments": {
+          "skill_md_sha": "5514eaae3d941246561e43fa05e5cd52160b676b",
+          "description_pt": "Sessão de entrevista que extrai fragmentos de escrita do usuário e os anexa a um único documento, como matéria-prima para um artigo futuro. Use quando quiser desenvolver ideias antes de estruturá-las.",
+          "areas": [
+            "fragment-collection"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill que lê e escreve em um arquivo markdown; depende do sistema de arquivos local e de permissões de leitura/escrita no diretório escolhido pelo usuário."
+          },
+          "analyzed_at": "2026-05-21T16:20:55.791Z"
+        },
+        "writing-shape": {
+          "skill_md_sha": "7dea05702bfe6d9a26164cfecbf18b4c3c58442b",
+          "description_pt": "Transforma anotações e rascunhos em artigos prontos para publicação, guiando a estruturação parágrafo por parágrafo com discussões sobre formato (listas, tabelas, citações). Use quando precisar organizar material bruto em um texto coeso.",
+          "areas": [
+            "writing-shape"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "A skill depende de um arquivo markdown de entrada fornecido pelo usuário e de um arquivo de saída para salvar o artigo. O usuário deve especificar o caminho do arquivo de saída se não for fornecido."
+          },
+          "analyzed_at": "2026-05-21T16:20:58.000Z"
+        },
+        "zoom-out": {
+          "skill_md_sha": "1e7a5dc728fed0a85a28c9dfb6e78ce5a81da7db",
+          "description_pt": "Peça ao agente para fornecer contexto mais amplo ou uma visão de alto nível. Use quando não conhecer bem uma área do código ou precisar entender como ela se encaixa no panorama geral.",
+          "areas": [
+            "code-navigation"
+          ],
+          "deps": {
+            "referenced_skills": [],
+            "system_requirements": [],
+            "external_files": [],
+            "implicit_deps_notes": "Nenhuma dependência implícita identificada."
+          },
+          "analyzed_at": "2026-05-21T16:20:59.776Z"
+        },
+        "tdd": {
+          "skill_md_sha": "7a989411eb3c4d0879cb33b2d7d05831add27b84",
+          "deps": {
+            "referenced_skills": [
+              "deep-modules",
+              "interface-design",
+              "refactoring"
+            ],
+            "system_requirements": [],
+            "external_files": [
+              "tests.md",
+              "mocking.md"
+            ],
+            "implicit_deps_notes": "A skill referencia arquivos de documentação (tests.md, mocking.md) que devem estar no mesmo diretório ou acessíveis via caminho relativo. As skills 'deep-modules', 'interface-design' e 'refactoring' são mencionadas como complementares, mas não há garantia de que existam como skills separadas."
+          },
+          "analyzed_at": "2026-05-21T16:19:30.644Z"
+        }
+      }
     }
   }
 }

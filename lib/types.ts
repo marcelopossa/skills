@@ -17,6 +17,25 @@ export const ImportedSkillSchema = z.object({
 });
 export type ImportedSkill = z.infer<typeof ImportedSkillSchema>;
 
+export const DepsAnalysisSchema = z.object({
+  referenced_skills: z.array(z.string()).default([]),
+  system_requirements: z
+    .array(z.object({ tool: z.string(), version: z.string().optional() }))
+    .default([]),
+  external_files: z.array(z.string()).default([]),
+  implicit_deps_notes: z.string().default(""),
+});
+export type DepsAnalysis = z.infer<typeof DepsAnalysisSchema>;
+
+export const SkillAnalysisCacheSchema = z.object({
+  skill_md_sha: z.string(),
+  description_pt: z.string().optional(),
+  areas: z.array(z.string()).optional(),
+  deps: DepsAnalysisSchema.optional(),
+  analyzed_at: z.string(),
+});
+export type SkillAnalysisCache = z.infer<typeof SkillAnalysisCacheSchema>;
+
 export const SourceSchema = z.object({
   repo_url: z.string(),
   owner: z.string(),
@@ -28,6 +47,7 @@ export const SourceSchema = z.object({
   attribution: z.string().default(""),
   imported_skills: z.record(z.string(), ImportedSkillSchema).default({}),
   dismissed_skills: z.array(z.string()).default([]),
+  analysis_cache: z.record(z.string(), SkillAnalysisCacheSchema).default({}),
 });
 export type Source = z.infer<typeof SourceSchema>;
 
@@ -70,4 +90,6 @@ export type SkillRow = UpstreamSkill & {
   status: SkillStatus;
   current_areas: string[];
   changed_files?: string[];
+  cached_deps?: DepsAnalysis;
+  cache_stale?: boolean;
 };

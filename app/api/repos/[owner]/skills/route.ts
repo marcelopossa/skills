@@ -15,6 +15,11 @@ export async function GET(_req: Request, ctx: { params: Promise<{ owner: string 
   const dismissed = new Set(src.dismissed_skills);
   const rows: SkillRow[] = upstream.map((u) => {
     const imported = src.imported_skills[u.name];
+    const skillMdSha = u.files.find((f) => f.path === `${u.upstream_path}/SKILL.md`)?.sha;
+    const cache = skillMdSha ? src.analysis_cache?.[u.name] : undefined;
+    const cacheValid = !!(cache && skillMdSha && cache.skill_md_sha === skillMdSha);
+    const cacheStale = !!(cache && skillMdSha && cache.skill_md_sha !== skillMdSha);
+
     let status: SkillStatus;
     let changedFiles: string[] | undefined;
     if (dismissed.has(u.name)) {
@@ -33,11 +38,26 @@ export async function GET(_req: Request, ctx: { params: Promise<{ owner: string 
       }
       status = changedFiles.length > 0 ? "imported-modified" : "imported-up-to-date";
     }
+
+    const description = imported?.description
+      ? imported.description
+      : cacheValid && cache?.description_pt
+        ? cache.description_pt
+        : u.description;
+    const currentAreas = imported?.areas?.length
+      ? imported.areas
+      : cacheValid && cache?.areas
+        ? cache.areas
+        : [];
+
     return {
       ...u,
+      description,
       status,
-      current_areas: imported?.areas || [],
+      current_areas: currentAreas,
       changed_files: changedFiles,
+      cached_deps: cacheValid ? cache?.deps : undefined,
+      cache_stale: cacheStale,
     };
   });
 

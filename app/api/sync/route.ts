@@ -4,6 +4,7 @@ import { readSources, writeSources } from "@/lib/sources";
 import {
   fetchLicense,
   fetchLicenseText,
+  fetchRawFile,
   getHeadSha,
   listUpstreamSkills,
 } from "@/lib/github";
@@ -11,8 +12,10 @@ import {
   downloadSkillFiles,
   removeSkill,
   writeNotice,
+  writeRequirementsIfAny,
 } from "@/lib/skills-fs";
 import { regeneratePluginManifest, regenerateReadme } from "@/lib/manifest";
+import { refineDescription } from "@/lib/deepseek";
 import type { ImportedSkill } from "@/lib/types";
 
 const SyncBodySchema = z.object({
@@ -21,6 +24,7 @@ const SyncBodySchema = z.object({
   update: z.array(z.string()).default([]),
   remove: z.array(z.string()).default([]),
   dismiss: z.array(z.string()).default([]),
+  undismiss: z.array(z.string()).default([]),
   area_overrides: z.record(z.string(), z.array(z.string())).optional(),
   description_overrides: z.record(z.string(), z.string()).optional(),
 });
@@ -36,7 +40,7 @@ export async function POST(req: Request) {
   if (!parsed.success) {
     return NextResponse.json({ error: parsed.error.issues }, { status: 400 });
   }
-  const { owner, import: toImport, update, remove, dismiss, area_overrides, description_overrides } = parsed.data;
+  const { owner, import: toImport, update, remove, dismiss, undismiss, area_overrides, description_overrides } = parsed.data;
 
   const sources = await readSources();
   const src = sources.sources[owner];
@@ -69,7 +73,16 @@ export async function POST(req: Request) {
     );
     const prev: ImportedSkill | undefined = src.imported_skills[u.name];
     const areas = area_overrides?.[u.name] ?? prev?.areas ?? [];
-    const description = description_overrides?.[u.name] ?? prev?.description ?? u.description ?? "";
+    let description = description_overrides?.[u.name] ?? prev?.description ?? u.description ?? "";
+    if (!description_overrides?.[u.name] && process.env.DEEPSEEK_API_KEY) {
+      try {
+        const md = await fetchRawFile(src.owner, src.repo, headSha, `${u.upstream_path}/SKILL.md`);
+        const refined = await refineDescription(md, u.description || "");
+        if (refined.suggested_description) description = refined.suggested_description;
+      } catch (e) {
+        void e;
+      }
+    }
     src.imported_skills[u.name] = {
       upstream_path: u.upstream_path,
       local_path: `skills/${src.owner}/${u.name}`,
@@ -78,6 +91,14 @@ export async function POST(req: Request) {
       description,
       files,
     };
+    const skillMdSha = u.files.find((f) => f.path === `${u.upstream_path}/SKILL.md`)?.sha;
+    const cached =
+      skillMdSha && src.analysis_cache?.[u.name]?.skill_md_sha === skillMdSha
+        ? src.analysis_cache[u.name]
+        : undefined;
+    if (cached?.deps) {
+      await writeRequirementsIfAny(src.owner, u.name, cached.deps);
+    }
     log.push({ action: toImport.includes(skillName) ? "import" : "update", skill: skillName });
   }
 
@@ -90,6 +111,11 @@ export async function POST(req: Request) {
   for (const skillName of dismiss) {
     if (!src.dismissed_skills.includes(skillName)) src.dismissed_skills.push(skillName);
     log.push({ action: "dismiss", skill: skillName });
+  }
+
+  if (undismiss.length > 0) {
+    src.dismissed_skills = src.dismissed_skills.filter((n) => !undismiss.includes(n));
+    for (const n of undismiss) log.push({ action: "undismiss", skill: n });
   }
 
   src.last_synced_sha = headSha;

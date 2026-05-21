@@ -48,6 +48,58 @@ export async function removeSkill(owner: string, skillName: string): Promise<voi
   await fs.rm(dir, { recursive: true, force: true });
 }
 
+export async function writeRequirementsIfAny(
+  owner: string,
+  skillName: string,
+  deps: import("./types").DepsAnalysis | undefined
+): Promise<boolean> {
+  if (!deps) return false;
+  const hasContent =
+    deps.system_requirements.length > 0 ||
+    deps.referenced_skills.length > 0 ||
+    deps.external_files.length > 0 ||
+    !!deps.implicit_deps_notes.trim();
+  if (!hasContent) return false;
+  const lines: string[] = [`# Requisitos — ${skillName}`, ""];
+  if (deps.system_requirements.length > 0) {
+    lines.push("## Ferramentas externas necessárias", "");
+    lines.push("Você precisa ter instalado no seu sistema antes de usar esta skill:");
+    lines.push("");
+    for (const r of deps.system_requirements) {
+      lines.push(`- **${r.tool}**${r.version ? ` (versão ${r.version})` : ""}`);
+    }
+    lines.push("");
+  }
+  if (deps.referenced_skills.length > 0) {
+    lines.push("## Skills relacionadas", "");
+    lines.push("Esta skill faz referência a outras skills do mesmo repositório:");
+    lines.push("");
+    for (const s of deps.referenced_skills) lines.push(`- \`${s}\``);
+    lines.push("");
+  }
+  if (deps.external_files.length > 0) {
+    lines.push("## Arquivos externos referenciados", "");
+    lines.push(
+      "Esta skill referencia arquivos fora do diretório dela. Eles não foram copiados automaticamente:"
+    );
+    lines.push("");
+    for (const f of deps.external_files) lines.push(`- \`${f}\``);
+    lines.push("");
+  }
+  if (deps.implicit_deps_notes.trim()) {
+    lines.push("## Observações", "");
+    lines.push(deps.implicit_deps_notes.trim());
+    lines.push("");
+  }
+  lines.push("---");
+  lines.push("");
+  lines.push("_Arquivo gerado automaticamente pelo painel a partir da análise via IA._");
+  const target = path.join(skillLocalDir(owner, skillName), "REQUIREMENTS.md");
+  await ensureDir(path.dirname(target));
+  await fs.writeFile(target, lines.join("\n"), "utf8");
+  return true;
+}
+
 export async function writeNotice(
   owner: string,
   repoUrl: string,

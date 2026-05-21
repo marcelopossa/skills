@@ -32,6 +32,7 @@ export default function SkillDetail({
   const [draftDescription, setDraftDescription] = useState("");
   const [saving, setSaving] = useState(false);
   const [reclassifying, setReclassifying] = useState(false);
+  const [refiningDesc, setRefiningDesc] = useState(false);
   const [resyncing, setResyncing] = useState(false);
 
   async function load() {
@@ -97,6 +98,28 @@ export default function SkillDetail({
     }
   }
 
+  async function refineDesc() {
+    if (!data) return;
+    setRefiningDesc(true);
+    try {
+      const res = await fetch("/api/refine-description", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          skill_markdown: data.markdown,
+          current_description: draftDescription || data.skill.description,
+        }),
+      });
+      if (res.ok) {
+        const j = (await res.json()) as { suggested_description: string };
+        setDraftDescription(j.suggested_description);
+        setEditing(true);
+      }
+    } finally {
+      setRefiningDesc(false);
+    }
+  }
+
   async function resync() {
     if (!confirm(`Re-sincronizar '${name}' do upstream? Arquivos locais serão sobrescritos.`)) return;
     setResyncing(true);
@@ -124,6 +147,14 @@ export default function SkillDetail({
         <div className="flex items-baseline justify-between flex-wrap gap-2">
           <h1 className="text-2xl font-semibold">{name}</h1>
           <div className="flex gap-2">
+            <button
+              onClick={() => void refineDesc()}
+              disabled={refiningDesc}
+              className="text-sm px-3 py-1.5 rounded border border-purple-300 dark:border-purple-700 text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 disabled:opacity-50 inline-flex items-center gap-1"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              {refiningDesc ? "…" : "Traduzir descrição"}
+            </button>
             <button
               onClick={() => void reclassify()}
               disabled={reclassifying}
