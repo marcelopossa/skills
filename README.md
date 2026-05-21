@@ -30,7 +30,6 @@ npm run dev                  # abrir http://localhost:3000
 
 _Systematic diagnosis and resolution of software defects, including reproduction, minimization, hypothesis testing, and instrumentation._
 
-- **`mattpocock-diagnose`** — Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir.
 - **`anthropics-pdf`** — Skill para manipular arquivos PDF: ler, extrair texto/tabelas, mesclar, dividir, rotacionar, adicionar marca d'água, criar, preencher formulários, criptografar/descriptografar, extrair imagens e aplicar OCR.
 - **`anthropics-webapp-testing`** — Ferramenta para testar e interagir com aplicações web locais usando Playwright: verifica funcionalidades, depura UI, captura screenshots e visualiza logs do navegador.
 
@@ -62,15 +61,6 @@ _Habilidade para criar, ler, editar e analisar arquivos .pptx, incluindo formata
 - **`anthropics-pptx`** — Use esta skill sempre que um arquivo .pptx estiver envolvido — para criar, ler, editar, extrair texto ou combinar slides. Ative quando o usuário mencionar 'deck', 'slides', 'apresentação' ou um nome de arquivo .pptx.
 - **`anthropics-xlsx`** — Crie, edite ou analise arquivos de planilha (.xlsx, .csv, etc.) com fórmulas dinâmicas e formatação profissional. Ideal para manipular dados tabulares, gerar relatórios financeiros ou limpar dados bagunçados.
 
-### Sem área atribuída
-
-- **`mattpocock-tdd`** — Desenvolvimento orientado a testes com ciclo red-green-refactor. Use para construir funcionalidades ou corrigir bugs com TDD, quando mencionar 'red-green-refactor', quiser testes de integração ou desenvolvimento test-first.
-- **`mattpocock-grill-me`** — Entrevista implacável sobre planos ou designs, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano sob pressão ou quando mencionar 'me avalie'.
-- **`mattpocock-grill-with-docs`** — Sessão de questionamento que desafia seu plano contra o modelo de domínio existente, afina a terminologia e atualiza a documentação (CONTEXT.md, ADRs) à medida que as decisões se cristalizam. Use quando quiser testar um plano contra a linguagem e decisões documentadas do projeto.
-- **`mattpocock-handoff`** — Compacta a conversa atual em um documento de handoff para outro agente continuar o trabalho, salvando no diretório temporário do sistema.
-- **`mattpocock-improve-codebase-architecture`** — Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.
-- **`mattpocock-obsidian-vault`** — Pesquise, crie e gerencie notas no vault Obsidian com wikilinks e notas índice. Use para encontrar, criar ou organizar notas.
-
 Instale individualmente: `/plugin install <nome>@marcelopossa-skills`. Habilite/desabilite por sessão com `/plugin enable <nome>` e `/plugin disable <nome>`.
 <!-- AUTO:SKILLS:END -->
 
@@ -85,9 +75,57 @@ Skills aqui foram curadas a partir das fontes abaixo. Atribuição e licença s�
 - **Skills curadas:** `docx`, `pdf`, `pptx`, `web-artifacts-builder`, `webapp-testing`, `xlsx`
 - **Agradecimento:** Skills originalmente criadas por anthropics (https://github.com/anthropics).
 
+### [anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por anthropics (https://github.com/anthropics).
+
+### [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por anthropics (https://github.com/anthropics).
+
+### [anthropics/financial-services](https://github.com/anthropics/financial-services)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por anthropics (https://github.com/anthropics).
+
+### [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por anthropics (https://github.com/anthropics).
+
+### [czlonkowski/n8n-skills](https://github.com/czlonkowski/n8n-skills)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por czlonkowski (https://github.com/czlonkowski).
+
 ### [mattpocock/skills](https://github.com/mattpocock/skills)
 
 - **Licença:** MIT ([LICENSE](https://github.com/mattpocock/skills/blob/main/LICENSE))
-- **Skills curadas:** `diagnose`, `grill-me`, `grill-with-docs`, `handoff`, `improve-codebase-architecture`, `obsidian-vault`, `tdd`
+- **Skills curadas:** _nenhuma ainda_
 - **Agradecimento:** Skills originalmente criadas por mattpocock (https://github.com/mattpocock).
+
+### [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por nextlevelbuilder (https://github.com/nextlevelbuilder).
+
+### [obra/superpowers-marketplace](https://github.com/obra/superpowers-marketplace)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por obra (https://github.com/obra).
+
+### [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+
+- **Licença:** UNKNOWN
+- **Skills curadas:** _nenhuma ainda_
+- **Agradecimento:** Skills originalmente criadas por thedotmack (https://github.com/thedotmack).
 <!-- AUTO:CREDITS:END -->

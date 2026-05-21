@@ -97,10 +97,47 @@ export default function RepoBrowse({ params }: { params: Promise<{ owner: string
     if (!data) return null;
     const s = data.skills.find((x) => x.name === name);
     if (!s) return null;
+    const baseUrl = `https://raw.githubusercontent.com/${data.owner}/${data.repo}/${data.head_sha}`;
+
+    if (s.type === "package") {
+      const pluginPath = s.upstream_path
+        ? `${s.upstream_path}/.claude-plugin/plugin.json`
+        : `.claude-plugin/plugin.json`;
+      let pluginJsonText = "";
+      try {
+        const r = await fetch(`${baseUrl}/${pluginPath}`);
+        if (r.ok) pluginJsonText = await r.text();
+      } catch {
+        /* ignore */
+      }
+      const skillSummaries: string[] = [];
+      const skillsToSample = (s.package_skills || []).slice(0, 8);
+      for (const inner of skillsToSample) {
+        const candidates = s.files
+          .map((f) => f.path)
+          .filter((p) => p.endsWith(`/${inner}/SKILL.md`));
+        if (candidates.length === 0) continue;
+        try {
+          const r = await fetch(`${baseUrl}/${candidates[0]}`);
+          if (!r.ok) continue;
+          const txt = (await r.text()).slice(0, 1200);
+          skillSummaries.push(`### Skill interna: ${inner}\n\n${txt}`);
+        } catch {
+          /* ignore */
+        }
+      }
+      const all =
+        `# Pacote: ${s.name}\n\n` +
+        (pluginJsonText ? `## plugin.json upstream:\n\n\`\`\`json\n${pluginJsonText}\n\`\`\`\n\n` : "") +
+        (skillSummaries.length > 0
+          ? `## Resumo das skills internas\n\n${skillSummaries.join("\n\n")}`
+          : `## Lista de skills internas\n\n${(s.package_skills || []).map((x) => `- ${x}`).join("\n")}`);
+      return all;
+    }
+
     const path = `${s.upstream_path}/SKILL.md`;
-    const url = `https://raw.githubusercontent.com/${owner}/${data.repo}/${data.head_sha}/${path}`;
     try {
-      const r = await fetch(url);
+      const r = await fetch(`${baseUrl}/${path}`);
       if (!r.ok) return null;
       return await r.text();
     } catch {
@@ -111,7 +148,14 @@ export default function RepoBrowse({ params }: { params: Promise<{ owner: string
   function skillMdSha(name: string): string | undefined {
     if (!data) return undefined;
     const s = data.skills.find((x) => x.name === name);
-    return s?.files.find((f) => f.path === `${s.upstream_path}/SKILL.md`)?.sha;
+    if (!s) return undefined;
+    if (s.type === "package") {
+      const pluginPath = s.upstream_path
+        ? `${s.upstream_path}/.claude-plugin/plugin.json`
+        : `.claude-plugin/plugin.json`;
+      return s.files.find((f) => f.path === pluginPath)?.sha;
+    }
+    return s.files.find((f) => f.path === `${s.upstream_path}/SKILL.md`)?.sha;
   }
 
   async function classifySelected(kind: "classify" | "all" = "classify") {

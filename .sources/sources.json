@@ -7,106 +7,14 @@
       "repo": "skills",
       "branch": "main",
       "last_synced_sha": "b8be62ffacb0118fa3eaa29a0923c87c8c11985c",
-      "last_synced_at": "2026-05-21T16:50:01.611Z",
+      "last_synced_at": "2026-05-21T17:34:45.781Z",
       "license": {
         "spdx": "MIT",
         "url": "https://github.com/mattpocock/skills/blob/main/LICENSE",
-        "fetched_at": "2026-05-21T16:49:48.325Z"
+        "fetched_at": "2026-05-21T17:34:45.212Z"
       },
       "attribution": "Skills originalmente criadas por mattpocock (https://github.com/mattpocock).",
-      "imported_skills": {
-        "diagnose": {
-          "upstream_path": "skills/engineering/diagnose",
-          "local_path": "skills/mattpocock/diagnose",
-          "upstream_category": "engineering",
-          "areas": [
-            "debugging"
-          ],
-          "description": "Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir.",
-          "files": {
-            "SKILL.md": "ed55bda2fdb0d690ea3b80a1cf28bf848c5ad2b5",
-            "scripts/hitl-loop.template.sh": "40afc4652f6f52fc117b2b00e1fa65fcec235838"
-          },
-          "type": "skill"
-        },
-        "tdd": {
-          "upstream_path": "skills/engineering/tdd",
-          "local_path": "skills/mattpocock/tdd",
-          "upstream_category": "engineering",
-          "areas": [],
-          "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use para construir funcionalidades ou corrigir bugs com TDD, quando mencionar 'red-green-refactor', quiser testes de integração ou desenvolvimento test-first.",
-          "files": {
-            "SKILL.md": "7a989411eb3c4d0879cb33b2d7d05831add27b84",
-            "deep-modules.md": "0d9720cf1dce25e51f4ba66d16f9d2de78a12abb",
-            "interface-design.md": "a0a20ca41f02f18e63b78cde06cec0763923a403",
-            "mocking.md": "71cbfee674d93244ce81d1830b930ca9a69200bd",
-            "refactoring.md": "8a4443924fbe40c2f865c56a9477d5ec01cc9962",
-            "tests.md": "ff22f809ccbcac26ecd7a3c4bc48ef701a8ac82e"
-          },
-          "type": "skill"
-        },
-        "grill-me": {
-          "upstream_path": "skills/productivity/grill-me",
-          "local_path": "skills/mattpocock/grill-me",
-          "upstream_category": "productivity",
-          "areas": [],
-          "description": "Entrevista implacável sobre planos ou designs, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano sob pressão ou quando mencionar 'me avalie'.",
-          "files": {
-            "SKILL.md": "bd04394c675ee54173a093c50eb74da01a2940fa"
-          },
-          "type": "skill"
-        },
-        "grill-with-docs": {
-          "upstream_path": "skills/engineering/grill-with-docs",
-          "local_path": "skills/mattpocock/grill-with-docs",
-          "upstream_category": "engineering",
-          "areas": [],
-          "description": "Sessão de questionamento que desafia seu plano contra o modelo de domínio existente, afina a terminologia e atualiza a documentação (CONTEXT.md, ADRs) à medida que as decisões se cristalizam. Use quando quiser testar um plano contra a linguagem e decisões documentadas do projeto.",
-          "files": {
-            "ADR-FORMAT.md": "da7e78ec1c220cd0aedf7ad36424c9398034f375",
-            "CONTEXT-FORMAT.md": "08302557cc2ca8de32c02de708a7c8c84ed66f3f",
-            "SKILL.md": "5ea0aa913629bec683690f371839bd10e588413d"
-          },
-          "type": "skill"
-        },
-        "handoff": {
-          "upstream_path": "skills/productivity/handoff",
-          "local_path": "skills/mattpocock/handoff",
-          "upstream_category": "productivity",
-          "areas": [],
-          "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar o trabalho, salvando no diretório temporário do sistema.",
-          "files": {
-            "SKILL.md": "0aa5b99300da27b50e80db53f880e422204faedd"
-          },
-          "type": "skill"
-        },
-        "improve-codebase-architecture": {
-          "upstream_path": "skills/engineering/improve-codebase-architecture",
-          "local_path": "skills/mattpocock/improve-codebase-architecture",
-          "upstream_category": "engineering",
-          "areas": [],
-          "description": "Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.",
-          "files": {
-            "DEEPENING.md": "ecaf5d7dcf7aae2aff6dbc63742dd069351b4f5c",
-            "HTML-REPORT.md": "8adc368ffb30f9e8a6f01ac95621555f4afc2b76",
-            "INTERFACE-DESIGN.md": "3197723a0d04aef73b74fbcf7e48269988a61684",
-            "LANGUAGE.md": "530c27630a045406a66712c8f062e873c3b22449",
-            "SKILL.md": "c12b263bed311d85cbcedcda7e36867eda541ddc"
-          },
-          "type": "skill"
-        },
-        "obsidian-vault": {
-          "upstream_path": "skills/personal/obsidian-vault",
-          "local_path": "skills/mattpocock/obsidian-vault",
-          "upstream_category": "personal",
-          "areas": [],
-          "description": "Pesquise, crie e gerencie notas no vault Obsidian com wikilinks e notas índice. Use para encontrar, criar ou organizar notas.",
-          "files": {
-            "SKILL.md": "b9393654a90811d6e1ce25163b3bd77f803c1026"
-          },
-          "type": "skill"
-        }
-      },
+      "imported_skills": {},
       "dismissed_skills": [
         "qa",
         "request-refactor-plan",
@@ -447,7 +355,7 @@
           "analyzed_at": "2026-05-21T16:19:30.644Z"
         }
       },
-      "expand_skills": true
+      "expand_skills": false
     },
     "anthropics": {
       "repo_url": "https://github.com/anthropics/skills",

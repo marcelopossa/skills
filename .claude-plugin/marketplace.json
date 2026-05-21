@@ -63,58 +63,6 @@
         "pptx-manipulation",
         "pdf-processing"
       ]
-    },
-    {
-      "name": "mattpocock-diagnose",
-      "source": "./plugins/mattpocock-diagnose",
-      "description": "Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir.",
-      "category": "engineering",
-      "keywords": [
-        "debugging"
-      ],
-      "license": "MIT"
-    },
-    {
-      "name": "mattpocock-grill-me",
-      "source": "./plugins/mattpocock-grill-me",
-      "description": "Entrevista implacável sobre planos ou designs, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano sob pressão ou quando mencionar 'me avalie'.",
-      "category": "productivity",
-      "license": "MIT"
-    },
-    {
-      "name": "mattpocock-grill-with-docs",
-      "source": "./plugins/mattpocock-grill-with-docs",
-      "description": "Sessão de questionamento que desafia seu plano contra o modelo de domínio existente, afina a terminologia e atualiza a documentação (CONTEXT.md, ADRs) à medida que as decisões se cristalizam. Use quando quiser testar um plano contra a linguagem e decisões documentadas do projeto.",
-      "category": "engineering",
-      "license": "MIT"
-    },
-    {
-      "name": "mattpocock-handoff",
-      "source": "./plugins/mattpocock-handoff",
-      "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar o trabalho, salvando no diretório temporário do sistema.",
-      "category": "productivity",
-      "license": "MIT"
-    },
-    {
-      "name": "mattpocock-improve-codebase-architecture",
-      "source": "./plugins/mattpocock-improve-codebase-architecture",
-      "description": "Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.",
-      "category": "engineering",
-      "license": "MIT"
-    },
-    {
-      "name": "mattpocock-obsidian-vault",
-      "source": "./plugins/mattpocock-obsidian-vault",
-      "description": "Pesquise, crie e gerencie notas no vault Obsidian com wikilinks e notas índice. Use para encontrar, criar ou organizar notas.",
-      "category": "personal",
-      "license": "MIT"
-    },
-    {
-      "name": "mattpocock-tdd",
-      "source": "./plugins/mattpocock-tdd",
-      "description": "Desenvolvimento orientado a testes com ciclo red-green-refactor. Use para construir funcionalidades ou corrigir bugs com TDD, quando mencionar 'red-green-refactor', quiser testes de integração ou desenvolvimento test-first.",
-      "category": "engineering",
-      "license": "MIT"
     }
   ]
 }
