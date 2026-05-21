@@ -10,7 +10,9 @@ export async function GET(_req: Request, ctx: { params: Promise<{ owner: string 
   if (!src) return NextResponse.json({ error: "Source não encontrada" }, { status: 404 });
 
   const headSha = await getHeadSha(src.owner, src.repo, src.branch);
-  const upstream = await listUpstreamSkills(src.owner, src.repo, headSha);
+  const upstream = await listUpstreamSkills(src.owner, src.repo, headSha, {
+    expandRootPackage: src.expand_skills,
+  });
 
   const dismissed = new Set(src.dismissed_skills);
   const rows: SkillRow[] = upstream.map((u) => {

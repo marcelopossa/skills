@@ -15,6 +15,7 @@ type RepoRow = {
   license: { spdx: string } | null;
   imported_count: number;
   dismissed_count: number;
+  expand_skills: boolean;
 };
 
 export default function ReposPage() {
@@ -50,6 +51,15 @@ export default function ReposPage() {
     } finally {
       setSubmitting(false);
     }
+  }
+
+  async function toggleExpand(slug: string, next: boolean) {
+    await fetch(`/api/repos/${slug}`, {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ expand_skills: next }),
+    });
+    await load();
   }
 
   async function remove(slug: string) {
@@ -131,6 +141,14 @@ export default function ReposPage() {
                         : "nunca"}
                     </span>
                   </div>
+                  <label className="text-xs text-zinc-500 mt-2 inline-flex items-center gap-1.5 cursor-pointer hover:text-zinc-700 dark:hover:text-zinc-300">
+                    <input
+                      type="checkbox"
+                      checked={r.expand_skills}
+                      onChange={(e) => void toggleExpand(r.slug, e.target.checked)}
+                    />
+                    <span>desdobrar skills individuais (ignora plugin.json do root)</span>
+                  </label>
                 </div>
                 <Link
                   href={`/repos/${r.slug}`}

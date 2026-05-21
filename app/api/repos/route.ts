@@ -20,6 +20,7 @@ export async function GET() {
     license: s.license,
     imported_count: Object.keys(s.imported_skills).length,
     dismissed_count: s.dismissed_skills.length,
+    expand_skills: !!s.expand_skills,
   }));
   return NextResponse.json({ sources: list });
 }
@@ -84,6 +85,7 @@ export async function POST(req: Request) {
     imported_skills: {},
     dismissed_skills: [],
     analysis_cache: {},
+    expand_skills: false,
   };
   await writeSources(sources);
   return NextResponse.json({ ok: true, slug, owner, repo, branch });

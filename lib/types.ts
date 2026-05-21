@@ -50,6 +50,7 @@ export const SourceSchema = z.object({
   imported_skills: z.record(z.string(), ImportedSkillSchema).default({}),
   dismissed_skills: z.array(z.string()).default([]),
   analysis_cache: z.record(z.string(), SkillAnalysisCacheSchema).default({}),
+  expand_skills: z.boolean().default(false),
 });
 export type Source = z.infer<typeof SourceSchema>;
 

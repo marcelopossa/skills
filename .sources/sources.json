@@ -446,7 +446,8 @@
           },
           "analyzed_at": "2026-05-21T16:19:30.644Z"
         }
-      }
+      },
+      "expand_skills": true
     },
     "anthropics": {
       "repo_url": "https://github.com/anthropics/skills",
@@ -917,7 +918,8 @@
           ],
           "analyzed_at": "2026-05-21T16:48:45.923Z"
         }
-      }
+      },
+      "expand_skills": false
     },
     "nextlevelbuilder": {
       "repo_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
@@ -930,7 +932,8 @@
       "attribution": "Skills originalmente criadas por nextlevelbuilder (https://github.com/nextlevelbuilder).",
       "imported_skills": {},
       "dismissed_skills": [],
-      "analysis_cache": {}
+      "analysis_cache": {},
+      "expand_skills": false
     },
     "obra": {
       "repo_url": "https://github.com/obra/superpowers-marketplace",
@@ -943,7 +946,8 @@
       "attribution": "Skills originalmente criadas por obra (https://github.com/obra).",
       "imported_skills": {},
       "dismissed_skills": [],
-      "analysis_cache": {}
+      "analysis_cache": {},
+      "expand_skills": false
     },
     "thedotmack": {
       "repo_url": "https://github.com/thedotmack/claude-mem",
@@ -956,7 +960,8 @@
       "attribution": "Skills originalmente criadas por thedotmack (https://github.com/thedotmack).",
       "imported_skills": {},
       "dismissed_skills": [],
-      "analysis_cache": {}
+      "analysis_cache": {},
+      "expand_skills": false
     },
     "czlonkowski": {
       "repo_url": "https://github.com/czlonkowski/n8n-skills",
@@ -969,7 +974,8 @@
       "attribution": "Skills originalmente criadas por czlonkowski (https://github.com/czlonkowski).",
       "imported_skills": {},
       "dismissed_skills": [],
-      "analysis_cache": {}
+      "analysis_cache": {},
+      "expand_skills": false
     },
     "anthropics-knowledge-work-plugins": {
       "repo_url": "https://github.com/anthropics/knowledge-work-plugins",
@@ -982,7 +988,50 @@
       "attribution": "Skills originalmente criadas por anthropics (https://github.com/anthropics).",
       "imported_skills": {},
       "dismissed_skills": [],
-      "analysis_cache": {}
+      "analysis_cache": {},
+      "expand_skills": false
+    },
+    "anthropics-claude-plugins-official": {
+      "repo_url": "https://github.com/anthropics/claude-plugins-official",
+      "owner": "anthropics",
+      "repo": "claude-plugins-official",
+      "branch": "main",
+      "last_synced_sha": null,
+      "last_synced_at": null,
+      "license": null,
+      "attribution": "Skills originalmente criadas por anthropics (https://github.com/anthropics).",
+      "imported_skills": {},
+      "dismissed_skills": [],
+      "analysis_cache": {},
+      "expand_skills": false
+    },
+    "anthropics-financial-services": {
+      "repo_url": "https://github.com/anthropics/financial-services",
+      "owner": "anthropics",
+      "repo": "financial-services",
+      "branch": "main",
+      "last_synced_sha": null,
+      "last_synced_at": null,
+      "license": null,
+      "attribution": "Skills originalmente criadas por anthropics (https://github.com/anthropics).",
+      "imported_skills": {},
+      "dismissed_skills": [],
+      "analysis_cache": {},
+      "expand_skills": false
+    },
+    "anthropics-claude-for-legal": {
+      "repo_url": "https://github.com/anthropics/claude-for-legal",
+      "owner": "anthropics",
+      "repo": "claude-for-legal",
+      "branch": "main",
+      "last_synced_sha": null,
+      "last_synced_at": null,
+      "license": null,
+      "attribution": "Skills originalmente criadas por anthropics (https://github.com/anthropics).",
+      "imported_skills": {},
+      "dismissed_skills": [],
+      "analysis_cache": {},
+      "expand_skills": false
     }
   }
 }

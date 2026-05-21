@@ -41,9 +41,10 @@ export async function downloadSkillFiles(
   files: { path: string; sha: string }[]
 ): Promise<Record<string, string>> {
   const filesIndex: Record<string, string> = {};
+  const prefix = upstreamSkillDir ? upstreamSkillDir + "/" : "";
   for (const f of files) {
-    if (!f.path.startsWith(upstreamSkillDir + "/")) continue;
-    const rel = f.path.slice(upstreamSkillDir.length + 1);
+    if (prefix && !f.path.startsWith(prefix)) continue;
+    const rel = prefix ? f.path.slice(prefix.length) : f.path;
     const buf = await fetchRawBuffer(ghOwner, repo, ref, f.path);
     await writeSkillFile(sourceKey, skillName, rel, buf);
     filesIndex[rel] = f.sha;

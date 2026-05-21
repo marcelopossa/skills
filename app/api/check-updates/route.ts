@@ -29,7 +29,9 @@ export async function GET() {
         };
         continue;
       }
-      const upstream = await listUpstreamSkills(src.owner, src.repo, headSha);
+      const upstream = await listUpstreamSkills(src.owner, src.repo, headSha, {
+        expandRootPackage: src.expand_skills,
+      });
       const dismissed = new Set(src.dismissed_skills);
       const modified: { name: string; changed_files: string[] }[] = [];
       const newAvailable: {

@@ -48,7 +48,9 @@ export async function POST(req: Request) {
   if (!src) return NextResponse.json({ error: "Source não encontrada" }, { status: 404 });
 
   const headSha = await getHeadSha(src.owner, src.repo, src.branch);
-  const upstream = await listUpstreamSkills(src.owner, src.repo, headSha);
+  const upstream = await listUpstreamSkills(src.owner, src.repo, headSha, {
+    expandRootPackage: src.expand_skills,
+  });
   const upstreamByName = new Map(upstream.map((u) => [u.name, u]));
 
   const license = await fetchLicense(src.owner, src.repo);

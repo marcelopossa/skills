@@ -141,9 +141,45 @@ function extractRelativeRefs(content: string): string[] {
 export async function listUpstreamSkills(
   owner: string,
   repo: string,
-  sha: string
+  sha: string,
+  opts: { expandRootPackage?: boolean } = {}
 ): Promise<UpstreamSkill[]> {
   const tree = await getTreeRecursive(owner, repo, sha);
+
+  const hasRootPlugin = tree.some(
+    (e) => e.type === "blob" && e.path === ".claude-plugin/plugin.json"
+  );
+  if (hasRootPlugin && !opts.expandRootPackage) {
+    let name = repo;
+    let description = "";
+    try {
+      const raw = await fetchRawFile(owner, repo, sha, ".claude-plugin/plugin.json");
+      const pj = JSON.parse(raw) as { name?: string; description?: string };
+      if (typeof pj.name === "string" && pj.name.trim()) name = pj.name.trim();
+      if (typeof pj.description === "string") description = pj.description.trim();
+    } catch {
+      /* fallback */
+    }
+    const allFiles = tree.filter((e) => e.type === "blob");
+    const skillNames = allFiles
+      .filter((f) => f.path.endsWith("/SKILL.md"))
+      .map((f) => {
+        const parts = f.path.slice(0, -"/SKILL.md".length).split("/");
+        return parts[parts.length - 1];
+      });
+    return [
+      {
+        name,
+        upstream_path: "",
+        upstream_category: null,
+        description,
+        files: allFiles.map((f) => ({ path: f.path, sha: f.sha })),
+        external_refs: [],
+        type: "package",
+        package_skills: skillNames.sort(),
+      },
+    ];
+  }
 
   const packagePluginPaths = tree.filter(
     (e) => e.type === "blob" && e.path.endsWith("/.claude-plugin/plugin.json")
