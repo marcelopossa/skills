@@ -1,0 +1,9 @@
+{
+  "name": "anthropics-pptx",
+  "description": "Use esta skill sempre que um arquivo .pptx estiver envolvido — para criar, ler, editar, extrair texto ou combinar slides. Ative quando o usuário mencionar 'deck', 'slides', 'apresentação' ou um nome de arquivo .pptx.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/skills",
+  "repository": "https://github.com/anthropics/skills"
+}

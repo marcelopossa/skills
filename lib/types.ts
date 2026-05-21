@@ -14,6 +14,8 @@ export const ImportedSkillSchema = z.object({
   areas: z.array(z.string()).default([]),
   description: z.string().default(""),
   files: z.record(z.string(), z.string()),
+  type: z.enum(["skill", "package"]).default("skill"),
+  package_skills: z.array(z.string()).optional(),
 });
 export type ImportedSkill = z.infer<typeof ImportedSkillSchema>;
 
@@ -77,6 +79,8 @@ export type UpstreamSkill = {
   description: string;
   files: { path: string; sha: string }[];
   external_refs: string[];
+  type: "skill" | "package";
+  package_skills?: string[];
 };
 
 export type SkillStatus =

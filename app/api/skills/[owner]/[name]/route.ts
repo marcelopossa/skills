@@ -12,7 +12,7 @@ export async function PATCH(
   req: Request,
   ctx: { params: Promise<{ owner: string; name: string }> }
 ) {
-  const { owner, name } = await ctx.params;
+  const { owner: sourceKey, name } = await ctx.params;
   let body: unknown;
   try {
     body = await req.json();
@@ -24,7 +24,7 @@ export async function PATCH(
     return NextResponse.json({ error: parsed.error.issues }, { status: 400 });
   }
   const sources = await readSources();
-  const skill = sources.sources[owner]?.imported_skills[name];
+  const skill = sources.sources[sourceKey]?.imported_skills[name];
   if (!skill) return NextResponse.json({ error: "Skill não encontrada" }, { status: 404 });
   if (parsed.data.areas) skill.areas = parsed.data.areas;
   if (parsed.data.description !== undefined) skill.description = parsed.data.description;

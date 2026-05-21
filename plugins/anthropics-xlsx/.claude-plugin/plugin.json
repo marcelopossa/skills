@@ -1,0 +1,9 @@
+{
+  "name": "anthropics-xlsx",
+  "description": "Crie, edite ou analise arquivos de planilha (.xlsx, .csv, etc.) com fórmulas dinâmicas e formatação profissional. Ideal para manipular dados tabulares, gerar relatórios financeiros ou limpar dados bagunçados.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/skills",
+  "repository": "https://github.com/anthropics/skills"
+}

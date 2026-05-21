@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Plus, ExternalLink, Trash2 } from "lucide-react";
 
 type RepoRow = {
+  slug: string;
   owner: string;
   repo: string;
   repo_url: string;
@@ -18,7 +19,7 @@ type RepoRow = {
 
 export default function ReposPage() {
   const [list, setList] = useState<RepoRow[]>([]);
-  const [url, setUrl] = useState("https://github.com/mattpocock/skills");
+  const [url, setUrl] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -51,9 +52,9 @@ export default function ReposPage() {
     }
   }
 
-  async function remove(owner: string) {
-    if (!confirm(`Remover fonte '${owner}' do tracking? (skills locais não são apagadas.)`)) return;
-    const res = await fetch(`/api/repos/${owner}`, { method: "DELETE" });
+  async function remove(slug: string) {
+    if (!confirm(`Remover fonte '${slug}' do tracking? (skills locais não são apagadas.)`)) return;
+    const res = await fetch(`/api/repos/${slug}`, { method: "DELETE" });
     if (!res.ok) {
       const j = await res.json();
       alert(typeof j.error === "string" ? j.error : "Falha ao remover");
@@ -74,7 +75,7 @@ export default function ReposPage() {
           <input
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://github.com/owner/repo"
+            placeholder="owner/repo ou https://github.com/owner/repo"
             className="flex-1 px-3 py-2 text-sm border border-zinc-300 dark:border-zinc-700 rounded bg-white dark:bg-zinc-900"
           />
           <button
@@ -98,13 +99,13 @@ export default function ReposPage() {
           <div className="space-y-2">
             {list.map((r) => (
               <div
-                key={r.owner}
+                key={r.slug}
                 className="flex items-center gap-3 p-4 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900"
               >
                 <div className="flex-1 min-w-0">
                   <div className="flex items-baseline gap-2">
                     <Link
-                      href={`/repos/${r.owner}`}
+                      href={`/repos/${r.slug}`}
                       className="font-medium hover:underline truncate"
                     >
                       {r.owner}/{r.repo}
@@ -132,13 +133,13 @@ export default function ReposPage() {
                   </div>
                 </div>
                 <Link
-                  href={`/repos/${r.owner}`}
+                  href={`/repos/${r.slug}`}
                   className="text-sm px-3 py-1.5 rounded border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800"
                 >
                   Explorar
                 </Link>
                 <button
-                  onClick={() => remove(r.owner)}
+                  onClick={() => remove(r.slug)}
                   className="text-zinc-400 hover:text-red-600 p-1"
                   title="Remover fonte"
                 >

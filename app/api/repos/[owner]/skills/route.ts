@@ -4,9 +4,9 @@ import { getHeadSha, listUpstreamSkills } from "@/lib/github";
 import type { SkillRow, SkillStatus } from "@/lib/types";
 
 export async function GET(_req: Request, ctx: { params: Promise<{ owner: string }> }) {
-  const { owner } = await ctx.params;
+  const { owner: sourceKey } = await ctx.params;
   const sources = await readSources();
-  const src = sources.sources[owner];
+  const src = sources.sources[sourceKey];
   if (!src) return NextResponse.json({ error: "Source não encontrada" }, { status: 404 });
 
   const headSha = await getHeadSha(src.owner, src.repo, src.branch);
@@ -62,6 +62,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ owner: string 
   });
 
   return NextResponse.json({
+    slug: sourceKey,
     owner: src.owner,
     repo: src.repo,
     branch: src.branch,

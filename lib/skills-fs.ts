@@ -21,18 +21,19 @@ export async function ensureDir(dir: string): Promise<void> {
 }
 
 export async function writeSkillFile(
-  owner: string,
+  sourceKey: string,
   skillName: string,
   relPathWithinSkill: string,
   data: Buffer
 ): Promise<void> {
-  const target = path.join(skillLocalDir(owner, skillName), relPathWithinSkill);
+  const target = path.join(skillLocalDir(sourceKey, skillName), relPathWithinSkill);
   await ensureDir(path.dirname(target));
   await fs.writeFile(target, data);
 }
 
 export async function downloadSkillFiles(
-  owner: string,
+  sourceKey: string,
+  ghOwner: string,
   repo: string,
   ref: string,
   upstreamSkillDir: string,
@@ -43,43 +44,75 @@ export async function downloadSkillFiles(
   for (const f of files) {
     if (!f.path.startsWith(upstreamSkillDir + "/")) continue;
     const rel = f.path.slice(upstreamSkillDir.length + 1);
-    const buf = await fetchRawBuffer(owner, repo, ref, f.path);
-    await writeSkillFile(owner, skillName, rel, buf);
+    const buf = await fetchRawBuffer(ghOwner, repo, ref, f.path);
+    await writeSkillFile(sourceKey, skillName, rel, buf);
     filesIndex[rel] = f.sha;
   }
   return filesIndex;
 }
 
-export async function removeSkill(owner: string, skillName: string): Promise<void> {
-  await fs.rm(skillLocalDir(owner, skillName), { recursive: true, force: true });
-  await fs.rm(pluginDir(owner, skillName), { recursive: true, force: true });
+export async function removeSkill(sourceKey: string, skillName: string): Promise<void> {
+  await fs.rm(skillLocalDir(sourceKey, skillName), { recursive: true, force: true });
+  await fs.rm(pluginDir(sourceKey, skillName), { recursive: true, force: true });
 }
 
 export async function writePluginFolder(
-  owner: string,
+  sourceKey: string,
   skillName: string,
   meta: {
     description: string;
     licenseSpdx?: string;
     repoUrl: string;
     author: string;
+    type?: "skill" | "package";
   }
 ): Promise<void> {
-  const srcDir = skillLocalDir(owner, skillName);
-  const dstDir = pluginSkillDir(owner, skillName);
-  await fs.rm(pluginDir(owner, skillName), { recursive: true, force: true });
-  await ensureDir(dstDir);
-  await copyDirRecursive(srcDir, dstDir);
+  const srcDir = skillLocalDir(sourceKey, skillName);
+  const dstRoot = pluginDir(sourceKey, skillName);
+  await fs.rm(dstRoot, { recursive: true, force: true });
+
+  const pluginNameFull = `${sourceKey}-${skillName}`;
+
+  if (meta.type === "package") {
+    await ensureDir(dstRoot);
+    await copyDirRecursive(srcDir, dstRoot);
+    const pluginPath = path.join(dstRoot, ".claude-plugin", "plugin.json");
+    let upstream: Record<string, unknown> = {};
+    try {
+      upstream = JSON.parse(await fs.readFile(pluginPath, "utf8"));
+    } catch {
+      /* ignore */
+    }
+    const manifest = {
+      ...upstream,
+      name: pluginNameFull,
+      description:
+        meta.description ||
+        (typeof upstream.description === "string" ? upstream.description : "") ||
+        `Pacote ${skillName} curado de ${sourceKey}`,
+      author: { name: meta.author || sourceKey },
+      homepage: meta.repoUrl,
+      repository: meta.repoUrl,
+      ...(meta.licenseSpdx && meta.licenseSpdx !== "UNKNOWN" ? { license: meta.licenseSpdx } : {}),
+    };
+    await ensureDir(path.dirname(pluginPath));
+    await fs.writeFile(pluginPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
+    return;
+  }
+
+  const dstSkillDir = pluginSkillDir(sourceKey, skillName);
+  await ensureDir(dstSkillDir);
+  await copyDirRecursive(srcDir, dstSkillDir);
 
   const manifest = {
-    name: `${owner}-${skillName}`,
-    description: meta.description || `Skill ${skillName} curada de ${owner}`,
-    author: { name: meta.author || owner },
+    name: pluginNameFull,
+    description: meta.description || `Skill ${skillName} curada de ${sourceKey}`,
+    author: { name: meta.author || sourceKey },
     homepage: meta.repoUrl,
     repository: meta.repoUrl,
     ...(meta.licenseSpdx && meta.licenseSpdx !== "UNKNOWN" ? { license: meta.licenseSpdx } : {}),
   };
-  const manifestPath = pluginManifestFile(owner, skillName);
+  const manifestPath = pluginManifestFile(sourceKey, skillName);
   await ensureDir(path.dirname(manifestPath));
   await fs.writeFile(manifestPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 }
@@ -104,7 +137,7 @@ async function copyDirRecursive(src: string, dst: string): Promise<void> {
 }
 
 export async function writeRequirementsIfAny(
-  owner: string,
+  sourceKey: string,
   skillName: string,
   deps: import("./types").DepsAnalysis | undefined
 ): Promise<boolean> {
@@ -149,46 +182,47 @@ export async function writeRequirementsIfAny(
   lines.push("---");
   lines.push("");
   lines.push("_Arquivo gerado automaticamente pelo painel a partir da análise via IA._");
-  const target = path.join(skillLocalDir(owner, skillName), "REQUIREMENTS.md");
+  const target = path.join(skillLocalDir(sourceKey, skillName), "REQUIREMENTS.md");
   await ensureDir(path.dirname(target));
   await fs.writeFile(target, lines.join("\n"), "utf8");
   return true;
 }
 
 export async function writeNotice(
-  owner: string,
+  sourceKey: string,
+  ghOwner: string,
   repoUrl: string,
   spdx: string,
   licenseText: string | null,
   syncedSha: string
 ): Promise<void> {
-  await ensureDir(sourceDir(owner));
+  await ensureDir(sourceDir(sourceKey));
   const body =
-    `# NOTICE — ${owner}\n\n` +
+    `# NOTICE — ${ghOwner}\n\n` +
     `Skills nesta pasta são curadas a partir de [${repoUrl}](${repoUrl}).\n\n` +
     `- **Licença detectada:** ${spdx}\n` +
     `- **Commit de referência da última sync:** \`${syncedSha}\`\n` +
-    `- **Atribuição:** Originally authored by ${owner} at ${repoUrl}. ` +
+    `- **Atribuição:** Originally authored by ${ghOwner} at ${repoUrl}. ` +
     `Curated here under ${spdx}.\n\n` +
     (licenseText
       ? `## LICENSE (cópia integral do upstream)\n\n\`\`\`\n${licenseText}\n\`\`\`\n`
       : `## LICENSE\n\n_LICENSE não foi encontrada automaticamente no upstream. Verifique manualmente antes de redistribuir._\n`);
-  await fs.writeFile(noticeFile(owner), body, "utf8");
+  await fs.writeFile(noticeFile(sourceKey), body, "utf8");
 }
 
-export async function readSkillMarkdown(owner: string, skillName: string): Promise<string | null> {
+export async function readSkillMarkdown(sourceKey: string, skillName: string): Promise<string | null> {
   try {
-    return await fs.readFile(path.join(skillLocalDir(owner, skillName), "SKILL.md"), "utf8");
+    return await fs.readFile(path.join(skillLocalDir(sourceKey, skillName), "SKILL.md"), "utf8");
   } catch {
     return null;
   }
 }
 
 export async function listLocalSkillFiles(
-  owner: string,
+  sourceKey: string,
   skillName: string
 ): Promise<string[]> {
-  const root = skillLocalDir(owner, skillName);
+  const root = skillLocalDir(sourceKey, skillName);
   const out: string[] = [];
   async function walk(dir: string, prefix: string) {
     let entries: import("node:fs").Dirent[];

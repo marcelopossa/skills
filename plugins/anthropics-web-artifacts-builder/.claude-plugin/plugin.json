@@ -1,0 +1,9 @@
+{
+  "name": "anthropics-web-artifacts-builder",
+  "description": "Ferramentas para criar artefatos HTML complexos com React, Tailwind CSS e shadcn/ui. Use para componentes com estado, roteamento ou shadcn/ui, não para HTML/JSX simples.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/skills",
+  "repository": "https://github.com/anthropics/skills"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "anthropics-pdf",
+  "description": "Skill para manipular arquivos PDF: ler, extrair texto/tabelas, mesclar, dividir, rotacionar, adicionar marca d'água, criar, preencher formulários, criptografar/descriptografar, extrair imagens e aplicar OCR.",
+  "author": {
+    "name": "anthropics"
+  },
+  "homepage": "https://github.com/anthropics/skills",
+  "repository": "https://github.com/anthropics/skills"
+}

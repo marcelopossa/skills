@@ -3,9 +3,14 @@ import { z } from "zod";
 import { readSources, writeSources } from "@/lib/sources";
 import { getDefaultBranch, parseRepoUrl } from "@/lib/github";
 
+function slugFor(owner: string, repo: string): string {
+  return `${owner}-${repo}`;
+}
+
 export async function GET() {
   const data = await readSources();
-  const list = Object.values(data.sources).map((s) => ({
+  const list = Object.entries(data.sources).map(([key, s]) => ({
+    slug: key,
     owner: s.owner,
     repo: s.repo,
     repo_url: s.repo_url,
@@ -50,13 +55,24 @@ export async function POST(req: Request) {
     );
   }
   const sources = await readSources();
-  if (sources.sources[owner]) {
+  const slug = slugFor(owner, repo);
+
+  const conflict = Object.entries(sources.sources).find(
+    ([, s]) => s.owner === owner && s.repo === repo
+  );
+  if (conflict) {
     return NextResponse.json(
-      { error: `Source '${owner}' já cadastrada` },
+      { error: `${owner}/${repo} já está cadastrado (slug: ${conflict[0]})` },
       { status: 409 }
     );
   }
-  sources.sources[owner] = {
+  if (sources.sources[slug]) {
+    return NextResponse.json(
+      { error: `Slug '${slug}' já existe` },
+      { status: 409 }
+    );
+  }
+  sources.sources[slug] = {
     repo_url: `https://github.com/${owner}/${repo}`,
     owner,
     repo,
@@ -70,5 +86,5 @@ export async function POST(req: Request) {
     analysis_cache: {},
   };
   await writeSources(sources);
-  return NextResponse.json({ ok: true, owner, repo, branch });
+  return NextResponse.json({ ok: true, slug, owner, repo, branch });
 }

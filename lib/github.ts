@@ -10,10 +10,15 @@ function gh(): Octokit {
   return _octokit;
 }
 
-export function parseRepoUrl(url: string): { owner: string; repo: string } {
-  const m = url.trim().match(/github\.com[/:]([^/]+)\/([^/.]+)(?:\.git)?\/?$/);
-  if (!m) throw new Error(`Não é uma URL de repo GitHub válida: ${url}`);
-  return { owner: m[1], repo: m[2] };
+export function parseRepoUrl(input: string): { owner: string; repo: string } {
+  const s = input.trim().replace(/\/+$/, "");
+  const urlMatch = s.match(/github\.com[/:]([^/\s]+)\/([^/\s.]+)(?:\.git)?$/);
+  if (urlMatch) return { owner: urlMatch[1], repo: urlMatch[2] };
+  const shortMatch = s.match(/^([A-Za-z0-9][A-Za-z0-9._-]*)\/([A-Za-z0-9][A-Za-z0-9._-]*?)(?:\.git)?$/);
+  if (shortMatch) return { owner: shortMatch[1], repo: shortMatch[2] };
+  throw new Error(
+    `Não reconheci um repo GitHub. Use "owner/repo" (ex: nextlevelbuilder/ui-ux-pro-max-skill) ou a URL completa.`
+  );
 }
 
 export async function getDefaultBranch(owner: string, repo: string): Promise<string> {
@@ -139,10 +144,53 @@ export async function listUpstreamSkills(
   sha: string
 ): Promise<UpstreamSkill[]> {
   const tree = await getTreeRecursive(owner, repo, sha);
-  const skillMdFiles = tree.filter((e) => e.type === "blob" && e.path.endsWith("/SKILL.md"));
+
+  const packagePluginPaths = tree.filter(
+    (e) => e.type === "blob" && e.path.endsWith("/.claude-plugin/plugin.json")
+  );
+  const packageDirs: string[] = packagePluginPaths
+    .map((p) => p.path.slice(0, -"/.claude-plugin/plugin.json".length))
+    .filter((d) => d.length > 0);
+
   const out: UpstreamSkill[] = [];
 
-  for (const entry of skillMdFiles) {
+  for (const pkgDir of packageDirs) {
+    const pkgPluginPath = `${pkgDir}/.claude-plugin/plugin.json`;
+    const dirFiles = tree.filter(
+      (e) => e.type === "blob" && e.path.startsWith(pkgDir + "/")
+    );
+    const skillMdInside = dirFiles.filter((f) => f.path.endsWith("/SKILL.md"));
+    const skillNames = skillMdInside.map((f) =>
+      f.path.slice(pkgDir.length + 1, -"/SKILL.md".length).split("/").pop() || ""
+    );
+    let name = pkgDir.split("/").pop()!;
+    let description = "";
+    try {
+      const pluginRaw = await fetchRawFile(owner, repo, sha, pkgPluginPath);
+      const pluginJson = JSON.parse(pluginRaw) as { name?: string; description?: string };
+      if (typeof pluginJson.name === "string" && pluginJson.name.trim()) name = pluginJson.name.trim();
+      if (typeof pluginJson.description === "string") description = pluginJson.description.trim();
+    } catch {
+      /* fallback to dir name */
+    }
+    out.push({
+      name,
+      upstream_path: pkgDir,
+      upstream_category: pkgDir.split("/").slice(0, -1).join("/") || null,
+      description,
+      files: dirFiles.map((f) => ({ path: f.path, sha: f.sha })),
+      external_refs: [],
+      type: "package",
+      package_skills: skillNames.filter(Boolean).sort(),
+    });
+  }
+
+  const skillMdFiles = tree.filter((e) => e.type === "blob" && e.path.endsWith("/SKILL.md"));
+  const standaloneSkills = skillMdFiles.filter(
+    (s) => !packageDirs.some((pkg) => s.path.startsWith(pkg + "/"))
+  );
+
+  for (const entry of standaloneSkills) {
     const dir = entry.path.slice(0, -"/SKILL.md".length);
     const name = dir.split("/").pop()!;
     const segments = dir.split("/");
@@ -153,6 +201,7 @@ export async function listUpstreamSkills(
     );
 
     let description = "";
+    let externalRefs: string[] = [];
     try {
       const md = await fetchRawFile(owner, repo, sha, entry.path);
       const fm = matter(md);
@@ -160,30 +209,20 @@ export async function listUpstreamSkills(
         (typeof fm.data?.description === "string" && fm.data.description.trim()) ||
         firstNonEmptyLine(fm.content) ||
         "";
-
       const refs = extractRelativeRefs(md);
-      const externalRefs = refs
-        .filter((r) => r.startsWith("../") || r.startsWith("/"))
-        .map((r) => r);
-
-      out.push({
-        name,
-        upstream_path: dir,
-        upstream_category: category,
-        description,
-        files: dirFiles.map((f) => ({ path: f.path, sha: f.sha })),
-        external_refs: externalRefs,
-      });
+      externalRefs = refs.filter((r) => r.startsWith("../") || r.startsWith("/"));
     } catch {
-      out.push({
-        name,
-        upstream_path: dir,
-        upstream_category: category,
-        description: "",
-        files: dirFiles.map((f) => ({ path: f.path, sha: f.sha })),
-        external_refs: [],
-      });
+      /* fallback */
     }
+    out.push({
+      name,
+      upstream_path: dir,
+      upstream_category: category,
+      description,
+      files: dirFiles.map((f) => ({ path: f.path, sha: f.sha })),
+      external_refs: externalRefs,
+      type: "skill",
+    });
   }
   return out.sort((a, b) => a.name.localeCompare(b.name));
 }

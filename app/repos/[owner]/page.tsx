@@ -492,6 +492,14 @@ export default function RepoBrowse({ params }: { params: Promise<{ owner: string
                 <td className="px-3 py-2 font-medium align-top">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span>{s.name}</span>
+                    {s.type === "package" && (
+                      <span
+                        title={`Pacote com ${s.package_skills?.length || 0} skill(s) internas: ${s.package_skills?.join(", ") || "—"}`}
+                        className="text-[10px] px-1.5 py-0.5 rounded bg-sky-100 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 cursor-help"
+                      >
+                        📦 pacote ({s.package_skills?.length || 0})
+                      </span>
+                    )}
                     {s.upstream_category && (
                       <span className="text-[10px] text-zinc-500">{s.upstream_category}</span>
                     )}

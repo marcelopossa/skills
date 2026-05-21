@@ -9,30 +9,30 @@ export const PLUGINS_DIR = path.join(REPO_ROOT, "plugins");
 export const README_FILE = path.join(REPO_ROOT, "README.md");
 export const README_TEMPLATE = path.join(REPO_ROOT, "README.template.md");
 
-export function sourceDir(owner: string): string {
-  return path.join(SKILLS_DIR, owner);
+export function sourceDir(sourceKey: string): string {
+  return path.join(SKILLS_DIR, sourceKey);
 }
 
-export function skillLocalDir(owner: string, skillName: string): string {
-  return path.join(SKILLS_DIR, owner, skillName);
+export function skillLocalDir(sourceKey: string, skillName: string): string {
+  return path.join(SKILLS_DIR, sourceKey, skillName);
 }
 
-export function noticeFile(owner: string): string {
-  return path.join(SKILLS_DIR, owner, "NOTICE.md");
+export function noticeFile(sourceKey: string): string {
+  return path.join(SKILLS_DIR, sourceKey, "NOTICE.md");
 }
 
-export function pluginName(owner: string, skillName: string): string {
-  return `${owner}-${skillName}`;
+export function pluginName(sourceKey: string, skillName: string): string {
+  return `${sourceKey}-${skillName}`;
 }
 
-export function pluginDir(owner: string, skillName: string): string {
-  return path.join(PLUGINS_DIR, pluginName(owner, skillName));
+export function pluginDir(sourceKey: string, skillName: string): string {
+  return path.join(PLUGINS_DIR, pluginName(sourceKey, skillName));
 }
 
-export function pluginManifestFile(owner: string, skillName: string): string {
-  return path.join(pluginDir(owner, skillName), ".claude-plugin", "plugin.json");
+export function pluginManifestFile(sourceKey: string, skillName: string): string {
+  return path.join(pluginDir(sourceKey, skillName), ".claude-plugin", "plugin.json");
 }
 
-export function pluginSkillDir(owner: string, skillName: string): string {
-  return path.join(pluginDir(owner, skillName), "skills", skillName);
+export function pluginSkillDir(sourceKey: string, skillName: string): string {
+  return path.join(pluginDir(sourceKey, skillName), "skills", skillName);
 }
