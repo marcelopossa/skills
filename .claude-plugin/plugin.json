@@ -1,0 +1,9 @@
+{
+  "name": "marcelopossa-skills",
+  "description": "Marketplace pessoal de skills curadas por Marcelo Possa",
+  "version": "0.1.0",
+  "skills": [
+    "./skills/mattpocock/diagnose",
+    "./skills/mattpocock/tdd"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "areas": [
+    {
+      "slug": "debugging",
+      "label": "Debugging",
+      "description": "Systematic diagnosis and resolution of software defects, including reproduction, minimization, hypothesis testing, and instrumentation."
+    }
+  ]
+}

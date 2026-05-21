@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "sources": {
+    "mattpocock": {
+      "repo_url": "https://github.com/mattpocock/skills",
+      "owner": "mattpocock",
+      "repo": "skills",
+      "branch": "main",
+      "last_synced_sha": "b8be62ffacb0118fa3eaa29a0923c87c8c11985c",
+      "last_synced_at": "2026-05-21T14:19:59.973Z",
+      "license": {
+        "spdx": "MIT",
+        "url": "https://github.com/mattpocock/skills/blob/main/LICENSE",
+        "fetched_at": "2026-05-21T14:19:58.084Z"
+      },
+      "attribution": "Skills originalmente criadas por mattpocock (https://github.com/mattpocock).",
+      "imported_skills": {
+        "diagnose": {
+          "upstream_path": "skills/engineering/diagnose",
+          "local_path": "skills/mattpocock/diagnose",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-test. Use when user says \"diagnose this\" / \"debug this\", reports a bug, says something is broken/throwing/failing, or describes a performance regression.",
+          "files": {
+            "SKILL.md": "ed55bda2fdb0d690ea3b80a1cf28bf848c5ad2b5",
+            "scripts/hitl-loop.template.sh": "40afc4652f6f52fc117b2b00e1fa65fcec235838"
+          }
+        },
+        "tdd": {
+          "upstream_path": "skills/engineering/tdd",
+          "local_path": "skills/mattpocock/tdd",
+          "upstream_category": "engineering",
+          "areas": [],
+          "description": "Test-driven development with red-green-refactor loop. Use when user wants to build features or fix bugs using TDD, mentions \"red-green-refactor\", wants integration tests, or asks for test-first development.",
+          "files": {
+            "SKILL.md": "7a989411eb3c4d0879cb33b2d7d05831add27b84",
+            "deep-modules.md": "0d9720cf1dce25e51f4ba66d16f9d2de78a12abb",
+            "interface-design.md": "a0a20ca41f02f18e63b78cde06cec0763923a403",
+            "mocking.md": "71cbfee674d93244ce81d1830b930ca9a69200bd",
+            "refactoring.md": "8a4443924fbe40c2f865c56a9477d5ec01cc9962",
+            "tests.md": "ff22f809ccbcac26ecd7a3c4bc48ef701a8ac82e"
+          }
+        }
+      },
+      "dismissed_skills": []
+    }
+  }
+}
