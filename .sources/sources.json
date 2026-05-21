@@ -7,11 +7,11 @@
       "repo": "skills",
       "branch": "main",
       "last_synced_sha": "b8be62ffacb0118fa3eaa29a0923c87c8c11985c",
-      "last_synced_at": "2026-05-21T17:34:45.781Z",
+      "last_synced_at": "2026-05-21T17:47:51.132Z",
       "license": {
         "spdx": "MIT",
         "url": "https://github.com/mattpocock/skills/blob/main/LICENSE",
-        "fetched_at": "2026-05-21T17:34:45.212Z"
+        "fetched_at": "2026-05-21T17:47:50.594Z"
       },
       "attribution": "Skills originalmente criadas por mattpocock (https://github.com/mattpocock).",
       "imported_skills": {},
@@ -19,7 +19,13 @@
         "qa",
         "request-refactor-plan",
         "ubiquitous-language",
-        "design-an-interface"
+        "design-an-interface",
+        "edit-article",
+        "obsidian-vault",
+        "review",
+        "writing-beats",
+        "writing-fragments",
+        "writing-shape"
       ],
       "analysis_cache": {
         "caveman": {
@@ -355,7 +361,7 @@
           "analyzed_at": "2026-05-21T16:19:30.644Z"
         }
       },
-      "expand_skills": false
+      "expand_skills": true
     },
     "anthropics": {
       "repo_url": "https://github.com/anthropics/skills",

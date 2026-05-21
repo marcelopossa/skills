@@ -362,6 +362,26 @@ export default function RepoBrowse({ params }: { params: Promise<{ owner: string
     }
   }
 
+  async function dismissAllByCategory(cat: string) {
+    if (!data) return;
+    const targets = data.skills
+      .filter(
+        (s) =>
+          s.upstream_category === cat &&
+          s.status !== "dismissed" &&
+          !s.status.startsWith("imported")
+      )
+      .map((s) => s.name);
+    if (targets.length === 0) return;
+    if (!confirm(`Ignorar ${targets.length} skill(s) da categoria '${cat}'?`)) return;
+    await fetch("/api/sync", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ owner, import: [], update: [], remove: [], dismiss: targets }),
+    });
+    await load();
+  }
+
   async function dismissOne(name: string) {
     if (!confirm(`Marcar '${name}' como ignorada (não reaparecerá em novas)?`)) return;
     await fetch("/api/sync", {
@@ -457,6 +477,39 @@ export default function RepoBrowse({ params }: { params: Promise<{ owner: string
         >
           Limpar seleção
         </button>
+        {(() => {
+          const cats = Array.from(
+            new Set(data.skills.map((s) => s.upstream_category).filter(Boolean))
+          ).sort() as string[];
+          if (cats.length === 0) return null;
+          return (
+            <select
+              value=""
+              onChange={(e) => {
+                const v = e.target.value;
+                if (v) void dismissAllByCategory(v);
+                e.currentTarget.value = "";
+              }}
+              className="text-sm border border-zinc-300 dark:border-zinc-700 rounded px-2 py-1 bg-white dark:bg-zinc-900"
+              title="Marca como ignorada todas as skills upstream daquela categoria"
+            >
+              <option value="">Ignorar categoria…</option>
+              {cats.map((c) => {
+                const count = data.skills.filter(
+                  (s) =>
+                    s.upstream_category === c &&
+                    s.status !== "dismissed" &&
+                    !s.status.startsWith("imported")
+                ).length;
+                return (
+                  <option key={c} value={c} disabled={count === 0}>
+                    ignorar {c} ({count})
+                  </option>
+                );
+              })}
+            </select>
+          );
+        })()}
         <div className="ml-auto flex flex-wrap gap-2">
           <button
             onClick={() => void classifySelected("classify")}

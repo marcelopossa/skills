@@ -113,13 +113,21 @@ export default function ReposPage() {
                 className="flex items-center gap-3 p-4 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900"
               >
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline gap-2">
+                  <div className="flex items-baseline gap-2 flex-wrap">
                     <Link
                       href={`/repos/${r.slug}`}
                       className="font-medium hover:underline truncate"
                     >
                       {r.owner}/{r.repo}
                     </Link>
+                    {r.expand_skills && (
+                      <span
+                        title="Modo expandido: root plugin.json/marketplace.json ignorado; cada SKILL.md vira um plugin individual"
+                        className="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 cursor-help"
+                      >
+                        ⤴ desdobrado
+                      </span>
+                    )}
                     <a
                       href={r.repo_url}
                       target="_blank"
