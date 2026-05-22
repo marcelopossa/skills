@@ -1,0 +1,10 @@
+{
+  "name": "mattpocock-handoff",
+  "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar, salvando no diretório temporário do sistema e referenciando artefatos existentes.",
+  "author": {
+    "name": "mattpocock"
+  },
+  "homepage": "https://github.com/mattpocock/skills",
+  "repository": "https://github.com/mattpocock/skills",
+  "license": "MIT"
+}

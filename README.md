@@ -96,6 +96,7 @@ _Habilidade para planejar, executar e analisar campanhas de marketing multicanal
 - **`mattpocock-grill-me`** — Entrevista implacável sobre um plano ou design, explorando cada ramo da árvore de decisão até o entendimento compartilhado. Use para testar um plano ou quando mencionar 'me grille'.
 - **`mattpocock-diagnose`** — Loop disciplinado de diagnóstico para bugs difíceis e regressões de performance: reproduzir, minimizar, hipotetizar, instrumentar, corrigir. Use quando o usuário disser 'diagnostique isso' ou relatar um bug.
 - **`mattpocock-caveman`** — Modo de comunicação ultracompacto que reduz uso de tokens em ~75% ao eliminar rodeios, mantendo precisão técnica. Ative com 'caveman mode' ou '/caveman'.
+- **`mattpocock-handoff`** — Compacta a conversa atual em um documento de handoff para outro agente continuar, salvando no diretório temporário do sistema e referenciando artefatos existentes.
 
 Instale individualmente: `/plugin install <nome>@marcelopossa-skills`. Habilite/desabilite por sessão com `/plugin enable <nome>` e `/plugin disable <nome>`.
 <!-- AUTO:SKILLS:END -->
@@ -144,7 +145,7 @@ Skills aqui foram curadas a partir das fontes abaixo. Atribuição e licença s�
 ### [mattpocock/skills](https://github.com/mattpocock/skills)
 
 - **Licença:** MIT ([LICENSE](https://github.com/mattpocock/skills/blob/main/LICENSE))
-- **Skills curadas:** `caveman`, `diagnose`, `grill-me`, `grill-with-docs`, `improve-codebase-architecture`, `tdd`, `write-a-skill`
+- **Skills curadas:** `caveman`, `diagnose`, `grill-me`, `grill-with-docs`, `handoff`, `improve-codebase-architecture`, `tdd`, `write-a-skill`
 - **Agradecimento:** Skills originalmente criadas por mattpocock (https://github.com/mattpocock).
 
 ### [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)

@@ -88,6 +88,13 @@
       "license": "MIT"
     },
     {
+      "name": "mattpocock-handoff",
+      "source": "./plugins/mattpocock-handoff",
+      "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar, salvando no diretório temporário do sistema e referenciando artefatos existentes.",
+      "category": "productivity",
+      "license": "MIT"
+    },
+    {
       "name": "mattpocock-improve-codebase-architecture",
       "source": "./plugins/mattpocock-improve-codebase-architecture",
       "description": "Encontre oportunidades de aprofundamento na arquitetura do código, guiado pela linguagem de domínio em CONTEXT.md e decisões em docs/adr/. Use para melhorar a arquitetura, refatorar, consolidar módulos acoplados ou tornar o código mais testável e navegável por IA.",

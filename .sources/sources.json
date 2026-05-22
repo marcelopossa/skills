@@ -7,11 +7,11 @@
       "repo": "skills",
       "branch": "main",
       "last_synced_sha": "b8be62ffacb0118fa3eaa29a0923c87c8c11985c",
-      "last_synced_at": "2026-05-21T18:00:42.645Z",
+      "last_synced_at": "2026-05-22T00:34:51.483Z",
       "license": {
         "spdx": "MIT",
         "url": "https://github.com/mattpocock/skills/blob/main/LICENSE",
-        "fetched_at": "2026-05-21T18:00:28.529Z"
+        "fetched_at": "2026-05-22T00:34:48.973Z"
       },
       "attribution": "Skills originalmente criadas por mattpocock (https://github.com/mattpocock).",
       "imported_skills": {
@@ -101,6 +101,17 @@
           "description": "Modo de comunicação ultracompacto que reduz uso de tokens em ~75% ao eliminar rodeios, mantendo precisão técnica. Ative com 'caveman mode' ou '/caveman'.",
           "files": {
             "SKILL.md": "85770a38992a7c74d2b3467b03fe5bd4b1287fe6"
+          },
+          "type": "skill"
+        },
+        "handoff": {
+          "upstream_path": "skills/productivity/handoff",
+          "local_path": "skills/mattpocock/handoff",
+          "upstream_category": "productivity",
+          "areas": [],
+          "description": "Compacta a conversa atual em um documento de handoff para outro agente continuar, salvando no diretório temporário do sistema e referenciando artefatos existentes.",
+          "files": {
+            "SKILL.md": "0aa5b99300da27b50e80db53f880e422204faedd"
           },
           "type": "skill"
         }
